@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr" className="scroll-smooth pt-20 md:pt-0">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethosoft</title>
+  <link rel="icon" type="image/png" href="https://ethosoft.org/logolar/ethos-02.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Ubuntu', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              salmon: '#E07A5F', // Approximate from description "Soft kiremit/somon"
+              dark: '#1A1A1A',
+              light: '#FCFAF7', // Warm paper-like background
+              gray: '#F4F4F0',
+              text: '#3C3C3C'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-padding-top: 5rem;
+      /* 80px for sticky header */
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FCFAF7;
+      color: #3C3C3C;
+    }
+
+    /* Custom scrollbar for a cleaner look */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #FCFAF7;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D1D1D1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #E07A5F;
+    }
+  </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.29.2",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-CJFJmhG7.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
