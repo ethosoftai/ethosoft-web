@@ -1,5 +1,21 @@
 
 
+DirectoryIndex index.html index.php
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Git verilerinin web üzerinden görüntülenmesini engelle
+    RewriteRule (^|/)\.git(?:/|$) - [F,L,NC]
+</IfModule>
+
+# Hassas geliştirme dosyalarını engelle
+<FilesMatch "^(\.env|\.gitignore|\.cpanel\.yml|config\.php|composer\.(json|lock)|package(-lock)?\.json)$">
+    Require all denied
+</FilesMatch>
+
 # php -- BEGIN cPanel-generated handler, do not edit
 # This domain inherits the “PHP” package.
 # php -- END cPanel-generated handler, do not edit
