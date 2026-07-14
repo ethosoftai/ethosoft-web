@@ -3,8 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html/
     - /bin/mkdir -p "$DEPLOYPATH"
-    - /bin/cp -f index.html .htaccess "$DEPLOYPATH"
-    - /bin/cp -R -f assets basarilarimiz kisiler logolar partnerlerimiz "$DEPLOYPATH"
+    - /bin/cp -f dist/index.html .htaccess "$DEPLOYPATH"
+    - /bin/cp -R -f dist/assets public/basarilarimiz public/kisiler public/logolar public/partnerlerimiz "$DEPLOYPATH"
     - /bin/chmod 755 "$DEPLOYPATH"
     - /bin/chmod 644 "$DEPLOYPATH/index.html" "$DEPLOYPATH/.htaccess"
     - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type d -exec /bin/chmod 755 {} \;
