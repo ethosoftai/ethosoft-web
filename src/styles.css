@@ -94,6 +94,57 @@ img {
   transform: translateY(0);
 }
 
+.seo-fallback {
+  min-height: 100vh;
+  padding: 140px 24px 80px;
+  display: grid;
+  place-items: center;
+}
+
+.seo-fallback__inner {
+  width: min(100%, 920px);
+}
+
+.seo-fallback__kicker {
+  margin: 0 0 18px;
+  color: var(--salmon-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.seo-fallback h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-weight: 300;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.seo-fallback__inner > p:not(.seo-fallback__kicker) {
+  max-width: 720px;
+  margin: 32px 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.seo-fallback nav {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.seo-fallback nav a {
+  color: var(--salmon-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;
