@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/cp -f index.html .htaccess "$DEPLOYPATH"
+    - /bin/cp -a assets basarilarimiz kisiler logolar partnerlerimiz "$DEPLOYPATH"
