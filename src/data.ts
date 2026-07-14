@@ -1,10 +1,10 @@
-export type ProjectCategory = "Tümü" | "Temel YZ" | "Sağlık" | "Eğitim";
+export type ProjectCategory = "All" | "Core AI" | "Healthcare" | "Education";
 
 export type Project = {
   id: string;
   title: string;
   description: string;
-  category: Exclude<ProjectCategory, "Tümü">;
+  category: Exclude<ProjectCategory, "All">;
   focus: string[];
 };
 
@@ -19,12 +19,12 @@ export type TeamMember = {
 };
 
 export const navigation = [
-  { label: "Projeler", href: "#projects" },
-  { label: "Yaklaşım", href: "#approach" },
-  { label: "Ekip", href: "#team" },
-  { label: "Başarılar", href: "#achievements" },
-  { label: "Partnerler", href: "#partners" },
-  { label: "İletişim", href: "#contact" },
+  { label: "Projects", href: "#projects" },
+  { label: "Approach", href: "#approach" },
+  { label: "Team", href: "#team" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Partners", href: "#partners" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const projects: Project[] = [
@@ -32,65 +32,65 @@ export const projects: Project[] = [
     id: "eeg2video",
     title: "EEG2Video",
     description:
-      "EEG sinyalleri aracılığıyla insanın hayal ettiği sekansları yapay zeka ile videoya dönüştüren araştırma projesi.",
-    category: "Temel YZ",
-    focus: ["EEG", "Üretken yapay zeka", "Multimodal öğrenme"],
+      "A research project that uses artificial intelligence to transform imagined sequences captured through EEG signals into video.",
+    category: "Core AI",
+    focus: ["EEG", "Generative AI", "Multimodal learning"],
   },
   {
     id: "epilepsi",
-    title: "Epilepsi Erken Teşhis",
+    title: "Early Epilepsy Detection",
     description:
-      "EEG sinyallerini analiz ederek nöbet öncesi örüntüleri belirleyen erken teşhis ve uyarı sistemi.",
-    category: "Sağlık",
-    focus: ["Biyosinyal", "Erken uyarı", "Karar destek"],
+      "An early detection and warning system that analyzes EEG signals to identify patterns preceding epileptic seizures.",
+    category: "Healthcare",
+    focus: ["Biosignals", "Early warning", "Decision support"],
   },
   {
     id: "protein",
-    title: "Protein Mutasyon Analizi",
+    title: "Protein Mutation Analysis",
     description:
-      "Proteinlerde meydana gelen mutasyonların hastalıklara etkisini analiz eden multimodal yapay zeka sistemi.",
-    category: "Sağlık",
-    focus: ["Biyoinformatik", "Multimodal YZ", "Risk analizi"],
+      "A multimodal AI system that analyzes how protein mutations contribute to disease.",
+    category: "Healthcare",
+    focus: ["Bioinformatics", "Multimodal AI", "Risk analysis"],
   },
   {
     id: "kalp",
-    title: "Kalp Hastalıkları Tanısı",
+    title: "Heart Disease Diagnosis",
     description:
-      "Klinik veriler ve EKG sinyalleriyle 10’dan fazla kalp hastalığını otomatik tespit eden karar destek sistemi.",
-    category: "Sağlık",
-    focus: ["EKG", "Klinik veri", "Sınıflandırma"],
+      "A decision-support system that automatically detects more than ten heart conditions using clinical data and ECG signals.",
+    category: "Healthcare",
+    focus: ["ECG", "Clinical data", "Classification"],
   },
   {
     id: "goz",
-    title: "Göz Hastalıkları Tespiti",
+    title: "Eye Disease Detection",
     description:
-      "Fundus ve OCT görüntülerinden 20 farklı göz hastalığını sınıflandıran ve lezyonları tespit eden sistem.",
-    category: "Sağlık",
-    focus: ["Medikal görüntüleme", "OCT", "Lezyon tespiti"],
+      "A system that classifies twenty eye conditions and detects lesions from fundus and OCT images.",
+    category: "Healthcare",
+    focus: ["Medical imaging", "OCT", "Lesion detection"],
   },
   {
     id: "gogus",
-    title: "Göğüs X-Ray Analizi",
+    title: "Chest X-Ray Analysis",
     description:
-      "Göğüs X-ray görüntülerinden hastalık tespiti, lokalizasyon ve otomatik radyoloji raporu üretimi.",
-    category: "Sağlık",
-    focus: ["Radyoloji", "Lokalizasyon", "Raporlama"],
+      "Disease detection, localization, and automated radiology report generation from chest X-ray images.",
+    category: "Healthcare",
+    focus: ["Radiology", "Localization", "Reporting"],
   },
   {
     id: "beyin",
-    title: "Multimodal Beyin Analizi",
+    title: "Multimodal Brain Analysis",
     description:
-      "MR, BT ve EEG modalitelerini birlikte değerlendirerek beyin hastalıklarının güvenilir tespitini hedefleyen sistem.",
-    category: "Sağlık",
-    focus: ["MR", "BT", "EEG"],
+      "A system designed to reliably detect neurological conditions by jointly evaluating MRI, CT, and EEG modalities.",
+    category: "Healthcare",
+    focus: ["MRI", "CT", "EEG"],
   },
   {
     id: "solvio",
     title: "Solvio",
     description:
-      "İngilizce sınavlarını otomatik değerlendiren ve öğrencilere kişiselleştirilmiş geri bildirim sunan eğitim platformu.",
-    category: "Eğitim",
-    focus: ["NLP", "Ölçme ve değerlendirme", "Kişiselleştirme"],
+      "An education platform that automatically evaluates English exams and provides students with personalized feedback.",
+    category: "Education",
+    focus: ["NLP", "Assessment", "Personalization"],
   },
 ];
 
@@ -98,7 +98,7 @@ export const team: TeamMember[] = [
   {
     id: "remzi",
     name: "Remzi Öz",
-    role: "Takım Danışmanı",
+    role: "Team Advisor",
     email: "remzioz@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/remzi-%C3%B6z-29687b1b3/",
     image: "remzi.png",
@@ -107,7 +107,7 @@ export const team: TeamMember[] = [
   {
     id: "omer",
     name: "Ömer Faruk Aksoy",
-    role: "Takım Kaptanı, YZ & Veri Mühendisi",
+    role: "Team Lead, AI & Data Engineer",
     email: "omer@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/%C3%B6merfarukaksoy/",
     image: "omer.png",
@@ -116,7 +116,7 @@ export const team: TeamMember[] = [
   {
     id: "nedim",
     name: "Nedim Mutlu Sezer",
-    role: "Teknoloji Kaptanı, YZ & Veri Mühendisi",
+    role: "Technology Lead, AI & Data Engineer",
     email: "nedim@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/nmsofficial/",
     image: "nedim.jpeg",
@@ -125,7 +125,7 @@ export const team: TeamMember[] = [
   {
     id: "yagiz",
     name: "Yağız Ekrem Dalar",
-    role: "PR Kaptanı, YZ & Veri Mühendisi",
+    role: "Communications Lead, AI & Data Engineer",
     email: "ekrem@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/yagizekremdalar/",
     image: "yagiz.png",
@@ -134,7 +134,7 @@ export const team: TeamMember[] = [
   {
     id: "rifat",
     name: "Ahmet Rıfat Öztürk",
-    role: "Strateji Kaptanı, YZ & Veri Mühendisi",
+    role: "Strategy Lead, AI & Data Engineer",
     email: "ahmetrifat@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/ahmet-r%C4%B1fat-%C3%B6zt%C3%BCrk-161896293/",
@@ -144,7 +144,7 @@ export const team: TeamMember[] = [
   {
     id: "arda",
     name: "Feyzi Arda Salihoğlu",
-    role: "Strateji Kaptanı, YZ & Veri Mühendisi",
+    role: "Strategy Lead, AI & Data Engineer",
     email: "feyziarda.salihoglu@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/feyzi-arda-saliho%C4%9Flu-579057386/",
@@ -154,7 +154,7 @@ export const team: TeamMember[] = [
   {
     id: "yusuf",
     name: "Yusuf Cidik",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "cidik@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/yusuf-cidik-41471a31a/",
     group: "team",
@@ -162,7 +162,7 @@ export const team: TeamMember[] = [
   {
     id: "alper",
     name: "Alper Safa Dede",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "alpersafadede@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/alper-safa-dede-40a702315/",
     group: "team",
@@ -170,7 +170,7 @@ export const team: TeamMember[] = [
   {
     id: "ugur",
     name: "Uğur Ali Şahinoğlu",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "ugrli@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/u%C4%9Fur-ali-%C5%9Fahino%C4%9Flu-823707387",
@@ -179,7 +179,7 @@ export const team: TeamMember[] = [
   {
     id: "alaattin",
     name: "Alaattin Ömer Çavuş",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "omercavus@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/%C3%B6mer-%C3%A7avu%C5%9F-a80b95389/",
@@ -188,7 +188,7 @@ export const team: TeamMember[] = [
   {
     id: "seza",
     name: "Yusuf Seza Kılınç",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "yusufsezakilinc@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/yusuf-seza-kilin%C3%A7-1b3b02389/",
@@ -197,7 +197,7 @@ export const team: TeamMember[] = [
   {
     id: "hamza",
     name: "Hamza Yakup Yılmaz",
-    role: "Altyapı",
+    role: "Infrastructure Team",
     email: "hamzayakupyilmaz@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/hamza-yakup-y%C4%B1lmaz-a958a2384/",
@@ -208,45 +208,45 @@ export const team: TeamMember[] = [
 export const achievements = [
   {
     id: "datamedx",
-    title: "DataMedX Hackathon Şampiyonluğu",
-    organization: "İstinye Üniversitesi",
+    title: "DataMedX Hackathon Championship",
+    organization: "İstinye University",
     image: "datamedx.jpeg",
-    rank: "Şampiyon",
+    rank: "Champion",
   },
   {
     id: "mostra",
-    title: "Mostra Hackathon Jüri Özel Ödülü",
-    organization: "İTÜ & Uyumsoft",
+    title: "Mostra Hackathon Jury's Special Award",
+    organization: "Istanbul Technical University & Uyumsoft",
     image: "mostra.jpeg",
-    rank: "Jüri Özel Ödülü",
+    rank: "Jury's Special Award",
   },
   {
     id: "teknofest",
-    title: "Sağlıkta Yapay Zeka Yarışması",
+    title: "AI in Healthcare Competition",
     organization: "TEKNOFEST",
     image: "teknofest.jpeg",
-    rank: "Türkiye 3.'sü",
+    rank: "3rd Place in Türkiye",
   },
   {
     id: "basaksehir",
-    title: "Living Lab İnovasyon Yarışması",
+    title: "Living Lab Innovation Competition",
     organization: "Başakşehir Living Lab",
     image: "basaksehir.jpeg",
-    rank: "Türkiye 2.'si",
+    rank: "2nd Place in Türkiye",
   },
   {
     id: "eucodeweek",
     title: "EU Code Week Hackathon",
     organization: "European Commission",
     image: "eucodeweek.jpeg",
-    rank: "Türkiye 1.'si",
+    rank: "1st Place in Türkiye",
   },
 ];
 
 export const partners = [
-  { id: "bilisimvadisi", name: "Bilişim Vadisi", logo: "bilisimvadisi.png" },
-  { id: "gsb", name: "Gençlik ve Spor Bakanlığı", logo: "gsb.png" },
+  { id: "bilisimvadisi", name: "Informatics Valley", logo: "bilisimvadisi.png" },
+  { id: "gsb", name: "Ministry of Youth and Sports", logo: "gsb.png" },
   { id: "ag", name: "Asrın Global", logo: "ag.png" },
-  { id: "mems", name: "ODTÜ MEMS Merkezi", logo: "mems.png" },
-  { id: "pertev", name: "Pertevniyal Lisesi", logo: "pertev.png" },
+  { id: "mems", name: "METU MEMS Center", logo: "mems.png" },
+  { id: "pertev", name: "Pertevniyal High School", logo: "pertev.png" },
 ];

@@ -30,9 +30,9 @@ import {
 } from "./data";
 
 const categoryIcons = {
-  "Temel YZ": BrainCircuit,
-  Sağlık: HeartPulse,
-  Eğitim: GraduationCap,
+  "Core AI": BrainCircuit,
+  Healthcare: HeartPulse,
+  Education: GraduationCap,
 };
 
 function LinkedInIcon({ size = 20 }: { size?: number }) {
@@ -74,12 +74,12 @@ function Header() {
   return (
     <header className={`site-header ${scrolled || menuOpen ? "is-scrolled" : ""}`}>
       <div className="header-inner">
-        <a className="brand" href="#hero" aria-label="Ethosoft ana sayfa">
+        <a className="brand" href="#hero" aria-label="Ethosoft home">
           <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
           <span>Ethosoft</span>
         </a>
 
-        <nav className="desktop-nav" aria-label="Ana menü">
+        <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -92,7 +92,7 @@ function Header() {
           type="button"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
-          aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen((value) => !value)}
         >
           {menuOpen ? <X /> : <Menu />}
@@ -102,7 +102,7 @@ function Header() {
       <nav
         id="mobile-navigation"
         className={`mobile-nav ${menuOpen ? "is-open" : ""}`}
-        aria-label="Mobil menü"
+        aria-label="Mobile navigation"
       >
         {navigation.map((item, index) => (
           <a
@@ -129,22 +129,22 @@ function Hero() {
         <div className="hero-copy">
           <div className="eyebrow hero-eyebrow">
             <Sparkles size={16} />
-            İnsan odaklı yapay zeka
+            Human-centered artificial intelligence
           </div>
           <h1 id="hero-title">
-            Fikri araştırmaya,
-            <span>araştırmayı etkiye</span> dönüştürüyoruz.
+            We turn ideas into research,
+            <span>and research into impact.</span>
           </h1>
           <p>
-            Sağlık, eğitim ve temel yapay zeka teknolojilerinde; bilimsel merakı,
-            mühendislik disiplinini ve insani değerleri aynı masada buluşturuyoruz.
+            Across healthcare, education, and core AI, we bring scientific curiosity,
+            engineering rigor, and human values to the same table.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">
-              Projeleri keşfet <ArrowRight size={18} />
+              Explore our projects <ArrowRight size={18} />
             </a>
             <a className="button button-secondary" href="#contact">
-              Birlikte çalışalım
+              Work with us
             </a>
           </div>
         </div>
@@ -154,7 +154,7 @@ function Hero() {
           <div className="orbit orbit-two" />
           <div className="visual-core">
             <img src="/logolar/ethos-03.png" alt="" width="340" height="172" />
-            <p>Bilim · Teknoloji · Etki</p>
+            <p>Science · Technology · Impact</p>
           </div>
           <div className="signal-card signal-card-top">
             <span className="signal-dot" />
@@ -162,27 +162,27 @@ function Hero() {
           </div>
           <div className="signal-card signal-card-bottom">
             <ScanLine size={17} />
-            Sağlık teknolojileri
+            Health technologies
           </div>
         </div>
       </div>
 
-      <div className="stats" aria-label="Ethosoft sayılarla">
+      <div className="stats" aria-label="Ethosoft at a glance">
         <div>
           <strong>8</strong>
-          <span>Aktif proje alanı</span>
+          <span>Active research areas</span>
         </div>
         <div>
           <strong>12</strong>
-          <span>Disiplinler arası ekip üyesi</span>
+          <span>Interdisciplinary team members</span>
         </div>
         <div>
           <strong>5</strong>
-          <span>Ulusal başarı</span>
+          <span>National achievements</span>
         </div>
         <div>
           <strong>5</strong>
-          <span>Stratejik partner</span>
+          <span>Strategic partners</span>
         </div>
       </div>
     </section>
@@ -247,7 +247,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           className="modal-close"
           type="button"
           onClick={onClose}
-          aria-label="Kapat"
+          aria-label="Close"
         >
           <X />
         </button>
@@ -263,7 +263,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           ))}
         </div>
         <a className="button button-primary" href="mailto:merhaba@ethosoft.org">
-          Proje hakkında konuşalım <Mail size={17} />
+          Discuss this project <Mail size={17} />
         </a>
       </div>
     </div>
@@ -271,12 +271,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 }
 
 function Projects() {
-  const categories: ProjectCategory[] = ["Tümü", "Temel YZ", "Sağlık", "Eğitim"];
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("Tümü");
+  const categories: ProjectCategory[] = ["All", "Core AI", "Healthcare", "Education"];
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const visibleProjects = useMemo(
     () =>
-      activeCategory === "Tümü"
+      activeCategory === "All"
         ? projects
         : projects.filter((project) => project.category === activeCategory),
     [activeCategory],
@@ -287,12 +287,12 @@ function Projects() {
       <SectionHeading
         id="projects-title"
         index="01"
-        kicker="Odak alanlarımız"
-        title="Gerçek problemlere çalışan yapay zeka."
-        description="Biyosinyallerden medikal görüntülemeye, üretken yapay zekadan kişiselleştirilmiş eğitime uzanan araştırma ve ürün alanlarımız."
+        kicker="Focus areas"
+        title="AI built for real-world problems."
+        description="Our research and product areas span biosignals, medical imaging, generative AI, and personalized education."
       />
 
-      <div className="filter-bar" role="group" aria-label="Projeleri kategoriye göre filtrele">
+      <div className="filter-bar" role="group" aria-label="Filter projects by category">
         {categories.map((category) => (
           <button
             key={category}
@@ -319,7 +319,7 @@ function Projects() {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <button type="button" onClick={() => setSelectedProject(project)}>
-                Detayları gör <ArrowUpRight size={18} />
+                View details <ArrowUpRight size={18} />
               </button>
             </article>
           );
@@ -337,18 +337,18 @@ function Approach() {
   const principles = [
     {
       icon: Microscope,
-      title: "Araştırma disiplini",
-      text: "Problemi veriyle tanımlar, literatürle sınar ve tekrarlanabilir deneylerle geliştiririz.",
+      title: "Research discipline",
+      text: "We define problems with data, challenge assumptions through the literature, and develop through reproducible experiments.",
     },
     {
       icon: ShieldCheck,
-      title: "Güvenilir teknoloji",
-      text: "Doğruluk kadar açıklanabilirlik, mahremiyet ve insan denetimini de tasarımın parçası görürüz.",
+      title: "Trustworthy technology",
+      text: "We treat explainability, privacy, and human oversight as essential design requirements alongside accuracy.",
     },
     {
       icon: Users,
-      title: "Disiplinler arası ekip",
-      text: "Mühendisliği sağlık, eğitim ve iletişim perspektifleriyle bir araya getiririz.",
+      title: "Interdisciplinary team",
+      text: "We connect engineering with perspectives from healthcare, education, and communication.",
     },
   ];
 
@@ -357,8 +357,8 @@ function Approach() {
       <SectionHeading
         id="approach-title"
         index="02"
-        kicker="Çalışma biçimimiz"
-        title="Teknolojiyi yalnızca mümkün olduğu için değil, anlamlı olduğu için geliştiriyoruz."
+        kicker="How we work"
+        title="We build technology not simply because it is possible, but because it is meaningful."
       />
       <div className="principle-grid">
         {principles.map(({ icon: Icon, title, text }) => (
@@ -386,7 +386,7 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
         {member.image ? (
           <img
             src={`/kisiler/${member.image}`}
-            alt={`${member.name} portresi`}
+            alt={`Portrait of ${member.name}`}
             loading="lazy"
             width="320"
             height="320"
@@ -402,7 +402,7 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
           <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} LinkedIn`}>
             <LinkedInIcon size={17} />
           </a>
-          <a href={`mailto:${member.email}`} aria-label={`${member.name} e-posta`}>
+          <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
             <Mail size={17} />
           </a>
         </div>
@@ -420,9 +420,9 @@ function Team() {
       <SectionHeading
         id="team-title"
         index="03"
-        kicker="Ekibimiz"
-        title="Farklı disiplinler, ortak bir merak."
-        description="Araştırmayı ürüne, fikri ölçülebilir etkiye dönüştürmek için birlikte çalışan genç ve dinamik bir ekip."
+        kicker="Our team"
+        title="Different disciplines, shared curiosity."
+        description="A young, dynamic team working together to turn research into products and ideas into measurable impact."
       />
 
       <div className="team-grid team-grid-featured">
@@ -432,7 +432,7 @@ function Team() {
       </div>
 
       <div className="team-subheading">
-        <span>Altyapı ekibi</span>
+        <span>Infrastructure team</span>
         <div />
       </div>
       <div className="team-grid team-grid-compact">
@@ -473,9 +473,9 @@ function Achievements() {
       <SectionHeading
         id="achievements-title"
         index="04"
-        kicker="Başarılarımız"
-        title="Ürettiğimiz değerin sahadaki karşılığı."
-        description="Araştırma ve ürünlerimizi farklı platformlarda sınadık; öğrendik, geliştirdik ve birlikte kazandık."
+        kicker="Our achievements"
+        title="Where our work proves its value."
+        description="We have tested our research and products across different platforms—learning, improving, and succeeding together."
       />
 
       <div className="achievement-grid">
@@ -485,7 +485,7 @@ function Achievements() {
             className={`achievement-card achievement-${index + 1}`}
             type="button"
             onClick={() => setSelected(achievement)}
-            aria-label={`${achievement.title} görselini büyüt`}
+            aria-label={`Enlarge image for ${achievement.title}`}
           >
             <img
               src={`/basarilarimiz/${achievement.image}`}
@@ -519,7 +519,7 @@ function Achievements() {
               className="modal-close"
               type="button"
               onClick={() => setSelected(null)}
-              aria-label="Kapat"
+              aria-label="Close"
             >
               <X />
             </button>
@@ -542,15 +542,15 @@ function Partners() {
       <SectionHeading
         id="partners-title"
         index="05"
-        kicker="Ekosistem"
-        title="Birlikte değer ürettiğimiz kurumlar."
+        kicker="Ecosystem"
+        title="Organizations we create value with."
       />
       <div className="partner-grid">
         {partners.map((partner) => (
           <div className="partner-card" key={partner.id}>
             <img
               src={`/partnerlerimiz/${partner.logo}`}
-              alt={`${partner.name} logosu`}
+              alt={`${partner.name} logo`}
               loading="lazy"
               width="180"
               height="90"
@@ -569,11 +569,11 @@ function Contact() {
       <div className="contact-orb" aria-hidden="true" />
       <div className="contact-inner">
         <div>
-          <p className="section-kicker">Yeni bir fikir mi var?</p>
-          <h2>Geleceği birlikte şekillendirelim.</h2>
+          <p className="section-kicker">Have an idea?</p>
+          <h2>Let's shape the future together.</h2>
           <p>
-            Araştırma ortaklığı, ürün geliştirme, mentorluk veya ekibimize katılmak için
-            bize ulaşın.
+            Reach out to explore research partnerships, product development, mentorship,
+            or opportunities to join our team.
           </p>
         </div>
         <div className="contact-actions">
@@ -582,7 +582,7 @@ function Contact() {
               <Mail />
             </span>
             <div>
-              <small>E-posta</small>
+              <small>Email</small>
               <strong>merhaba@ethosoft.org</strong>
             </div>
             <ArrowUpRight />
@@ -605,7 +605,7 @@ function Contact() {
           <span>Ethosoft</span>
         </a>
         <p>© {new Date().getFullYear()} Ethosoft AI Team</p>
-        <a href="#hero">Başa dön <ArrowUp size={16} /></a>
+        <a href="#hero">Back to top <ArrowUp size={16} /></a>
       </div>
     </footer>
   );

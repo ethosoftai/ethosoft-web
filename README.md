@@ -1,15 +1,15 @@
-# Ethosoft web sitesi
+# Ethosoft website
 
-Ethosoft'un kurumsal web sitesi. React, TypeScript ve Vite ile geliştirilir; derlenmiş `dist/` çıktısı cPanel Git deployment ile `public_html` dizinine kopyalanır.
+Ethosoft's corporate website. It is built with React, TypeScript, and Vite; the compiled `dist/` output is copied to `public_html` through cPanel Git deployment.
 
-## Yerel geliştirme
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Kontroller ve production build
+## Checks and production build
 
 ```bash
 npm run typecheck
@@ -17,8 +17,8 @@ npm run build
 npm run preview
 ```
 
-İçerikler `src/data.ts`, arayüz `src/App.tsx`, stiller `src/styles.css` içindedir. Görseller `public/` altında tutulur.
+Content lives in `src/data.ts`, the interface in `src/App.tsx`, and styles in `src/styles.css`. Images are stored under `public/`.
 
-## Hazalhost / cPanel dağıtımı
+## Hazalhost / cPanel deployment
 
-Değişiklikleri göndermeden önce `npm run build` çalıştırılmalıdır. `dist/` repoda tutulur; `.cpanel.yml` bu çıktıyı `public_html` içine kopyalar ve LiteSpeed'in okuyabilmesi için dosya/klasör izinlerini düzenler.
+Run `npm run build` before pushing changes. The repository tracks `dist/`; `.cpanel.yml` copies that output into `public_html` and applies file and directory permissions that LiteSpeed can read.
