@@ -1,0 +1,18 @@
+# Ethosoft
+
+> Ethosoft is an interdisciplinary artificial intelligence research team working across language models, healthcare, education, and core AI.
+
+## Research papers
+
+- [Foresight Is Not Enough](https://ethosoft.org/papers/foresight-is-not-enough/): A 2026 preprint examining sentence-level future prediction, self-loop hard negatives, semantic reranking, and the representation-to-behavior calibration gap in small language models. DOI: 10.21203/rs.3.rs-10331341/v1.
+
+## Research index
+
+- [Ethosoft Papers](https://ethosoft.org/papers/): The canonical index of Ethosoft preprints and technical reports.
+- [Ethosoft Projects](https://ethosoft.org/#projects): Current artificial intelligence research and product areas.
+- [Ethosoft Team](https://ethosoft.org/#team): Team members and research contributors.
+
+## External research profiles
+
+- [Ethosoft on GitHub](https://github.com/ethosoftai)
+- [Ethosoft on Hugging Face](https://huggingface.co/Ethosoft)

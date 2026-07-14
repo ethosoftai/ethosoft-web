@@ -19,6 +19,7 @@ export type TeamMember = {
 };
 
 export const navigation = [
+  { label: "Papers", href: "/papers/" },
   { label: "Projects", href: "#projects" },
   { label: "Approach", href: "#approach" },
   { label: "Team", href: "#team" },

@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowUp,
   ArrowUpRight,
+  BookOpen,
   BrainCircuit,
   Dna,
   ExternalLink,
@@ -333,6 +334,52 @@ function Projects() {
   );
 }
 
+function ResearchSpotlight() {
+  return (
+    <section id="research" className="section research-spotlight" aria-labelledby="research-title">
+      <SectionHeading
+        id="research-title"
+        index="02"
+        kicker="Research papers"
+        title="Open research, built to be examined."
+        description="Read our preprints, technical reports, controlled experiments, and the evidence behind the systems we build."
+      />
+
+      <article className="featured-paper-card">
+        <div className="featured-paper-mark" aria-hidden="true">
+          <BookOpen />
+          <span>01</span>
+        </div>
+        <div className="featured-paper-content">
+          <div className="featured-paper-meta">
+            <span>Preprint</span>
+            <time dateTime="2026-07-14">July 14, 2026</time>
+            <span>Small language models</span>
+          </div>
+          <h3>
+            Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard
+            Negatives, and the Calibration Gap in Small Language Models
+          </h3>
+          <p>
+            A controlled study of why a learned future-oriented representation may
+            remain too weakly calibrated to control language-model generation behavior.
+          </p>
+          <div className="featured-paper-footer">
+            <span>Öztürk, Dalar, Aksoy, Sezer &amp; Salihoğlu</span>
+            <a href="/papers/foresight-is-not-enough/">
+              Read the paper <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <a className="research-archive-link" href="/papers/">
+        Browse the research archive <ArrowRight size={18} />
+      </a>
+    </section>
+  );
+}
+
 function Approach() {
   const principles = [
     {
@@ -356,7 +403,7 @@ function Approach() {
     <section id="approach" className="section approach-section" aria-labelledby="approach-title">
       <SectionHeading
         id="approach-title"
-        index="02"
+        index="03"
         kicker="How we work"
         title="We build technology not simply because it is possible, but because it is meaningful."
       />
@@ -419,7 +466,7 @@ function Team() {
     <section id="team" className="section team-section" aria-labelledby="team-title">
       <SectionHeading
         id="team-title"
-        index="03"
+        index="04"
         kicker="Our team"
         title="Different disciplines, shared curiosity."
         description="A young, dynamic team working together to turn research into products and ideas into measurable impact."
@@ -472,7 +519,7 @@ function Achievements() {
     >
       <SectionHeading
         id="achievements-title"
-        index="04"
+        index="05"
         kicker="Our achievements"
         title="Where our work proves its value."
         description="We have tested our research and products across different platforms—learning, improving, and succeeding together."
@@ -541,7 +588,7 @@ function Partners() {
     <section id="partners" className="section partners-section" aria-labelledby="partners-title">
       <SectionHeading
         id="partners-title"
-        index="05"
+        index="06"
         kicker="Ecosystem"
         title="Organizations we create value with."
       />
@@ -618,6 +665,7 @@ export default function App() {
       <main id="main-content">
         <Hero />
         <Projects />
+        <ResearchSpotlight />
         <Approach />
         <Team />
         <Achievements />

@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="ForesightLM-v2 studies why learned sentence-level future signals may fail to control small language model generation, using fixed-pool reranking and strong negative controls."
+    />
+    <meta
+      name="keywords"
+      content="ForesightLM-v2, sentence-level future prediction, self-loop hard negatives, semantic reranking, representation-to-behavior gap, small language models, text generation, model interpretability"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://ethosoft.org/papers/foresight-is-not-enough/" />
+    <link
+      rel="alternate"
+      type="application/pdf"
+      href="https://www.researchsquare.com/article/rs-10331341/v1.pdf"
+    />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      property="og:title"
+      content="Foresight Is Not Enough: Future Signals and the Calibration Gap | Ethosoft"
+    />
+    <meta
+      property="og:description"
+      content="A controlled study of sentence-level future prediction, self-loop hard negatives, and semantic reranking in small language models."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:url" content="https://ethosoft.org/papers/foresight-is-not-enough/" />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:section" content="Artificial Intelligence" />
+    <meta property="article:tag" content="Small language models" />
+    <meta property="article:tag" content="Sentence-level future prediction" />
+    <meta property="article:tag" content="Semantic reranking" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta
+      name="citation_title"
+      content="Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard Negatives, and the Calibration Gap in Small Language Models"
+    />
+    <meta name="citation_author" content="Ahmet Rıfat Öztürk" />
+    <meta name="citation_author" content="Yağız Ekrem Dalar" />
+    <meta name="citation_author" content="Ömer Faruk Aksoy" />
+    <meta name="citation_author" content="Nedim Mutlu Sezer" />
+    <meta name="citation_author" content="Feyzi Arda Salihoğlu" />
+    <meta name="citation_publication_date" content="2026/07/14" />
+    <meta name="citation_doi" content="10.21203/rs.3.rs-10331341/v1" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_technical_report_institution" content="Ethosoft" />
+    <meta
+      name="citation_abstract"
+      content="A language model can learn a representation that appears to anticipate future text, but such a representation may still fail to control generation behavior. We study this representation-to-behavior gap in ForesightLM-v2, a DistilGPT-2-scale language model trained with a sentence-level future-prediction head and self-loop hard negatives. Fixed-pool generation controls show that most aggregate gains are explained by multi-candidate semantic reranking rather than the learned future term itself."
+    />
+    <meta
+      name="citation_keywords"
+      content="language models; sentence-level future prediction; semantic reranking; self-loop hard negatives; hard-negative mining; text generation; representation-to-behavior gap; model interpretability; small language models"
+    />
+    <meta name="DC.type" content="Text.Preprint" />
+    <meta name="DC.publisher" content="Research Square" />
+    <meta name="DC.rights" content="CC BY 4.0" />
+    <meta name="DC.identifier" content="doi:10.21203/rs.3.rs-10331341/v1" />
+    <meta
+      name="DC.description"
+      content="A controlled study of sentence-level future prediction, self-loop hard negatives, semantic reranking, and the representation-to-behavior gap in small language models."
+    />
+
+    <title>Foresight Is Not Enough: Future Signals and the Calibration Gap | Ethosoft</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/papers.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://ethosoft.org/papers/foresight-is-not-enough/#paper",
+            "url": "https://ethosoft.org/papers/foresight-is-not-enough/",
+            "mainEntityOfPage": "https://ethosoft.org/papers/foresight-is-not-enough/",
+            "headline": "Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard Negatives, and the Calibration Gap in Small Language Models",
+            "alternativeHeadline": "ForesightLM-v2 and the representation-to-behavior calibration gap",
+            "description": "A controlled study of why a learned sentence-level future signal may remain weakly calibrated for language-model generation behavior.",
+            "abstract": "A language model can learn a representation that anticipates future text while still failing to use it to control generation. ForesightLM-v2 tests this representation-to-behavior gap with sentence-level future prediction, self-loop hard negatives, fixed candidate pools, and strong reranking controls.",
+            "datePublished": "2026-07-14",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "sameAs": [
+              "https://doi.org/10.21203/rs.3.rs-10331341/v1",
+              "https://www.researchsquare.com/article/rs-10331341/v1"
+            ],
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "DOI",
+              "value": "10.21203/rs.3.rs-10331341/v1",
+              "url": "https://doi.org/10.21203/rs.3.rs-10331341/v1"
+            },
+            "keywords": [
+              "sentence-level future prediction",
+              "self-loop hard negatives",
+              "semantic reranking",
+              "representation-to-behavior gap",
+              "small language models",
+              "text generation",
+              "model interpretability"
+            ],
+            "author": [
+              {
+                "@type": "Person",
+                "name": "Ahmet Rıfat Öztürk",
+                "sameAs": "https://orcid.org/0009-0001-2941-0412",
+                "affiliation": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+              },
+              {
+                "@type": "Person",
+                "name": "Yağız Ekrem Dalar",
+                "sameAs": "https://orcid.org/0009-0009-3522-4403",
+                "affiliation": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+              },
+              {
+                "@type": "Person",
+                "name": "Ömer Faruk Aksoy",
+                "sameAs": "https://orcid.org/0009-0000-4680-0431",
+                "affiliation": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+              },
+              {
+                "@type": "Person",
+                "name": "Nedim Mutlu Sezer",
+                "sameAs": "https://orcid.org/0009-0001-3499-6067",
+                "affiliation": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+              },
+              {
+                "@type": "Person",
+                "name": "Feyzi Arda Salihoğlu",
+                "sameAs": "https://orcid.org/0009-0006-5841-1664",
+                "affiliation": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+              }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Research Square",
+              "url": "https://www.researchsquare.com/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Ethosoft", "item": "https://ethosoft.org/" },
+              { "@type": "ListItem", "position": 2, "name": "Papers", "item": "https://ethosoft.org/papers/" },
+              { "@type": "ListItem", "position": 3, "name": "Foresight Is Not Enough", "item": "https://ethosoft.org/papers/foresight-is-not-enough/" }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="research-body paper-detail-body">
+    <a class="skip-link" href="#paper-content">Skip to paper</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Research navigation">
+          <a href="/papers/">All papers</a>
+          <a href="https://doi.org/10.21203/rs.3.rs-10331341/v1">DOI</a>
+          <a href="https://github.com/Ahmet2001/foresightLM">Code</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="paper-content">
+      <article>
+        <header class="paper-hero">
+          <div class="research-shell paper-hero-inner">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Ethosoft</a>
+              <span aria-hidden="true">/</span>
+              <a href="/papers/">Papers</a>
+              <span aria-hidden="true">/</span>
+              <span>Foresight Is Not Enough</span>
+            </nav>
+
+            <div class="paper-labels">
+              <span class="paper-status">Preprint</span>
+              <span>Research Article</span>
+              <span>Open Access</span>
+            </div>
+
+            <h1>
+              Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard
+              Negatives, and the Calibration Gap in Small Language Models
+            </h1>
+
+            <p class="paper-deck">
+              A controlled study of the gap between learning a future-oriented semantic
+              representation and using that signal to change language-model generation behavior.
+            </p>
+
+            <ul class="author-list" aria-label="Paper authors">
+              <li><a href="https://orcid.org/0009-0001-2941-0412">Ahmet Rıfat Öztürk <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0009-3522-4403">Yağız Ekrem Dalar <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0000-4680-0431">Ömer Faruk Aksoy <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0001-3499-6067">Nedim Mutlu Sezer <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0006-5841-1664">Feyzi Arda Salihoğlu <span>ORCID</span></a></li>
+            </ul>
+
+            <div class="paper-identifiers">
+              <div><span>Published</span><strong>July 14, 2026</strong></div>
+              <div><span>Affiliation</span><strong>Ethosoft</strong></div>
+              <div><span>DOI</span><a href="https://doi.org/10.21203/rs.3.rs-10331341/v1">10.21203/rs.3.rs-10331341/v1</a></div>
+              <div><span>License</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>
+            </div>
+
+            <div class="preprint-notice">
+              <strong>Preprint notice</strong>
+              <p>This manuscript has not undergone peer review by a journal.</p>
+            </div>
+
+            <div class="paper-actions">
+              <a class="paper-action-primary" href="https://www.researchsquare.com/article/rs-10331341/v1.pdf">Read the full PDF <span aria-hidden="true">↗</span></a>
+              <a href="https://doi.org/10.21203/rs.3.rs-10331341/v1">View DOI record</a>
+              <a href="https://github.com/Ahmet2001/foresightLM">View source code</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="research-shell paper-layout">
+          <aside class="paper-toc" aria-label="On this page">
+            <p>On this page</p>
+            <a href="#abstract">Abstract</a>
+            <a href="#research-question">Research question</a>
+            <a href="#key-findings">Key findings</a>
+            <a href="#method">Method</a>
+            <a href="#interpretation">Interpretation</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#artifacts">Artifacts</a>
+            <a href="#citation">Citation</a>
+          </aside>
+
+          <div class="paper-content">
+            <section id="abstract" aria-labelledby="abstract-title">
+              <p class="research-kicker">Author abstract</p>
+              <h2 id="abstract-title">Abstract</h2>
+              <p class="abstract-text">
+                A language model can learn a representation that appears to anticipate future
+                text, but such a representation may still fail to control generation behavior.
+                We study this representation-to-behavior gap in ForesightLM-v2, a
+                DistilGPT-2-scale language model trained with a sentence-level future-prediction
+                head and self-loop hard negatives. Across three WikiText-103 seeds, the held-out
+                hard-negative margin is consistently positive, indicating a stable training-side
+                future signal; a one-seed WritingPrompts run provides a second-domain sanity
+                check. However, fixed-pool generation controls show that most aggregate gains are
+                explained by multi-candidate semantic reranking rather than the learned future
+                term itself. Removing the future term changes only 2 out of 120 selected
+                continuations, random and shuffled future-score controls closely match
+                learned-future reranking, and a training-free base-model five-candidate reranker
+                outperforms ForesightLM-v2 on several semantic diagnostics. The future score is
+                nevertheless modestly aligned with prompt anchoring and progression at the
+                candidate level. We therefore present ForesightLM-v2 not as a standalone coherence
+                solution, but as a controlled case study in how learned semantic signals require
+                calibrated behavioral interfaces and strong negative controls.
+              </p>
+            </section>
+
+            <section id="research-question" aria-labelledby="research-question-title">
+              <p class="research-kicker">Research question</p>
+              <h2 id="research-question-title">Does learning to predict the future change generation behavior?</h2>
+              <p>
+                ForesightLM-v2 asks whether a causal language model can use a learned
+                sentence-level future representation to produce better continuations—not merely
+                whether that representation can be measured during training. The study separates
+                representation learning from behavioral control by evaluating every selector on
+                the same fixed candidate pools.
+              </p>
+            </section>
+
+            <section id="key-findings" aria-labelledby="key-findings-title">
+              <p class="research-kicker">Results</p>
+              <h2 id="key-findings-title">Key findings</h2>
+              <div class="finding-grid">
+                <article>
+                  <span>01</span>
+                  <h3>The future signal is measurable.</h3>
+                  <p>The held-out hard-negative gap remained positive across three WikiText-103 seeds, averaging 0.0599 ± 0.0015.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <h3>Reranking drives most gains.</h3>
+                  <p>Generic, random, shuffled, and learned-future five-candidate selectors produced nearly identical aggregate diagnostics.</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <h3>The future term rarely changes the choice.</h3>
+                  <p>Removing the learned future term changed only 2 of 120 selected continuations on fixed candidate pools.</p>
+                </article>
+                <article>
+                  <span>04</span>
+                  <h3>Lexical looping is partly separable.</h3>
+                  <p>A lightweight lexical penalty reduced the surface-loop diagnostic from 0.1027 to 0.0546 without changing weak progression.</p>
+                </article>
+              </div>
+            </section>
+
+            <section id="method" aria-labelledby="method-title">
+              <p class="research-kicker">Experimental design</p>
+              <h2 id="method-title">Method at a glance</h2>
+              <dl class="method-list">
+                <div><dt>Model</dt><dd>Approximately 82M-parameter DistilGPT-2-scale causal language model</dd></div>
+                <div><dt>Training data</dt><dd>WikiText-103 and a one-seed WritingPrompts sanity check</dd></div>
+                <div><dt>Auxiliary objective</dt><dd>Sentence-level future prediction with self-loop hard negatives</dd></div>
+                <div><dt>Evaluation</dt><dd>120 prompts with fixed pools of five candidate continuations</dd></div>
+                <div><dt>Controls</dt><dd>Generic, random, shuffled, no-future, future-only, lexical, and training-free base-model selectors</dd></div>
+              </dl>
+            </section>
+
+            <section id="interpretation" aria-labelledby="interpretation-title">
+              <p class="research-kicker">Interpretation</p>
+              <h2 id="interpretation-title">A representation-to-behavior calibration gap</h2>
+              <p>
+                The future score carries semantic information at the population level, but it is
+                too weakly calibrated to reliably rank the best continuation within each prompt.
+                The result is a methodological warning for representation-based generation:
+                showing that a model encodes a useful signal is not enough to show that the signal
+                causally improves its behavior.
+              </p>
+              <blockquote>
+                Learned representations should be evaluated not only by whether they exist, but
+                by whether they change behavior beyond credible alternatives.
+              </blockquote>
+            </section>
+
+            <section id="limitations" aria-labelledby="limitations-title">
+              <p class="research-kicker">Scope</p>
+              <h2 id="limitations-title">Limitations</h2>
+              <ul class="paper-bullets">
+                <li>Generation quality is assessed with automatic diagnostics over 120 prompts rather than blinded human judgments.</li>
+                <li>WritingPrompts is a one-seed sanity check, not broad evidence of domain generalization.</li>
+                <li>The hard-negative pool and held-out validation set are deliberately small.</li>
+                <li>The study does not establish that the future signal improves token-level decoding or search-space exploration.</li>
+              </ul>
+            </section>
+
+            <section id="artifacts" aria-labelledby="artifacts-title">
+              <p class="research-kicker">Open research</p>
+              <h2 id="artifacts-title">Code and artifacts</h2>
+              <div class="artifact-links">
+                <a href="https://github.com/Ahmet2001/foresightLM">
+                  <span>Source code</span>
+                  <strong>GitHub · foresightLM</strong>
+                </a>
+                <a href="https://huggingface.co/Ethosoft/ForesightLM-Phase1">
+                  <span>Model artifacts</span>
+                  <strong>Hugging Face · ForesightLM-Phase1</strong>
+                </a>
+                <a href="https://www.researchsquare.com/article/rs-10331341/v1">
+                  <span>Version of record</span>
+                  <strong>Research Square · rs-10331341/v1</strong>
+                </a>
+              </div>
+            </section>
+
+            <section id="citation" aria-labelledby="citation-title">
+              <p class="research-kicker">Reuse and citation</p>
+              <h2 id="citation-title">Cite this preprint</h2>
+              <p>
+                Öztürk, A. R., Dalar, Y. E., Aksoy, Ö. F., Sezer, N. M., &amp;
+                Salihoğlu, F. A. (2026). <em>Foresight Is Not Enough: Sentence-Level
+                Future Signals, Self-Loop Hard Negatives, and the Calibration Gap in Small
+                Language Models</em>. Research Square.
+                <a href="https://doi.org/10.21203/rs.3.rs-10331341/v1">https://doi.org/10.21203/rs.3.rs-10331341/v1</a>
+              </p>
+              <p><a href="/papers/foresight-is-not-enough/citation.bib">Download the BibTeX citation</a></p>
+              <pre class="bibtex" aria-label="BibTeX citation"><code>@article{ozturk2026foresight,
+  title   = {Foresight Is Not Enough: Sentence-Level Future Signals,
+             Self-Loop Hard Negatives, and the Calibration Gap in Small Language Models},
+  author  = {Öztürk, Ahmet Rıfat and Dalar, Yağız Ekrem and Aksoy, Ömer Faruk
+             and Sezer, Nedim Mutlu and Salihoğlu, Feyzi Arda},
+  year    = {2026},
+  doi     = {10.21203/rs.3.rs-10331341/v1},
+  url     = {https://doi.org/10.21203/rs.3.rs-10331341/v1},
+  note    = {Preprint}
+}</code></pre>
+            </section>
+
+            <section class="paper-faq" aria-labelledby="faq-title">
+              <p class="research-kicker">Quick answers</p>
+              <h2 id="faq-title">Questions this study answers</h2>
+              <details>
+                <summary>Does sentence-level future prediction improve language-model coherence?</summary>
+                <p>The learned signal is measurable, but this study does not find that it independently drives the strongest generation improvements. Multi-candidate semantic reranking explains most gains.</p>
+              </details>
+              <details>
+                <summary>What are self-loop hard negatives?</summary>
+                <p>They are repetitive or stagnant continuations generated by the weak model itself and reused as negative examples for sentence-level future-representation learning.</p>
+              </details>
+              <details>
+                <summary>Why are fixed candidate pools important?</summary>
+                <p>They ensure that every selector evaluates the same continuations, separating score effects from the randomness and diversity introduced by sampling new candidates.</p>
+              </details>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/">
+          <img src="/logolar/ethos-02.png" alt="" width="40" height="40" />
+          <span>Ethosoft</span>
+        </a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="/papers/">Browse all papers</a>
+      </div>
+    </footer>
+  </body>
+</html>

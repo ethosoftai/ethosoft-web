@@ -7,5 +7,12 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: false,
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        papers: "papers/index.html",
+        foresightPaper: "papers/foresight-is-not-enough/index.html",
+      },
+    },
   },
 });
