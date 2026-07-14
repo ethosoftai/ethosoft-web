@@ -608,6 +608,21 @@
   gap: 10px;
 }
 
+.artifact-note {
+  margin: 0 0 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(221, 118, 94, 0.28);
+  border-radius: 14px;
+  background: rgba(246, 216, 206, 0.3);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.artifact-note strong {
+  color: var(--ink);
+}
+
 .artifact-links a {
   padding: 18px 20px;
   display: flex;
