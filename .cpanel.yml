@@ -4,4 +4,8 @@ deployment:
     - export DEPLOYPATH=$HOME/public_html/
     - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/cp -f index.html .htaccess "$DEPLOYPATH"
-    - /bin/cp -a assets basarilarimiz kisiler logolar partnerlerimiz "$DEPLOYPATH"
+    - /bin/cp -R -f assets basarilarimiz kisiler logolar partnerlerimiz "$DEPLOYPATH"
+    - /bin/chmod 755 "$DEPLOYPATH"
+    - /bin/chmod 644 "$DEPLOYPATH/index.html" "$DEPLOYPATH/.htaccess"
+    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type d -exec /bin/chmod 755 {} \;
+    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type f -exec /bin/chmod 644 {} \;
