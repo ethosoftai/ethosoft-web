@@ -12,6 +12,7 @@ export default defineConfig({
         main: "index.html",
         papers: "papers/index.html",
         foresightPaper: "papers/foresight-is-not-enough/index.html",
+        nedoqwenPaper: "papers/nedoqwen/index.html",
       },
     },
   },

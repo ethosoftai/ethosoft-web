@@ -153,7 +153,7 @@
 }
 
 .paper-list-card::after {
-  content: "01";
+  content: attr(data-paper-number);
   position: absolute;
   right: 34px;
   bottom: 12px;
@@ -167,6 +167,10 @@
 .paper-list-card > * {
   position: relative;
   z-index: 1;
+}
+
+.paper-list-card + .paper-list-card {
+  margin-top: 24px;
 }
 
 .paper-list-meta,

@@ -348,26 +348,26 @@ function ResearchSpotlight() {
       <article className="featured-paper-card">
         <div className="featured-paper-mark" aria-hidden="true">
           <BookOpen />
-          <span>01</span>
+          <span>02</span>
         </div>
         <div className="featured-paper-content">
           <div className="featured-paper-meta">
-            <span>Preprint</span>
-            <time dateTime="2026-07-14">July 14, 2026</time>
-            <span>Small language models</span>
+            <span>Preprint submitted</span>
+            <time dateTime="2026-07-16">July 16, 2026</time>
+            <span>Turkish NLP</span>
           </div>
           <h3>
-            Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard
-            Negatives, and the Calibration Gap in Small Language Models
+            NEDOQwen: An Auditable Low-Cost Diagnosis-and-Repair Study for a
+            Turkish-Centric 0.824B Language Model
           </h3>
           <p>
-            A controlled study of why a learned future-oriented representation may
-            remain too weakly calibrated to control language-model generation behavior.
+            A version-aware case study in exposing evaluation mismatch, auditing
+            answer-label bias, and partially repairing a Turkish-centric small language model.
           </p>
           <div className="featured-paper-footer">
             <span>Öztürk, Dalar, Aksoy, Sezer &amp; Salihoğlu</span>
-            <a href="/papers/foresight-is-not-enough/">
-              Read the paper <ArrowUpRight size={18} />
+            <a href="/papers/nedoqwen/">
+              Read the report <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
