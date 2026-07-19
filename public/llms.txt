@@ -11,14 +11,14 @@
 
 - [Ethosoft Papers](https://ethosoft.org/papers/): The canonical index of Ethosoft preprints and technical reports.
 - [Ethosoft Open Research](https://ethosoft.org/#research): The overview of Ethosoft papers, open-source models, prototypes, benchmark datasets, and controlled experiments.
-- [Ethosoft Models and Adapters](https://ethosoft.org/papers/models/): The canonical index of open model releases, adapters, local formats, and reproducibility code.
+- [Ethosoft Models and Adapters](https://ethosoft.org/models/): The canonical index of open model releases, adapters, local formats, and reproducibility code.
 - [Ethosoft Experiments and Benchmarks](https://ethosoft.org/experiments/): The canonical index of research prototypes, experimental code, and benchmark datasets.
 - [Ethosoft Projects](https://ethosoft.org/#projects): Current artificial intelligence research and product areas.
 - [Ethosoft Team](https://ethosoft.org/#team): Team members and research contributors.
 
 ## Models and adapters
 
-- [Qwen3-1.7B ResearchReasoning JSON RL](https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/): A detailed research page for the LoRA/PEFT adapter covering evidence-grounded research QA, source selection, claim verification, uncertainty reporting, strict JSON generation, diagnostic results, artifacts, and limitations.
+- [Qwen3-1.7B ResearchReasoning JSON RL](https://ethosoft.org/models/qwen3-research-reasoning-json-rl/): A detailed research page for the LoRA/PEFT adapter covering evidence-grounded research QA, source selection, claim verification, uncertainty reporting, strict JSON generation, diagnostic results, artifacts, and limitations.
 - [Qwen3-1.7B ResearchReasoning JSON RL GGUF](https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF): GGUF quantizations of the research-reasoning adapter for local inference.
 - [QA-Research-SLM](https://github.com/Ahmet2001/QA-research-SLM): Training, evaluation, and reproducibility code for the research-reasoning adapter.
 

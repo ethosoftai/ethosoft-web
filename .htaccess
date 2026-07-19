@@ -7,6 +7,10 @@ Options -Indexes
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Eski model URL'lerini yeni üst düzey /models/ yapısına yönlendir
+    RewriteRule ^papers/models/?$ /models/ [R=301,L,NE]
+    RewriteRule ^papers/models/(.+)$ /models/$1 [R=301,L,NE]
+
     # Git verilerinin web üzerinden görüntülenmesini engelle
     RewriteRule (^|/)\.git(?:/|$) - [F,L,NC]
 </IfModule>

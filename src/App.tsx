@@ -479,7 +479,7 @@ function ResearchSpotlight() {
           </span>
           <ArrowUpRight aria-hidden="true" />
         </a>
-        <a className="research-section-card" href="/papers/models/">
+        <a className="research-section-card" href="/models/">
           <span className="research-section-card-icon" aria-hidden="true">
             <BrainCircuit />
           </span>
@@ -552,7 +552,7 @@ function ResearchSpotlight() {
 
         {model && (
           <section className="research-card-column" aria-labelledby="models-card-title">
-            <a id="models-card-title" className="research-card-category" href="/papers/models/">
+            <a id="models-card-title" className="research-card-category" href="/models/">
               <span>
                 <strong>Models &amp; adapters</strong>
                 <small>Weights, adapters &amp; local formats</small>
@@ -562,7 +562,7 @@ function ResearchSpotlight() {
             <ResearchReleaseCard
               release={model}
               index={0}
-              cardHref="/papers/models/"
+              cardHref="/models/"
               cardLabel="Browse models and adapters"
             />
           </section>
