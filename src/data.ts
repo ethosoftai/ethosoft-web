@@ -18,14 +18,89 @@ export type TeamMember = {
   group: "advisor" | "leadership" | "team";
 };
 
+export type ResearchRelease = {
+  id: string;
+  category: "model" | "experiment";
+  title: string;
+  status: string;
+  areas: string[];
+  description: string;
+  highlightLabel: string;
+  highlight: string;
+  note: string;
+  links: {
+    label: string;
+    href: string;
+    kind: "code" | "dataset" | "model";
+  }[];
+};
+
 export const navigation = [
-  { label: "Papers", href: "/papers/" },
+  { label: "Research", href: "#research" },
   { label: "Projects", href: "#projects" },
   { label: "Approach", href: "#approach" },
   { label: "Team", href: "#team" },
   { label: "Achievements", href: "#achievements" },
   { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
+];
+
+export const researchReleases: ResearchRelease[] = [
+  {
+    id: "risk-routed-kv-memory",
+    category: "experiment",
+    title: "Risk-Routed Heterogeneous KV Memory",
+    status: "Early research prototype",
+    areas: ["LLM systems", "KV cache", "Exact recall"],
+    description:
+      "An open-source investigation of KV-cache compression as fidelity routing: exact-critical spans retain full KV precision while lower-risk background context uses low-bit quantized KV.",
+    highlightLabel: "Research question",
+    highlight: "What memory representation should each token use?",
+    note:
+      "The current implementation is an inference-time quantize/dequantize proxy, not a packed low-bit storage kernel.",
+    links: [
+      {
+        label: "View source on GitHub",
+        href: "https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory",
+        kind: "code",
+      },
+      {
+        label: "Explore the dataset",
+        href: "https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark",
+        kind: "dataset",
+      },
+    ],
+  },
+  {
+    id: "qwen3-research-reasoning-json-rl",
+    category: "model",
+    title: "Qwen3-1.7B ResearchReasoning JSON RL",
+    status: "Open model release",
+    areas: ["Evidence-grounded QA", "Claim verification", "Structured JSON"],
+    description:
+      "A compact LoRA/PEFT adapter for source-aware research question answering, evidence selection, claim verification, uncertainty reporting, and strict JSON generation.",
+    highlightLabel: "HotpotQA diagnostic",
+    highlight: "27.0 EM / 36.91 F1",
+    note:
+      "Fixed-seed diagnostic results with the project's research JSON schema—not an official leaderboard submission.",
+    links: [
+      {
+        label: "Adapter on Hugging Face",
+        href: "https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL",
+        kind: "model",
+      },
+      {
+        label: "GGUF on Hugging Face",
+        href: "https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF",
+        kind: "model",
+      },
+      {
+        label: "View training code",
+        href: "https://github.com/Ahmet2001/QA-research-SLM",
+        kind: "code",
+      },
+    ],
+  },
 ];
 
 export const projects: Project[] = [

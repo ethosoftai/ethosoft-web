@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="Qwen3-1.7B ResearchReasoning JSON RL is an open LoRA/PEFT adapter for evidence-grounded research QA, claim verification, uncertainty reporting, and strict JSON generation."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link
+      rel="canonical"
+      href="https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/"
+    />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:title" content="Qwen3-1.7B ResearchReasoning JSON RL | Ethosoft" />
+    <meta
+      property="og:description"
+      content="An open research adapter for evidence-grounded QA, source selection, claim verification, uncertainty handling, and strict JSON generation."
+    />
+    <meta
+      property="og:url"
+      content="https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/"
+    />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Qwen3-1.7B ResearchReasoning JSON RL | Ethosoft</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/#model",
+            "name": "Qwen3-1.7B ResearchReasoning JSON RL",
+            "description": "A LoRA/PEFT adapter for evidence-grounded research QA, source selection, claim verification, uncertainty handling, and strict JSON generation.",
+            "url": "https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/",
+            "codeRepository": "https://github.com/Ahmet2001/QA-research-SLM",
+            "downloadUrl": "https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL",
+            "license": "https://www.apache.org/licenses/LICENSE-2.0",
+            "programmingLanguage": "Python",
+            "runtimePlatform": "Transformers and PEFT",
+            "datePublished": "2026-07-19",
+            "author": { "@type": "Organization", "name": "Ethosoft", "url": "https://ethosoft.org/" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Ethosoft", "item": "https://ethosoft.org/" },
+              { "@type": "ListItem", "position": 2, "name": "Models", "item": "https://ethosoft.org/papers/models/" },
+              { "@type": "ListItem", "position": 3, "name": "Qwen3 ResearchReasoning", "item": "https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/" }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" crossorigin href="/assets/styles-Csjcxd9V.css">
+    <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
+  </head>
+  <body class="research-body">
+    <a class="skip-link" href="#model-content">Skip to model details</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Model navigation">
+          <a href="/papers/models/">All models</a>
+          <a href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL">Adapter</a>
+          <a href="https://github.com/Ahmet2001/QA-research-SLM">Code</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="model-content">
+      <article>
+        <header class="paper-hero">
+          <div class="research-shell paper-hero-inner">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Ethosoft</a>
+              <span aria-hidden="true">/</span>
+              <a href="/papers/models/">Models</a>
+              <span aria-hidden="true">/</span>
+              <span>Qwen3 ResearchReasoning</span>
+            </nav>
+
+            <div class="paper-labels">
+              <span class="paper-status">Open model release</span>
+              <span>LoRA / PEFT adapter</span>
+              <span>GGUF available</span>
+            </div>
+            <h1>Qwen3-1.7B ResearchReasoning JSON RL</h1>
+            <p class="paper-deck">
+              A compact adapter for evidence-grounded research question answering,
+              source selection, claim verification, uncertainty reporting, and strict
+              JSON schema generation.
+            </p>
+
+            <ul class="author-list" aria-label="Model contributors">
+              <li><a href="https://ethosoft.org/">Ethosoft <span>Publisher</span></a></li>
+              <li><a href="https://github.com/Ahmet2001/QA-research-SLM">QA-Research-SLM contributors <span>Code</span></a></li>
+            </ul>
+
+            <div class="paper-identifiers">
+              <div><span>Base model</span><strong>Qwen3-1.7B</strong></div>
+              <div><span>Adapter</span><strong>LoRA / PEFT</strong></div>
+              <div><span>Fine-tuning context</span><strong>4,096 tokens</strong></div>
+              <div><span>License</span><strong>Apache-2.0</strong></div>
+            </div>
+
+            <div class="preprint-notice">
+              <strong>Diagnostic notice</strong>
+              <p>Reported benchmark numbers are fixed-seed diagnostic runs using the project’s research JSON schema, not official leaderboard submissions.</p>
+            </div>
+
+            <div class="paper-actions">
+              <a class="paper-action-primary" href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL">Open the adapter <span aria-hidden="true">↗</span></a>
+              <a href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF">View GGUF formats</a>
+              <a href="https://github.com/Ahmet2001/QA-research-SLM">Review source code</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="research-shell paper-layout">
+          <aside class="paper-toc" aria-label="On this page">
+            <p>On this page</p>
+            <a href="#overview">Overview</a>
+            <a href="#behavior">Intended behavior</a>
+            <a href="#diagnostics">Diagnostics</a>
+            <a href="#training">Training</a>
+            <a href="#artifacts">Open artifacts</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#citation">Citation</a>
+          </aside>
+
+          <div class="paper-content">
+            <section id="overview" aria-labelledby="overview-title">
+              <p class="research-kicker">Model overview</p>
+              <h2 id="overview-title">A structured research state, not only a free-form answer</h2>
+              <p class="abstract-text">
+                Qwen3-1.7B ResearchReasoning JSON RL is an experimental adapter built on
+                Qwen3-1.7B. It specializes the compact base model for source-aware question
+                answering, evidence selection, claim verification, conflict detection,
+                uncertainty handling, and schema-constrained JSON output.
+              </p>
+              <blockquote>
+                The goal is to make the model expose its research plan, selected evidence,
+                claims, conflicts, uncertainties, and final answer in a machine-checkable form.
+              </blockquote>
+            </section>
+
+            <section id="behavior" aria-labelledby="behavior-title">
+              <p class="research-kicker">Intended behavior</p>
+              <h2 id="behavior-title">Evidence-grounded reasoning with explicit structure</h2>
+              <div class="finding-grid">
+                <article><span>01</span><h3>Plan before answering.</h3><p>Produces an explicit research plan and identifies the evidence needed for the task.</p></article>
+                <article><span>02</span><h3>Select supplied sources.</h3><p>Maps claims to source identifiers included in the prompt rather than inventing external citations.</p></article>
+                <article><span>03</span><h3>Verify and qualify claims.</h3><p>Reports supported, contradicted, or uncertain claims with confidence and evidence references.</p></article>
+                <article><span>04</span><h3>Return strict JSON.</h3><p>Targets a fixed schema suitable for validation, repair, and downstream research workflows.</p></article>
+              </div>
+            </section>
+
+            <section id="diagnostics" aria-labelledby="diagnostics-title">
+              <p class="research-kicker">Public benchmark diagnostics</p>
+              <h2 id="diagnostics-title">Task specialization, not a general leaderboard claim</h2>
+              <dl class="method-list">
+                <div><dt>HotpotQA</dt><dd>27.00 EM / 36.91 F1 on a 200-example fixed-seed diagnostic</dd></div>
+                <div><dt>PubMedQA</dt><dd>52.50% label accuracy on an 80-example PQA-L diagnostic</dd></div>
+                <div><dt>SciFact</dt><dd>The adapter improves schema compliance and verifier reward but does not consistently improve classification over the base model</dd></div>
+                <div><dt>JSON validity</dt><dd>95.50% on the reported HotpotQA diagnostic</dd></div>
+              </dl>
+              <p>
+                These prompts require the project’s strict research JSON schema. Results are
+                therefore not directly comparable with standard zero-shot leaderboard numbers.
+              </p>
+            </section>
+
+            <section id="training" aria-labelledby="training-title">
+              <p class="research-kicker">Training design</p>
+              <h2 id="training-title">Schema-focused adaptation with verifier-guided filtering</h2>
+              <dl class="method-list">
+                <div><dt>Base</dt><dd>Qwen/Qwen3-1.7B</dd></div>
+                <div><dt>Rank / alpha</dt><dd>LoRA rank 32, alpha 64, dropout 0.05</dd></div>
+                <div><dt>Final stage</dt><dd>One epoch over verifier-filtered rejection-sampling data initialized from a schema-hard SFT adapter</dd></div>
+                <div><dt>RL-lite</dt><dd>Verifier-guided rejection sampling followed by supervised fine-tuning; not a full online policy-gradient run</dd></div>
+                <div><dt>Languages</dt><dd>English and Turkish are represented in the project</dd></div>
+              </dl>
+            </section>
+
+            <section id="artifacts" aria-labelledby="artifacts-title">
+              <p class="research-kicker">Open research</p>
+              <h2 id="artifacts-title">Adapter, local formats, and reproducibility code</h2>
+              <div class="artifact-links">
+                <a href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL"><span>LoRA / PEFT adapter and model card</span><strong>Hugging Face · Adapter</strong></a>
+                <a href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF"><span>Quantized formats for local inference</span><strong>Hugging Face · GGUF</strong></a>
+                <a href="https://github.com/Ahmet2001/QA-research-SLM"><span>Training, evaluation, schemas, and reproducibility files</span><strong>GitHub · QA-Research-SLM</strong></a>
+              </div>
+            </section>
+
+            <section id="limitations" aria-labelledby="limitations-title">
+              <p class="research-kicker">Scope</p>
+              <h2 id="limitations-title">Limitations</h2>
+              <ul class="paper-bullets">
+                <li>This is an experimental research adapter, not a production fact-checking system.</li>
+                <li>Generated evidence references are source IDs supplied in the prompt; the model does not browse or verify external URLs.</li>
+                <li>High verifier reward does not guarantee factual correctness.</li>
+                <li>Structured JSON can still be malformed or truncated.</li>
+                <li>Lower-bit GGUF quantization may reduce schema adherence.</li>
+                <li>Diagnostic results should be independently reproduced before comparison.</li>
+              </ul>
+            </section>
+
+            <section id="citation" aria-labelledby="citation-title">
+              <p class="research-kicker">Reuse and citation</p>
+              <h2 id="citation-title">Cite the model release</h2>
+              <pre class="bibtex" aria-label="BibTeX citation"><code>@software{ethosoft_research_reasoner_2026,
+  title      = {Qwen3-1.7B ResearchReasoning JSON RL},
+  author     = {Ethosoft and QA-Research-SLM contributors},
+  year       = {2026},
+  url        = {https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL},
+  base_model = {Qwen/Qwen3-1.7B}
+}</code></pre>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/"><img src="/logolar/ethos-02.png" alt="" width="40" height="40" /><span>Ethosoft</span></a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="/papers/models/">Browse all models</a>
+      </div>
+    </footer>
+  </body>
+</html>

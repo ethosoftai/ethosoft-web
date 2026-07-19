@@ -22,6 +22,10 @@ Content lives in `src/data.ts`, the interface in `src/App.tsx`, and styles in `s
 Research archive pages are static multi-page Vite entries:
 
 - `papers/index.html` — publication index
+- `papers/models/index.html` — models and adapters index
+- `experiments/index.html` — experiments and benchmarks index
+- `papers/models/<slug>/index.html` — crawlable model and adapter landing pages
+- `experiments/<slug>/index.html` — crawlable experiment landing pages
 - `papers/<slug>/index.html` — crawlable publication landing pages
 - `src/papers.css` — research archive styles
 

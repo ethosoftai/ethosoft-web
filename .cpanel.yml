@@ -4,8 +4,8 @@ deployment:
     - export DEPLOYPATH=$HOME/public_html/
     - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/cp -f dist/index.html dist/robots.txt dist/sitemap.xml dist/llms.txt .htaccess "$DEPLOYPATH"
-    - /bin/cp -R -f dist/assets dist/papers public/basarilarimiz public/kisiler public/logolar public/partnerlerimiz "$DEPLOYPATH"
+    - /bin/cp -R -f dist/assets dist/papers dist/experiments public/basarilarimiz public/kisiler public/logolar public/partnerlerimiz "$DEPLOYPATH"
     - /bin/chmod 755 "$DEPLOYPATH"
     - /bin/chmod 644 "$DEPLOYPATH/index.html" "$DEPLOYPATH/robots.txt" "$DEPLOYPATH/sitemap.xml" "$DEPLOYPATH/llms.txt" "$DEPLOYPATH/.htaccess"
-    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/papers" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type d -exec /bin/chmod 755 {} \;
-    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/papers" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type f -exec /bin/chmod 644 {} \;
+    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/papers" "$DEPLOYPATH/experiments" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type d -exec /bin/chmod 755 {} \;
+    - /usr/bin/find "$DEPLOYPATH/assets" "$DEPLOYPATH/papers" "$DEPLOYPATH/experiments" "$DEPLOYPATH/basarilarimiz" "$DEPLOYPATH/kisiler" "$DEPLOYPATH/logolar" "$DEPLOYPATH/partnerlerimiz" -type f -exec /bin/chmod 644 {} \;

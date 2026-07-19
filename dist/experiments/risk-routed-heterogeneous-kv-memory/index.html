@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="Risk-Routed Heterogeneous KV Memory is an open experiment investigating KV-cache compression as fidelity routing for exact-critical and lower-risk tokens."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link
+      rel="canonical"
+      href="https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/"
+    />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:title" content="Risk-Routed Heterogeneous KV Memory | Ethosoft" />
+    <meta
+      property="og:description"
+      content="An open research prototype that treats KV-cache compression as fidelity routing rather than only token keep-or-drop selection."
+    />
+    <meta
+      property="og:url"
+      content="https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/"
+    />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Risk-Routed Heterogeneous KV Memory | Ethosoft</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/#experiment",
+            "name": "Risk-Routed Heterogeneous KV Memory",
+            "description": "An open experiment investigating KV-cache compression as fidelity routing for exact-critical and lower-risk context.",
+            "url": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/",
+            "codeRepository": "https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory",
+            "programmingLanguage": "Python",
+            "datePublished": "2026-07-19",
+            "author": { "@type": "Person", "name": "Ahmet Rıfat Öztürk" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Ethosoft", "item": "https://ethosoft.org/" },
+              { "@type": "ListItem", "position": 2, "name": "Experiments", "item": "https://ethosoft.org/experiments/" },
+              { "@type": "ListItem", "position": 3, "name": "Risk-Routed Heterogeneous KV Memory", "item": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/" }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" crossorigin href="/assets/styles-Csjcxd9V.css">
+    <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
+  </head>
+  <body class="research-body">
+    <a class="skip-link" href="#experiment-content">Skip to experiment details</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Experiment navigation">
+          <a href="/experiments/">All experiments</a>
+          <a href="https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory">Code</a>
+          <a href="https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark">Dataset</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="experiment-content">
+      <article>
+        <header class="paper-hero">
+          <div class="research-shell paper-hero-inner">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Ethosoft</a>
+              <span aria-hidden="true">/</span>
+              <a href="/experiments/">Experiments</a>
+              <span aria-hidden="true">/</span>
+              <span>Risk-Routed KV Memory</span>
+            </nav>
+
+            <div class="paper-labels">
+              <span class="paper-status">Early research prototype</span>
+              <span>LLM systems</span>
+              <span>Open benchmark</span>
+            </div>
+            <h1>Risk-Routed Heterogeneous KV Memory</h1>
+            <p class="paper-deck">
+              An investigation of KV-cache compression as fidelity routing: preserve
+              exact-critical spans in full KV precision and store lower-risk background
+              context with low-bit quantized KV.
+            </p>
+
+            <ul class="author-list" aria-label="Experiment contributors">
+              <li><a href="https://github.com/Ahmet2001">Ahmet Rıfat Öztürk <span>Researcher</span></a></li>
+            </ul>
+
+            <div class="paper-identifiers">
+              <div><span>Status</span><strong>Research prototype</strong></div>
+              <div><span>Models tested</span><strong>Qwen2.5 0.5B / 1.5B</strong></div>
+              <div><span>Context</span><strong>Up to 16K</strong></div>
+              <div><span>Fidelity</span><strong>Full, 4-bit, 3-bit</strong></div>
+            </div>
+
+            <div class="preprint-notice">
+              <strong>Implementation caveat</strong>
+              <p>The current implementation quantizes and dequantizes FP16 tensors as an inference-time proxy. It does not implement packed 3-bit or 4-bit KV storage kernels.</p>
+            </div>
+
+            <div class="paper-actions">
+              <a class="paper-action-primary" href="https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory">Review the experiment <span aria-hidden="true">↗</span></a>
+              <a href="https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark">Explore the benchmark</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="research-shell paper-layout">
+          <aside class="paper-toc" aria-label="On this page">
+            <p>On this page</p>
+            <a href="#overview">Overview</a>
+            <a href="#question">Research question</a>
+            <a href="#findings">Key findings</a>
+            <a href="#method">Method</a>
+            <a href="#results">Results</a>
+            <a href="#artifacts">Open artifacts</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#citation">Citation</a>
+          </aside>
+
+          <div class="paper-content">
+            <section id="overview" aria-labelledby="overview-title">
+              <p class="research-kicker">Experiment overview</p>
+              <h2 id="overview-title">Fidelity routing instead of only token eviction</h2>
+              <p class="abstract-text">
+                Long-context Transformer inference is constrained by KV-cache memory and
+                bandwidth. Many compression methods decide which tokens to retain or apply
+                one compression level uniformly. This experiment tests a heterogeneous policy:
+                exact-critical tokens and a local window remain in full KV precision, while
+                lower-risk background tokens use low-bit quantized KV.
+              </p>
+            </section>
+
+            <section id="question" aria-labelledby="question-title">
+              <p class="research-kicker">Research question</p>
+              <h2 id="question-title">What memory representation should each token use?</h2>
+              <p>
+                A low-attention token can later become exact-answer critical. Evicting an
+                identifier, date, quoted value, negation, secret marker, or key-value fact can
+                cause exact recall to fail. Uniform quantization retains all tokens but assigns
+                brittle exact spans and filler background the same fidelity.
+              </p>
+              <blockquote>
+                Exact-critical tokens ± a local window → Full KV. Remaining background tokens → low-bit Quantized KV.
+              </blockquote>
+            </section>
+
+            <section id="findings" aria-labelledby="findings-title">
+              <p class="research-kicker">Interpretation</p>
+              <h2 id="findings-title">Key findings</h2>
+              <div class="finding-grid">
+                <article><span>01</span><h3>Routing can protect exact recall.</h3><p>On Qwen2.5-0.5B diagnostics, routed low-bit policies often outperform quantization-only baselines at similar effective memory.</p></article>
+                <article><span>02</span><h3>3-bit can be too aggressive.</h3><p>The Qwen2.5-1.5B 8K proxy shows severe degradation under the current 3-bit setup.</p></article>
+                <article><span>03</span><h3>Uniform 4-bit is a strong baseline.</h3><p>The current heuristic router does not consistently beat uniform 4-bit quantization on the larger-model diagnostic.</p></article>
+                <article><span>04</span><h3>Proxy memory is not measured packed memory.</h3><p>Effective KV estimates describe intended packed storage, not the GPU peak memory of the FP16 proxy.</p></article>
+              </div>
+            </section>
+
+            <section id="method" aria-labelledby="method-title">
+              <p class="research-kicker">Experimental design</p>
+              <h2 id="method-title">Method at a glance</h2>
+              <dl class="method-list">
+                <div><dt>Full-fidelity spans</dt><dd>Identifiers, dates, code strings, quoted values, negations, secret markers, and key-value facts</dd></div>
+                <div><dt>Background</dt><dd>Remaining context represented by simulated 3-bit or 4-bit KV</dd></div>
+                <div><dt>Models</dt><dd>Qwen2.5-0.5B-Instruct and Qwen2.5-1.5B-Instruct</dd></div>
+                <div><dt>Contexts</dt><dd>512 through 16,384 tokens across diagnostic runs</dd></div>
+                <div><dt>Evaluation</dt><dd>Forced-choice exact-recall cases with accuracy, gold NLL, and margin reporting</dd></div>
+                <div><dt>Memory metric</dt><dd>Estimated effective packed KV memory, separate from observed GPU proxy memory</dd></div>
+              </dl>
+            </section>
+
+            <section id="results" aria-labelledby="results-title">
+              <p class="research-kicker">Selected diagnostics</p>
+              <h2 id="results-title">Results remain model- and fidelity-dependent</h2>
+              <dl class="method-list">
+                <div><dt>0.5B · up to 2K</dt><dd>4-bit routed: 0.967 accuracy at 0.264 effective memory; 4-bit quant-only: 0.922 at 0.250</dd></div>
+                <div><dt>0.5B · up to 16K</dt><dd>3-bit routed: 0.822 accuracy; 3-bit quant-only: 0.644</dd></div>
+                <div><dt>0.5B · 16K slice</dt><dd>3-bit routed: 0.933 accuracy; 3-bit quant-only: 0.733</dd></div>
+                <div><dt>1.5B · 8K</dt><dd>Uniform 4-bit remains stronger than the current heuristic router in accuracy</dd></div>
+              </dl>
+            </section>
+
+            <section id="artifacts" aria-labelledby="artifacts-title">
+              <p class="research-kicker">Open research</p>
+              <h2 id="artifacts-title">Code, experiment logs, and benchmark data</h2>
+              <div class="artifact-links">
+                <a href="https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory"><span>Proxy implementation, results, paper draft, and experiment notes</span><strong>GitHub · Source repository</strong></a>
+                <a href="https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark"><span>Public exact-recall benchmark dataset</span><strong>Hugging Face · Dataset</strong></a>
+              </div>
+            </section>
+
+            <section id="limitations" aria-labelledby="limitations-title">
+              <p class="research-kicker">Scope</p>
+              <h2 id="limitations-title">Limitations</h2>
+              <ul class="paper-bullets">
+                <li>The implementation is an inference-time fidelity proxy, not a production packed-KV kernel.</li>
+                <li>Effective memory estimates are not measured GPU peak-memory reductions.</li>
+                <li>The current risk router is heuristic and does not consistently outperform strong uniform-quantization baselines.</li>
+                <li>Results are diagnostic and limited to the tested models, contexts, prompts, and forced-choice protocol.</li>
+                <li>Larger-model validation shows that conclusions do not transfer uniformly across scale or bit width.</li>
+              </ul>
+            </section>
+
+            <section id="citation" aria-labelledby="citation-title">
+              <p class="research-kicker">Reuse and citation</p>
+              <h2 id="citation-title">Cite the experiment repository</h2>
+              <pre class="bibtex" aria-label="BibTeX citation"><code>@software{risk_routed_kv_memory_2026,
+  title  = {Risk-Routed Heterogeneous KV Memory},
+  author = {Öztürk, Ahmet Rıfat and contributors},
+  year   = {2026},
+  url    = {https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory}
+}</code></pre>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/"><img src="/logolar/ethos-02.png" alt="" width="40" height="40" /><span>Ethosoft</span></a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="/experiments/">Browse all experiments</a>
+      </div>
+    </footer>
+  </body>
+</html>

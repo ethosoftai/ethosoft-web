@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="Explore Ethosoft open research experiments, benchmark datasets, prototype implementations, results, and limitations."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ethosoft.org/experiments/" />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:title" content="Experiments &amp; Benchmarks | Ethosoft" />
+    <meta
+      property="og:description"
+      content="Open research prototypes, experimental code, benchmark datasets, results, and limitations from Ethosoft."
+    />
+    <meta property="og:url" content="https://ethosoft.org/experiments/" />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Experiments &amp; Benchmarks | Ethosoft</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Ethosoft Experiments and Benchmarks",
+        "description": "Open research prototypes, experimental code, benchmark datasets, results, and limitations from Ethosoft.",
+        "url": "https://ethosoft.org/experiments/",
+        "isPartOf": { "@type": "WebSite", "name": "Ethosoft", "url": "https://ethosoft.org/" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": 1,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/",
+              "name": "Risk-Routed Heterogeneous KV Memory"
+            }
+          ]
+        }
+      }
+    </script>
+    <link rel="stylesheet" crossorigin href="/assets/styles-Csjcxd9V.css">
+    <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
+  </head>
+  <body class="research-body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Research navigation">
+          <a href="/papers/">Papers</a>
+          <a href="/papers/models/">Models</a>
+          <a aria-current="page" href="/experiments/">Experiments</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="archive-hero">
+        <div class="research-shell archive-hero-inner">
+          <p class="research-kicker">Ethosoft Open Experiments</p>
+          <h1>Questions tested in public.</h1>
+          <p>
+            Explore early research prototypes, controlled evaluations, benchmark
+            datasets, experimental results, and the caveats that shape our conclusions.
+          </p>
+          <div class="archive-stats" aria-label="Experiment archive statistics">
+            <span><strong>1</strong> open prototype</span>
+            <span><strong>1</strong> benchmark dataset</span>
+            <span><strong>Open</strong> code</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-shell archive-section" aria-labelledby="experiments-title">
+        <div class="archive-heading">
+          <div>
+            <p class="research-kicker">Latest experiment</p>
+            <h2 id="experiments-title">Experiments &amp; benchmarks</h2>
+          </div>
+          <p>
+            Each release exposes its core question, method, implementation status,
+            data, results, and limitations for independent examination.
+          </p>
+        </div>
+
+        <article class="paper-list-card" data-paper-number="01">
+          <div class="paper-list-meta">
+            <span class="paper-status">Early research prototype</span>
+            <span>LLM systems</span>
+            <span>KV-cache compression</span>
+          </div>
+          <h3>
+            <a href="/experiments/risk-routed-heterogeneous-kv-memory/">
+              Risk-Routed Heterogeneous KV Memory
+            </a>
+          </h3>
+          <p class="paper-list-authors">Open implementation and exact-recall benchmark</p>
+          <p>
+            An investigation of KV-cache compression as fidelity routing: exact-critical
+            spans retain full KV precision while lower-risk background context uses low-bit
+            quantized KV.
+          </p>
+          <div class="topic-list" aria-label="Experiment topics">
+            <span>Exact recall</span>
+            <span>3-bit &amp; 4-bit KV</span>
+            <span>Long-context inference</span>
+            <span>Qwen2.5</span>
+          </div>
+          <p>
+            <strong>Research question:</strong> What memory representation should each
+            token use?
+          </p>
+          <p>
+            The current implementation is an inference-time quantize/dequantize proxy,
+            not a packed low-bit storage kernel.
+          </p>
+          <div class="release-card-links">
+            <a class="paper-card-link" href="/experiments/risk-routed-heterogeneous-kv-memory/">
+              Read the experiment page <span aria-hidden="true">→</span>
+            </a>
+            <a class="paper-card-link" href="https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory">
+              Review the experiment <span aria-hidden="true">→</span>
+            </a>
+            <a class="paper-card-link" href="https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark">
+              Explore the benchmark dataset <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/">
+          <img src="/logolar/ethos-02.png" alt="" width="40" height="40" />
+          <span>Ethosoft</span>
+        </a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="mailto:merhaba@ethosoft.org">merhaba@ethosoft.org</a>
+      </div>
+    </footer>
+  </body>
+</html>

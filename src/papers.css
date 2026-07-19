@@ -250,6 +250,17 @@
   color: var(--salmon-dark);
 }
 
+.release-card-links {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.release-card-links .paper-card-link {
+  margin-top: 0;
+}
+
 .paper-hero {
   position: relative;
   overflow: hidden;

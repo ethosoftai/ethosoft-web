@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="Explore Ethosoft open language models, research adapters, GGUF releases, diagnostic evaluations, and reproducibility code."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ethosoft.org/papers/models/" />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:title" content="Open Models &amp; Adapters | Ethosoft" />
+    <meta
+      property="og:description"
+      content="Open model releases, research adapters, GGUF formats, diagnostic evaluations, and reproducibility code from Ethosoft."
+    />
+    <meta property="og:url" content="https://ethosoft.org/papers/models/" />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Open Models &amp; Adapters | Ethosoft</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/papers.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Ethosoft Open Models and Adapters",
+        "description": "Open model releases, research adapters, local formats, diagnostics, and reproducibility code from Ethosoft.",
+        "url": "https://ethosoft.org/papers/models/",
+        "isPartOf": { "@type": "WebSite", "name": "Ethosoft", "url": "https://ethosoft.org/" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": 1,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://ethosoft.org/papers/models/qwen3-research-reasoning-json-rl/",
+              "name": "Qwen3-1.7B ResearchReasoning JSON RL"
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body class="research-body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Research navigation">
+          <a href="/papers/">Papers</a>
+          <a aria-current="page" href="/papers/models/">Models</a>
+          <a href="/experiments/">Experiments</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="archive-hero">
+        <div class="research-shell archive-hero-inner">
+          <p class="research-kicker">Ethosoft Open Models</p>
+          <h1>Compact models, open artifacts.</h1>
+          <p>
+            Explore research adapters, local inference formats, diagnostic evaluations,
+            and the code required to examine how each release was built.
+          </p>
+          <div class="archive-stats" aria-label="Model archive statistics">
+            <span><strong>1</strong> model release</span>
+            <span><strong>2</strong> distribution formats</span>
+            <span><strong>Open</strong> code</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-shell archive-section" aria-labelledby="models-title">
+        <div class="archive-heading">
+          <div>
+            <p class="research-kicker">Latest release</p>
+            <h2 id="models-title">Models &amp; adapters</h2>
+          </div>
+          <p>
+            Releases are accompanied by intended-use notes, limitations, diagnostic
+            results, and links to training or evaluation code.
+          </p>
+        </div>
+
+        <article class="paper-list-card" data-paper-number="01">
+          <div class="paper-list-meta">
+            <span class="paper-status">Open model release</span>
+            <span>Qwen3-1.7B</span>
+            <span>LoRA / PEFT</span>
+          </div>
+          <h3>
+            <a href="/papers/models/qwen3-research-reasoning-json-rl/">
+              Qwen3-1.7B ResearchReasoning JSON RL
+            </a>
+          </h3>
+          <p class="paper-list-authors">Ethosoft · QA-Research-SLM contributors</p>
+          <p>
+            A compact research adapter for evidence-grounded question answering,
+            source selection, claim verification, uncertainty reporting, and strict
+            JSON generation.
+          </p>
+          <div class="topic-list" aria-label="Model details">
+            <span>HotpotQA diagnostic: 27.0 EM</span>
+            <span>36.91 F1</span>
+            <span>English &amp; Turkish</span>
+            <span>Apache-2.0</span>
+          </div>
+          <p>
+            Results are fixed-seed diagnostics using the project's research JSON
+            schema, not an official leaderboard submission.
+          </p>
+          <div class="release-card-links">
+            <a class="paper-card-link" href="/papers/models/qwen3-research-reasoning-json-rl/">
+              Read the research page <span aria-hidden="true">→</span>
+            </a>
+            <a class="paper-card-link" href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL">
+              View the adapter <span aria-hidden="true">→</span>
+            </a>
+            <a class="paper-card-link" href="https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF">
+              Explore GGUF formats <span aria-hidden="true">→</span>
+            </a>
+            <a class="paper-card-link" href="https://github.com/Ahmet2001/QA-research-SLM">
+              Review the code <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/">
+          <img src="/logolar/ethos-02.png" alt="" width="40" height="40" />
+          <span>Ethosoft</span>
+        </a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="mailto:merhaba@ethosoft.org">merhaba@ethosoft.org</a>
+      </div>
+    </footer>
+  </body>
+</html>
