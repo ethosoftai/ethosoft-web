@@ -523,7 +523,7 @@ function ResearchSpotlight() {
             </div>
             <div className="featured-paper-content">
               <div className="featured-paper-meta">
-                <span>Preprint submitted</span>
+                <span>Preprint</span>
                 <time dateTime="2026-07-16">July 16, 2026</time>
                 <span>Turkish NLP</span>
               </div>

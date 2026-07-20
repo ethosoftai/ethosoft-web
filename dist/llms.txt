@@ -4,7 +4,7 @@
 
 ## Research papers
 
-- [NEDOQwen](https://ethosoft.org/papers/nedoqwen/): A 2026 technical report and submitted preprint presenting an auditable, low-cost diagnosis-and-repair study for a Turkish-centric 824M-parameter language model. The page links the report PDF, source code, two public model checkpoints, and two training datasets.
+- [NEDOQwen](https://ethosoft.org/papers/nedoqwen/): A 2026 Research Square preprint presenting an auditable, low-cost diagnosis-and-repair study for a Turkish-centric 824M-parameter language model. The page links DOI 10.21203/rs.3.rs-10384535/v1, a local usage guide, source code, two public model checkpoints, and two training datasets.
 - [Foresight Is Not Enough](https://ethosoft.org/papers/foresight-is-not-enough/): A 2026 preprint examining sentence-level future prediction, self-loop hard negatives, semantic reranking, and the representation-to-behavior calibration gap in small language models. DOI: 10.21203/rs.3.rs-10331341/v1.
 
 ## Research index
