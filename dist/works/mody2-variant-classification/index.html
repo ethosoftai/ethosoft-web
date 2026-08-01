@@ -22,7 +22,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"MODY2 Variant Classification","description":"A small-data experiment classifying GCK variants associated with MODY2 from local sequence context.","url":"https://ethosoft.org/works/mody2-variant-classification/","mainEntityOfPage":"https://ethosoft.org/works/mody2-variant-classification/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["GCK","Variant classification"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"MODY2 Variant Classification","item":"https://ethosoft.org/works/mody2-variant-classification/"}]}]}</script>
     <link rel="stylesheet" crossorigin href="/assets/styles-Dd4bKvSZ.css">
     <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
-    <link rel="stylesheet" crossorigin href="/assets/works-DUltb4W5.css">
+    <link rel="stylesheet" crossorigin href="/assets/works-Bxt6o-H_.css">
   </head>
   <body class="research-body works-body">
     <a class="skip-link" href="#work-content">Skip to project details</a>
@@ -57,6 +57,7 @@
             </dl>
             <p class="work-evidence"><strong>Evidence boundary:</strong> 356 labeled variants are not sufficient for a clinical claim; the result is presented as an exploratory baseline.</p>
           </article>
+            <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">A small-data GCK variant baseline.</h2><p>The MODY2 study assembles 317 pathogenic and 39 benign GCK variants from ClinVar and LOVD. After cleaning and label review, each sequence is represented with overlapping 3-mer frequencies. The benign class is substantially smaller, so SMOTE is applied inside the training workflow; a held test set is described as 20 pathogenic and 20 benign variants.</p><p>A voting ensemble combines XGBoost, LightGBM, Random Forest, KNN, logistic regression, Gradient Boosting, CatBoost, and SVM signals. The project compares 3-mer behavior with larger k-mer representations and reports accuracy, precision, sensitivity, specificity, F1, ROC AUC, and PR AUC, with the documented headline values at 78.35% accuracy, 0.7987 ROC AUC, and 0.8313 PR AUC.</p><div class="expanded-callout"><strong>Clinical caution:</strong> the sample is small and database labels are not equivalent to a prospective diagnostic cohort. Population-aware validation, family-level leakage checks, calibration, and SHAP or equivalent explanations are required next.</div></section>
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

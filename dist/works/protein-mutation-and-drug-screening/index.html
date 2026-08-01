@@ -22,7 +22,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"Protein Mutation Modeling and G6PD Screening","description":"Two linked computational workstreams: multimodal mutation analysis over sequence and structure, followed by a focused study of how the R166H variant changes G6PD structure and small-molecule binding profiles.","url":"https://ethosoft.org/works/protein-mutation-and-drug-screening/","mainEntityOfPage":"https://ethosoft.org/works/protein-mutation-and-drug-screening/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["Bioinformatics","Docking"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"Protein Mutation Modeling and G6PD Screening","item":"https://ethosoft.org/works/protein-mutation-and-drug-screening/"}]}]}</script>
     <link rel="stylesheet" crossorigin href="/assets/styles-Dd4bKvSZ.css">
     <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
-    <link rel="stylesheet" crossorigin href="/assets/works-DUltb4W5.css">
+    <link rel="stylesheet" crossorigin href="/assets/works-Bxt6o-H_.css">
   </head>
   <body class="research-body works-body">
     <a class="skip-link" href="#work-content">Skip to project details</a>
@@ -58,6 +58,7 @@
             </dl>
             <p class="work-evidence"><strong>Evidence boundary:</strong> the F1 values are project-reported and the docking results are computational hypotheses. Neither establishes a therapy or proves restoration of protein function without independent and laboratory validation.</p>
           </article>
+            <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">Sequence, structure, and virtual screening in one workflow.</h2><p>The protein project combines two related analyses. First, human cDNA and protein sequences sourced from NCBI are represented through sequence models, AlphaFold-derived structures, and graph neural networks; XGBoost and ensemble baselines are compared with a multimodal model that joins sequence and structural evidence. The project notes report F1 values of 72% for the conventional machine-learning path, 84% for the GNN path, and 94% for the combined model.</p><p>The second analysis focuses on the R166H G6PD mutation. Wild-type and mutant structures are compared, compounds are filtered with RDKit, and GNINA is used to compare docking poses and binding-energy patterns. This is useful as a hypothesis-generation workflow: ranking molecules computationally can prioritize experiments, but docking scores do not establish binding, efficacy, or restoration of enzyme function.</p><div class="expanded-callout"><strong>Reproducibility priorities:</strong> report sequence and structure versions, train/test separation by protein family or variant lineage, docking protocol, protonation assumptions, and laboratory follow-up.</div></section>
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

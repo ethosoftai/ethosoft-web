@@ -22,7 +22,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"AI Music Scoring","description":"An integrated Python pipeline that analyzes audio and lyrics to produce a genre-aware music quality score from 0 to 100.","url":"https://ethosoft.org/works/ai-music-scoring/","mainEntityOfPage":"https://ethosoft.org/works/ai-music-scoring/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["Audio","NLP","Scoring"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"AI Music Scoring","item":"https://ethosoft.org/works/ai-music-scoring/"}]}]}</script>
     <link rel="stylesheet" crossorigin href="/assets/styles-Dd4bKvSZ.css">
     <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
-    <link rel="stylesheet" crossorigin href="/assets/works-DUltb4W5.css">
+    <link rel="stylesheet" crossorigin href="/assets/works-Bxt6o-H_.css">
   </head>
   <body class="research-body works-body">
     <a class="skip-link" href="#work-content">Skip to project details</a>
@@ -58,6 +58,7 @@
           </dl>
           <p class="work-evidence"><strong>Evidence boundary:</strong> the supplied project document describes the methodology and reports strong model performance, but does not provide a public benchmark, annotator protocol, or independent validation of the final score's alignment with listener judgment.</p>
         </article>
+            <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">A score that listens to both sound and language.</h2><p>The music-scoring project addresses a gap in standardized music evaluation by treating a track as two linked information streams. The Python pipeline separates vocals with Demucs, transcribes them with Whisper, and then analyzes the lyrics for rhyme, redif, semantic depth, and potentially harmful content. This keeps formal lyric structure and meaning in the same record instead of reducing a song to an audio embedding.</p><p>On the acoustic side, MFCCs and spectral descriptors are used to estimate acousticness, energy, and danceability with Gradient Boosting. Genre-specific coefficients then combine the lyric and audio features into a 0–100 score. The project document names MAE and F1 as evaluation metrics and frames the output as a repeatable measurement that can support comparison, discovery, and further human study.</p><div class="expanded-callout"><strong>Interpretation boundary:</strong> a composite score is a model-defined instrument, not an objective property of a song. Human-rater agreement, genre-balanced validation, lyric-language coverage, copyright-safe evaluation data, and calibration should accompany any public ranking.</div></section>
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

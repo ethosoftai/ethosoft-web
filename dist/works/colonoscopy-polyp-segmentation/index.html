@@ -22,7 +22,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"Colonoscopy Polyp Segmentation","description":"A multi-dataset study of polyp masks in colonoscopy frames, built around reproducible preprocessing and comparative segmentation experiments.","url":"https://ethosoft.org/works/colonoscopy-polyp-segmentation/","mainEntityOfPage":"https://ethosoft.org/works/colonoscopy-polyp-segmentation/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["Colonoscopy","Segmentation"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"Colonoscopy Polyp Segmentation","item":"https://ethosoft.org/works/colonoscopy-polyp-segmentation/"}]}]}</script>
     <link rel="stylesheet" crossorigin href="/assets/styles-Dd4bKvSZ.css">
     <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
-    <link rel="stylesheet" crossorigin href="/assets/works-DUltb4W5.css">
+    <link rel="stylesheet" crossorigin href="/assets/works-Bxt6o-H_.css">
   </head>
   <body class="research-body works-body">
     <a class="skip-link" href="#work-content">Skip to project details</a>
@@ -57,6 +57,7 @@
             </dl>
             <p class="work-evidence"><strong>Generalization note:</strong> the documented cross-dataset variance is retained because aggregate validation performance alone can hide distribution shift.</p>
           </article>
+            <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">Segmentation under dataset shift.</h2><p>The polyp work compares several segmentation families—Attention U-Net, U-Net++, DeepLabV3+, PVT-Cascade, and SSFormer-S with progressive refinement—on colonoscopy imagery. Its practical emphasis is the experiment loop: resizing and mask preparation, augmentation, learning-rate studies, bilateral filtering, elastic deformation, and cosine-annealing warm restarts are treated as variables rather than hidden implementation details.</p><p>The documented validation results are paired with external-dataset behavior instead of being presented as one universal score. That matters for colonoscopy because camera systems, bowel preparation, lighting, lesion size, and annotation conventions can change the visual distribution. The project record therefore keeps both the stronger U-Net++ validation result and the less uniform cross-dataset results visible.</p><div class="expanded-callout"><strong>Next evidence:</strong> a fixed patient-level protocol, external prospective data, calibration, and lesion-size-stratified error analysis would be needed before deployment claims.</div></section>
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

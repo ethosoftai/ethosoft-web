@@ -230,6 +230,45 @@
   display: none;
 }
 
+.work-detail-expanded {
+  margin-top: 62px;
+  padding-top: 54px;
+  border-top: 1px solid var(--line);
+}
+
+.work-detail-expanded h2 {
+  max-width: 760px;
+  margin: 0 0 24px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.work-detail-expanded p:not(.research-kicker) {
+  max-width: 760px;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.expanded-callout {
+  max-width: 760px;
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid rgba(221, 118, 94, 0.34);
+  border-radius: 14px;
+  background: var(--salmon-soft);
+  color: #5d3c32;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.expanded-callout strong {
+  color: var(--salmon-dark);
+}
+
 .work-detail-aside {
   position: sticky;
   top: 112px;
