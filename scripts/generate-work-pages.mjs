@@ -20,6 +20,8 @@ const workPages = [
   ["studium-coach", "studium-ai-study-coach"],
   ["cyberbullying-protection", "context-aware-cyberbullying-protection"],
   ["particle-physics", "machine-learning-for-collider-events"],
+  ["music-scoring", "ai-music-scoring"],
+  ["dart-rift", "dart-rift"],
 ];
 
 const text = (value) =>

@@ -45,7 +45,7 @@
         },
         "mainEntity": {
           "@type": "ItemList",
-          "numberOfItems": 16,
+        "numberOfItems": 18,
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "url": "https://ethosoft.org/works/epilepsy-early-warning-system/", "name": "Epilepsy Early-Warning System" },
             { "@type": "ListItem", "position": 2, "url": "https://ethosoft.org/works/explainable-cardiomegaly-screening/", "name": "Explainable Cardiomegaly Screening" },
@@ -63,6 +63,8 @@
             { "@type": "ListItem", "position": 14, "url": "https://ethosoft.org/works/machine-learning-for-collider-events/", "name": "Machine Learning for Collider Events" },
             { "@type": "ListItem", "position": 15, "url": "https://ethosoft.org/models/qwen3-research-reasoning-json-rl/", "name": "Qwen3-1.7B ResearchReasoning JSON RL" },
             { "@type": "ListItem", "position": 16, "url": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/", "name": "Risk-Routed Heterogeneous KV Memory" }
+            ,{ "@type": "ListItem", "position": 17, "url": "https://ethosoft.org/works/ai-music-scoring/", "name": "AI Music Scoring" }
+            ,{ "@type": "ListItem", "position": 18, "url": "https://ethosoft.org/works/dart-rift/", "name": "DART-RIFT" }
           ]
         }
       }
@@ -96,7 +98,7 @@
             by their project records.
           </p>
           <div class="archive-stats" aria-label="Works archive statistics">
-            <span><strong>14</strong> project records</span>
+            <span><strong>16</strong> project records</span>
             <span><strong>2</strong> open research releases</span>
             <span><strong>4</strong> focus areas</span>
           </div>
@@ -314,12 +316,13 @@
         <div class="archive-heading">
           <div>
             <p class="research-kicker">Computational research</p>
-            <h2 id="computational-title">Learning from high-energy events.</h2>
+          <h2 id="computational-title">Learning from signals, physics, and data.</h2>
           </div>
           <p>A research design connecting simulated and observed collider events with interpretable signal-versus-background classification.</p>
         </div>
 
-        <article id="particle-physics" class="work-record work-record-wide" data-work-number="14">
+        <div class="works-grid">
+        <article id="particle-physics" class="work-record" data-work-number="14">
           <div class="work-meta"><span class="paper-status">Research concept</span><span>CERN · High-energy physics</span></div>
           <h3><a href="/works/machine-learning-for-collider-events/">Machine Learning for Collider Events</a></h3>
           <p class="work-summary">A proposed analysis of LHC proton-collision events for separating Standard Model backgrounds from rare signatures associated with Higgs processes or dark-matter searches.</p>
@@ -330,6 +333,31 @@
           </dl>
           <p class="work-evidence"><strong>Evidence boundary:</strong> the file defines the scientific problem and evaluation direction but does not contain an executed analysis or result.</p>
         </article>
+        <article id="music-scoring" class="work-record" data-work-number="15">
+          <div class="work-meta"><span class="paper-status">Applied AI project</span><span>Audio · NLP · Scoring</span></div>
+          <h3><a href="/works/ai-music-scoring/">AI Music Scoring</a></h3>
+          <p class="work-summary">An integrated Python pipeline that analyzes audio and lyrics to produce a genre-aware music quality score from 0 to 100.</p>
+          <dl class="work-facts">
+            <div><dt>Vocal and lyric pipeline</dt><dd>Demucs separates vocals, Whisper transcribes them, and deterministic rhyme/redif features are extracted from the resulting lyrics.</dd></div>
+            <div><dt>Language analysis</dt><dd>DistilBERT estimates semantic depth while logistic regression provides a documented content-toxicity signal.</dd></div>
+            <div><dt>Audio analysis</dt><dd>MFCC and spectral features feed Gradient Boosting models for acousticness, energy, and danceability estimates.</dd></div>
+            <div><dt>Scoring</dt><dd>Genre-specific coefficients combine the numeric features into a 0–100 score; the project document reports MAE and F1 as evaluation metrics. <a href="/works/ai-music-scoring.pdf">Read the project PDF</a>.</dd></div>
+          </dl>
+          <p class="work-evidence"><strong>Evidence boundary:</strong> the supplied project document describes the methodology and reports strong model performance, but does not provide a public benchmark, annotator protocol, or independent validation of the final score's alignment with listener judgment.</p>
+        </article>
+        <article id="dart-rift" class="work-record" data-work-number="16">
+          <div class="work-meta"><span class="paper-status">Open research project</span><span>Astrophysics · SPH · Bayesian inference</span></div>
+          <h3><a href="/works/dart-rift/">DART-RIFT</a></h3>
+          <p class="work-summary">A deterministic, GPU-accelerated SPH shock-physics and Bayesian-inference pipeline for estimating which Dimorphos interior structures are supported by NASA DART impact observables.</p>
+          <dl class="work-facts">
+            <div><dt>Forward model</dt><dd>Tillotson equation of state, pressure-dependent strength, P-α porosity, Barnes–Hut self-gravity, and a resolved DART projectile on a PDS-derived Dimorphos shape.</dd></div>
+            <div><dt>Validation discipline</dt><dd>The repository documents analytic and experimental checks including Sod, Sedov–Taylor, Taylor-bar, basalt Hugoniot, conservation, determinism, and CPU↔GPU comparisons.</dd></div>
+            <div><dt>Inference plan</dt><dd>Hundreds of interior-parameter simulations train a surrogate model; Bayesian inference then produces a posterior distribution rather than a single asserted interior.</dd></div>
+            <div><dt>Public repository</dt><dd><a href="https://github.com/Yagiz-D-Ekrem-Dolar/dart-rift">GitHub: Yagiz-D-Ekrem-Dolar/dart-rift</a></dd></div>
+          </dl>
+          <p class="work-evidence"><strong>Evidence boundary:</strong> the repository describes a validated simulation foundation and an inference target. It explicitly does not claim a completed Dimorphos scientific result before Hera observations; impact runs and posterior conclusions remain future project phases.</p>
+        </article>
+        </div>
       </section>
 
       <section id="open-releases" class="research-shell works-section open-releases" aria-labelledby="releases-title">

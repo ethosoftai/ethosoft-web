@@ -26,6 +26,8 @@ export default defineConfig({
         studiumWork: "works/studium-ai-study-coach/index.html",
         cyberbullyingProtectionWork: "works/context-aware-cyberbullying-protection/index.html",
         colliderEventsWork: "works/machine-learning-for-collider-events/index.html",
+        musicScoringWork: "works/ai-music-scoring/index.html",
+        dartRiftWork: "works/dart-rift/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",
         experiments: "experiments/index.html",

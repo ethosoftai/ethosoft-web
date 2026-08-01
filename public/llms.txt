@@ -40,6 +40,8 @@
 - [Studium AI Study Coach](https://ethosoft.org/works/studium-ai-study-coach/): A cross-platform YKS planning and study-analysis product concept.
 - [Context-Aware Cyberbullying Protection](https://ethosoft.org/works/context-aware-cyberbullying-protection/): A multilingual moderation and online-wellbeing concept with explicit privacy, appeal, and bias-testing requirements.
 - [Machine Learning for Collider Events](https://ethosoft.org/works/machine-learning-for-collider-events/): A research design for signal-versus-background learning on CERN/LHC collision and Monte Carlo data.
+- [AI Music Scoring](https://ethosoft.org/works/ai-music-scoring/): An integrated audio-and-lyrics pipeline using Demucs, Whisper, rhyme and redif analysis, DistilBERT, logistic regression, MFCC features, and Gradient Boosting to produce a genre-aware 0–100 score.
+- [DART-RIFT](https://ethosoft.org/works/dart-rift/): An open GPU-accelerated SPH shock-physics and Bayesian-inference project for probabilistically estimating Dimorphos interior structure from DART impact observables. [Repository](https://github.com/Yagiz-D-Ekrem-Dolar/dart-rift).
 
 ## Experiments and benchmarks
 
