@@ -153,6 +153,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "omer",
+    profile: "/person/omer-faruk-aksoy/",
     name: "Ömer Faruk Aksoy",
     role: "Team Lead, AI & Data Engineer",
     email: "omer@ethosoft.org",
@@ -193,6 +194,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "arda",
+    profile: "/person/feyzi-arda-salihoglu/",
     name: "Feyzi Arda Salihoğlu",
     role: "Strategy Lead, AI & Data Engineer",
     email: "feyziarda.salihoglu@ethosoft.org",

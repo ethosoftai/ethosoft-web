@@ -46,6 +46,36 @@ const extendedDetails = {
   "dart-rift": `<section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">A falsifiable inverse problem for Dimorphos.</h2><p>DART-RIFT works backward from the NASA DART impact: instead of choosing one asteroid interior and reporting one answer, it samples uncertain interior parameters such as bulk density, porosity, cohesion, and coarse-block fraction, runs a forward impact simulation, and learns how those parameters map to observables. Bayesian inference over that surrogate then returns a posterior distribution showing which interiors the data support.</p><p>The repository's foundation is a deterministic, GPU-accelerated SPH engine with a Tillotson equation of state, pressure-dependent strength, P-α porosity, Barnes–Hut self-gravity, a resolved projectile, and a PDS-derived Dimorphos shape. Its engineering record emphasizes gates and negative evidence: analytic and experimental tests, bit-level CPU/GPU comparisons, clean-tree runs, and explicit statements that passing validation gates does not yet constitute a scientific result about Dimorphos.</p><div class="expanded-callout"><strong>Scientific boundary:</strong> the project is designed to lock its prior prediction before Hera observations and make it falsifiable. Forward-model error must remain part of the posterior; a fast but miscalibrated simulator would produce overconfident conclusions.</div></section>`,
 };
 
+const sourceFiles = {
+  "epilepsy-early-warning": ["epilepsi/🧠 Epilepsi Erken Uyarı Sistemi.md", "epilepsi/açıklama.txt"],
+  "cardiomegaly-screening": ["teknofest2025syz/aciklama.txt", "teknofest2025syz/kardiyomegali/aciklama.txt"],
+  "polyp-segmentation": ["teknofest2025syz/polip/aciklama.txt"],
+  "ultrasound-heart-failure": ["ultrasonkalpyetmezligi/aciklama.txt"],
+  "protein-mutation-screening": ["protein/protein.txt"],
+  "mody2-variant-classification": ["mody2/🧬 Yapay Zeka Destekli MODY2 Tanısında GCK Gen Mutasyonlarının Sınıflandırılması.md"],
+  "eye-disease-imaging": ["göz/👁️ Fundus ve OCT Görüntüleri Aracılığıyla 25'ten Fazla Hastalığın Tespiti.md", "göz/aciklama.txt"],
+  "digital-stethoscope": ["steteskop/🩺 Steteskop Üzerinden Kalp Sesi ile Murmur ve Üfürüm Sınıflandıran Yapay Zeka Sistemi.md"],
+  "neuropathy-myopathy-emg": ["nöropati/aciklama.txt"],
+  "eco-routing": ["rota/🚗 Trafik Duyarlı Yakıt Verimliliği Sağlayan Rota Hesaplama Sistemi.md"],
+  "english-exam-evaluation": ["ingilizce/🤖 İngilizce Sınavlarını Otomatik Değerlendiren Yapay Zeka Sistemi.md"],
+  "studium-coach": ["studium/📚 Studium - Yapay Zeka Destekli Kişisel Koçluk Platformu.md"],
+  "cyberbullying-protection": ["siber/🛡️ Siber Zorbalık Tespiti ve Engelleme Sistemi.md"],
+  "particle-physics": ["parcacikfizigi/🔬 Parçacık Fiziği Projesi — QCD, Higgs ve Dark Matter Tespiti.md", "parcacikfizigi/aciklama.txt"],
+};
+
+const sourceRoot = resolve(root, "public", "works", "source");
+const escapeHtml = (value) =>
+  value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const originalSource = (id) => {
+  const files = sourceFiles[id] ?? [];
+  if (!files.length) return "";
+  return `<section class="work-original-source" aria-labelledby="original-source-title"><p class="research-kicker">Verbatim project material</p><h2 id="original-source-title">Original source text</h2><p class="source-note">The following text is reproduced exactly from the supplied project files. It is preserved for provenance; it may be in Turkish, use Markdown notation, or contain draft statements.</p>${files.map((relative) => {
+    const absolute = resolve(sourceRoot, relative);
+    const content = readFileSync(absolute, "utf8");
+    return `<details><summary>${escapeHtml(relative)}</summary><pre>${escapeHtml(content)}</pre></details>`;
+  }).join("")}</section>`;
+};
+
 const text = (value) =>
   value
     .replace(/<[^>]+>/g, " ")
@@ -161,6 +191,7 @@ for (const [id, slug] of workPages) {
             <p class="research-kicker">Methods and evidence</p>
             ${record}
             ${extendedDetails[id] ?? ""}
+            ${originalSource(id)}
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

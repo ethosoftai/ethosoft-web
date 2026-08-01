@@ -22,7 +22,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"Machine Learning for Collider Events","description":"A proposed analysis of LHC proton-collision events for separating Standard Model backgrounds from rare signatures associated with Higgs processes or dark-matter searches.","url":"https://ethosoft.org/works/machine-learning-for-collider-events/","mainEntityOfPage":"https://ethosoft.org/works/machine-learning-for-collider-events/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["CERN","High-energy physics"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"Machine Learning for Collider Events","item":"https://ethosoft.org/works/machine-learning-for-collider-events/"}]}]}</script>
     <link rel="stylesheet" crossorigin href="/assets/styles-D6hdV_Ml.css">
     <link rel="stylesheet" crossorigin href="/assets/papers-B5_WpRzt.css">
-    <link rel="stylesheet" crossorigin href="/assets/works-Bxt6o-H_.css">
+    <link rel="stylesheet" crossorigin href="/assets/works-93p8MPvC.css">
   </head>
   <body class="research-body works-body">
     <a class="skip-link" href="#work-content">Skip to project details</a>
@@ -58,6 +58,131 @@
           <p class="work-evidence"><strong>Evidence boundary:</strong> the file defines the scientific problem and evaluation direction but does not contain an executed analysis or result.</p>
         </article>
             <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">A collider pipeline from event generation to statistical evidence.</h2><p>The particle-physics project combines CERN/LHC collision records with Monte Carlo event generation, detector simulation, and reconstruction. The target questions span QCD backgrounds, Higgs production and decay, and beyond-Standard-Model signatures in which invisible particles appear indirectly as missing transverse momentum (MET).</p><p>Candidate features include jets, leptons, boson decays, angular distributions, multiplicities, momentum and energy, and MET. A signal-versus-background model can be trained on simulated samples, but the scientific endpoint is not classifier accuracy alone: simulation-to-data agreement, systematic uncertainties, control regions, p-values or limits, and robustness to pile-up must be part of the analysis. Proposed channels include mono-jet plus MET, mono-X plus MET, and Higgs-related final states.</p><div class="expanded-callout"><strong>Evidence boundary:</strong> the local project documents the analysis design and risk factors; it does not claim a new particle, a dark-matter observation, or a completed exclusion limit.</div></section>
+            <section class="work-original-source" aria-labelledby="original-source-title"><p class="research-kicker">Verbatim project material</p><h2 id="original-source-title">Original source text</h2><p class="source-note">The following text is reproduced exactly from the supplied project files. It is preserved for provenance; it may be in Turkish, use Markdown notation, or contain draft statements.</p><details><summary>parcacikfizigi/🔬 Parçacık Fiziği Projesi — QCD, Higgs ve Dark Matter Tespiti.md</summary><pre>## 1. Proje Tanımı ve Amaç
+
+Bu proje, yüksek enerjili çarpışma verilerini — özellikle CERN’de elde edilen proton‑proton çarpışmaları verileri — ve Monte Carlo simülasyonlarını kullanarak aşağıdaki hedefleri gerçekleştirmeyi amaçlamaktadır:
+
+- Standart Model (SM) kapsamında kuark‑gluon etkileşimleri (QCD) analizleri yapmak.
+    
+- Higgs boson sinyallerini tanımlamak ve niceliksel/kalitatif analizler gerçekleştirmek.
+    
+- Standart Model’in ötesinde potansiyel sinyaller arayarak dark matter adayı parçacıkların üretim ihtimalini ve izlerini aramak; özellikle “missing energy / transverse momentum imbalance (MET / (E_T^{\rm miss}))” sinyalleri üzerinden dark matter potansiyeli tespit etmek. ([arXiv](https://arxiv.org/abs/1109.4398?utm_source=chatgpt.com "Missing Energy Signatures of Dark Matter at the LHC"))
+    
+- Simülasyon altyapısı ile gerçek veri analiz sonuçlarını karşılaştırmak; model doğrulama ve testlerini Monte Carlo tabanlı “event generator + detector simulation + reconstruction” ile yapmak. ([lup.lub.lu.se](https://lup.lub.lu.se/student-papers/record/8932453/file/8932470.pdf?utm_source=chatgpt.com "Monte Carlo production of proton-proton collision events ..."))
+    
+
+Bu sayede, hem bilinen fizik süreçlerinin (QCD, Higgs) analizi hem de keşfedilmemiş / BSM (Beyond Standard Model) fizik olasılıklarının araştırılması hedeflenmektedir.
+
+---
+
+## 2. Temel Kavramsal Çerçeve
+
+### 2.1 Standart Model &amp; QCD / Higgs
+
+- QCD — kuark ve gluon etkileşimlerini açıklayan kuvvet teorisidir; hadron çarpışmalarında kuark/gluon bazlı süreçlerin analizi yapılır.
+    
+- Higgs bozonu, parçacık fiziğinde kütle kazanımı mekanizmasında kilit rol oynar; yüksek enerjili çarpışmalarda Higgs üretim ve bozunma kanalları analiz edilerek keşif ve niceliksel çalışmalar yapılır. ([Vikipedi](https://en.wikipedia.org/wiki/Compact_Muon_Solenoid?utm_source=chatgpt.com "Compact Muon Solenoid"))
+    
+
+### 2.2 Dark Matter &amp; Missing Energy Yaklaşımı
+
+- Dark matter: elektromanyetik etkileşimde bulunmayan, doğrudan gözlemlenemeyen; varlığı gözlemlenebilir madde üzerindeki kütleçekimsel/ivme etkilerinden ve astrofizik gözlemlerden çıkarılan varsayımsal madde türüdür. Evrendeki toplam madde‑enerji içeriğinin önemli bir kısmını oluşturduğu kabul edilmektedir. ([Vikipedi](https://tr.wikipedia.org/wiki/Karanl%C4%B1k_madde?utm_source=chatgpt.com "Karanlık madde"))
+    
+- Tuzaktan kaçan (görünmeyen) parçacıklar “invisible” oldukları için dedektörlerde doğrudan görüntülenemezler; ancak olayda **transvers momentum dengesi bozulması** — yani “missing transverse energy (MET)” — gözlemlenirse, bu durum dark matter üretiminin dolaylı bir kanıtı olabilir. Bu yöntem, collider dark matter arayışlarında önemli bir analiz stratejisidir. ([arXiv](https://arxiv.org/abs/1109.4398?utm_source=chatgpt.com "Missing Energy Signatures of Dark Matter at the LHC"))
+    
+
+---
+
+## 3. Veri &amp; Simülasyon Altyapısı
+
+### 3.1 Gerçek Veri — CERN / LHC
+
+- Proton–proton çarpışmaları: SM süreçleri (QCD, electroweak, Higgs vb.) ve potansiyel BSM olayları içeren veri setleri kullanılır. Örneğin, CMS ve ATLAS dedektörlerinden elde edilmiş veri setleri analiz edilebilir. ([Vikipedi](https://en.wikipedia.org/wiki/Compact_Muon_Solenoid?utm_source=chatgpt.com "Compact Muon Solenoid"))
+    
+- Bu veriler, dedektör kayıtları, çarpışma enerjileri, momentum‑enerji ölçümleri, jeti, lepton/bozon çıkışları, missing energy gibi parametreler içerir.
+    
+
+### 3.2 Monte Carlo Simülasyon &amp; “Event Generator”
+
+- Gerçek veri analizlerinin yanı sıra, Monte Carlo (MC) tabanlı “event generator + detector simulation + reconstruction” altyapısı kullanılarak simüle edilmiş veri setleri oluşturuluyor. Bu simülasyonlar, hem SM süreçlerini hem de dark matter / BSM senaryolarını içerebiliyor. ([lup.lub.lu.se](https://lup.lub.lu.se/student-papers/record/8932453/file/8932470.pdf?utm_source=chatgpt.com "Monte Carlo production of proton-proton collision events ..."))
+    
+- Simüle edilen olaylar — jet üretimi, bozon bozunmaları, dark matter adayı parçacık üretimi vb. — dedektör modellemeleri ile yeniden oluşturuluyor. Bu sayede “gerçekçi” analiz ortamı elde ediliyor ve model – data kıyaslamaları yapılabiliyor.
+    
+
+### 3.3 Makine Öğrenmesi / Sinyal‑Arkaplan Ayrımı
+
+- Simülasyon verileri, background (arka plan / SM süreçleri) ile signal (örneğin dark matter üretimi + MET + mono‑jet / mono‑X) olaylarını içerecek şekilde hazırlanıyor. ([lip.pt](https://www.lip.pt/files/training/papers/2020/pdf/LIP-STUDENTS-20-06.pdf?utm_source=chatgpt.com "Advanced data analysis methods for dark matter research ..."))
+    
+- Bu veri setleri ile makine öğrenmesi / derin öğrenme modelleri eğitiliyor; amaç, yüksek boyutlu veride signal vs background ayrımı yapmak — QCD background’un altındaki gizli sinyalleri (Higgs, Dark Matter) yükseltmek. ([lip.pt](https://www.lip.pt/files/training/papers/2020/pdf/LIP-STUDENTS-20-06.pdf?utm_source=chatgpt.com "Advanced data analysis methods for dark matter research ..."))
+    
+
+---
+
+## 4. Proje İşleyişi &amp; Metodoloji
+
+|Aşama|Açıklama|
+|---|---|
+|**Veri Toplama**|CERN veri setlerinden çekirdek çarpışma olayları + arka plan + simülasyon setleri|
+|**Simülasyon Üretimi**|Monte Carlo event generator + dedektör simülasyonu (örneğin GEANT4 / benzeri) ile simüle edilmiş veri oluşturulması|
+|**Öznitelik / Feature Çıkarımı**|Jet bilgileri, bozon bozunmaları, momentum &amp; enerji dağılımları, MET, lepton/jet sayısı, açısal dağılımlar vb.|
+|**Model Eğitimi**|Background vs signal sınıflandırması için ML / DL modelleri (örneğin DNN, boosted trees vs)|
+|**Analiz &amp; Sinyal Arama**|Higgs olayları, dark matter arayışı (mono‑jet + MET, mono‑X + MET) gibi özel kanalların taranması|
+|**Sonuç Doğrulama**|Simülasyon sonuçları ile gerçek veri karşılaştırması; istatistik analiz; p‑value / limit / olasılık hesaplamaları|
+|**Raporlama &amp; Yorum**|Örnek olaylar, sınırlar (exclusion limits), potansiyel keşif kanıtları veya sınırlar|
+
+---
+
+## 5. Öne Çıkan Deneysel Kanallar
+
+- **Mono‑jet + MET**: Yüksek enerjili bir jet + büyük missing transverse energy. Dark matter adayı parçacıkların dedektörü terk etmesi sonucu MET gözlemlenir. ([arXiv](https://arxiv.org/abs/1109.4398?utm_source=chatgpt.com "Missing Energy Signatures of Dark Matter at the LHC"))
+    
+- **Mono‑X + MET (X = Z, Higgs, photon …)**: Örneğin bir Z ya da Higgs bozonu + MET ile dark matter eş zamanlı üretimi. Özellikle Higgs + MET kanalı, dark matter arayışında alternatif bir sinyal yolu sunar. ([arXiv](https://arxiv.org/abs/1402.7074?utm_source=chatgpt.com "Mono-Higgs Detection of Dark Matter at the LHC"))
+    
+- **Higgs üretim ve bozunma kanalları**: Higgs bozonunun standart model beklentileriyle tutarlılığı, ya da sapmalar, yeni fiziğe dair ipuçları olabilir.
+    
+
+---
+
+## 6. Yenilikçi Yönler &amp; Projenin Katkısı
+
+- MC + gerçek veri + ML/DL kombine analizi ile “arka plan + sinyal ayırt etme” yeteneği — özellikle dark matter arayışında geleneksel cut‑based analizlerin ötesinde.
+    
+- Kanal çeşitliliği (mono‑jet, mono‑X, Higgs, jets, bozon bozunmaları vb.) ile geniş tarama ve keşif imkânı.
+    
+- Simülasyon ile sürekli test ve validasyon; modelin hem SM süreçlerinde hem BSM senaryolarında performansını ölçme.
+    
+- Potansiyel keşif — dark matter ya da henüz gözlemlenmemiş yeni parçacıklar — fizik açısından büyük bilimsel değer.
+    
+
+---
+
+## 7. Riskler &amp; Dikkat Edilmesi Gereken Hususlar
+
+- QCD background’un yoğunluğu: Hadron çarpışmalarında kuark/gluon süreçleri çok sayıda ve karmaşık arka plan oluşturur; signal gömülmüş olabilir.
+    
+- Sistematik belirsizlikler: Dedektör modeli, simülasyon doğruluğu, ölçek hatası, pile-up (çoklu çarpışma) gibi etkiler sinyal algısını zorlaştırabilir.
+    
+- Kütle / enerji parametreleri belirsizliği: Dark matter modeli ve kütlesi, bozunma kanalları gibi belirsizlikler; çok sayıda senaryo ile çalışılması gerek.
+    
+- İstatistiksel anlamlılık: Az sayıda sinyal olayı ile sonuç elde etmek zor; yüksek örneklem ve dikkatli analiz gerekir.
+    
+
+---
+
+## 8. Sonuç &amp; Öneriler
+
+Bu proje, parça fiziği araştırmalarında hem teorik hem deneysel olarak kritik kapıları aralamayı hedefleyen çok katmanlı, modern bir yaklaşımı temsil etmektedir. QCD, Higgs ve dark matter arayışını aynı çatı altında — gerçek veri + simülasyon + makine öğrenmesi — ile birleştirerek, bilimsel keşif potansiyelini maksimuma taşımaktadır.
+
+**Öneriler**:
+
+- Simülasyon veri setleri genişletilsin (varyant senaryolar, farklı kütle &amp; bozunma modları)
+    
+- ML/DL modelleri ve hyper‑parametre optimizasyonu sürekli revize edilsin
+    
+- Analiz kanalları çeşitlendirilsin — mono‑jet, mono‑X, Higgs, diboson + MET …
+    
+- Sonuçlar istatistiksel güven aralığı ile raporlansın; limitler, olasılıklar açıkça belirtlsin</pre></details><details><summary>parcacikfizigi/aciklama.txt</summary><pre>CERN veri setlerinden yararlanarak QCD, Higgs ve Dark Matter tespiti yapıyoruz. Ek olarak monte carlo simülasyonu ile modelimizi anlık test edebiliyoruz. Karanlık madde için missing energy den yararlanıyoz.
+</pre></details></section>
           </div>
           <aside class="work-detail-aside">
             <p class="research-kicker">Explore</p>

@@ -12,6 +12,8 @@
 
 ## Research index
 
+- [Goal Drift](https://ethosoft.org/papers/goal-drift/): An OpenReview preprint on objective revision, goal preservation, and alignment in capable AI systems. [Original PDF](https://openreview.net/pdf?id=DZTz8rXtqH) · [OpenReview record](https://openreview.net/forum?id=DZTz8rXtqH).
+
 - [Ethosoft Papers](https://ethosoft.org/papers/): The canonical index of Ethosoft preprints and technical reports.
 - [Ethosoft Works](https://ethosoft.org/works/): The canonical archive of Ethosoft projects, prototypes, competition systems, open models, datasets, benchmarks, and ongoing applied AI work.
 - [Ethosoft Open Research](https://ethosoft.org/#research): The overview of Ethosoft papers, open-source models, prototypes, benchmark datasets, and controlled experiments.
@@ -54,6 +56,8 @@
 - [Ahmet Rıfat Öztürk](https://ethosoft.org/person/ahmet-rifat-ozturk/): Ethosoft strategy lead, co-founder, and AI/data engineer working on Turkish NLP, small language models, medical AI, and robotics.
 - [Yağız Ekrem Dalar](https://ethosoft.org/person/yagiz-ekrem-dalar/): Ethosoft communications lead, AI researcher, and data engineer working on multimodal AI, reinforcement learning, Turkish NLP, and reproducible systems.
 - [Nedim Mutlu Sezer](https://ethosoft.org/person/nedim-mutlu-sezer/): Ethosoft co-founder and CTO, AI researcher, and project lead working on model evaluation, Turkish language models, biomedical AI, multimodal learning, and high-performance scientific computing.
+- [Ömer Faruk Aksoy](https://ethosoft.org/person/omer-faruk-aksoy/): Ethosoft captain and AI researcher working on computer vision, generative media, education technology, space-data processing, and scalable AI pipelines.
+- [Feyzi Arda Salihoğlu](https://ethosoft.org/person/feyzi-arda-salihoglu/): Ethosoft strategy lead and AI/data engineer contributing to language-model research, multimodal systems, reproducible experiments, and applied AI projects.
 
 ## External research profiles
 
