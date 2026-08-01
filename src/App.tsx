@@ -178,7 +178,7 @@ function Hero() {
           <span>Interdisciplinary team members</span>
         </div>
         <div>
-          <strong>5</strong>
+          <strong>8</strong>
           <span>National achievements</span>
         </div>
         <div>

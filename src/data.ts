@@ -269,6 +269,27 @@ export const achievements = [
     image: "eucodeweek.jpeg",
     rank: "1st Place in Türkiye",
   },
+  {
+    id: "mindbricks",
+    title: "MindBricks Hackathon",
+    organization: "MindBricks",
+    image: "mindbricks.png",
+    rank: "1st Place",
+  },
+  {
+    id: "datamedx2",
+    title: "DataMedX Hackathon 2",
+    organization: "İstinye University",
+    image: "datamedx2.png",
+    rank: "2nd Place · ₺70,000 Award",
+  },
+  {
+    id: "tua-astro",
+    title: "TUA Astro Hackathon",
+    organization: "TUA, TÜMMİAD & Valentura",
+    image: "TUA.png",
+    rank: "1st Place",
+  },
 ];
 
 export const partners = [

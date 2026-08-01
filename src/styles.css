@@ -1520,6 +1520,18 @@ img {
   grid-column: span 12;
 }
 
+.achievement-6 {
+  grid-column: span 5;
+}
+
+.achievement-7 {
+  grid-column: span 7;
+}
+
+.achievement-8 {
+  grid-column: span 12;
+}
+
 .achievement-card img {
   width: 100%;
   height: 100%;
