@@ -31,6 +31,24 @@ export const navigation = [
 
 export const projects: Project[] = [
   {
+    id: "qwen3-research-reasoning-json-rl",
+    href: "/models/qwen3-research-reasoning-json-rl/",
+    title: "Qwen3 ResearchReasoning JSON RL",
+    description:
+      "An open LoRA/PEFT adapter for evidence-grounded research QA, source selection, claim verification, uncertainty reporting, and strict JSON generation.",
+    category: "Core AI",
+    focus: ["Research QA", "Structured JSON", "Open model"],
+  },
+  {
+    id: "risk-routed-kv-memory",
+    href: "/experiments/risk-routed-heterogeneous-kv-memory/",
+    title: "Risk-Routed Heterogeneous KV Memory",
+    description:
+      "An open experiment routing exact-critical context to full-precision KV memory while lower-risk context uses quantized representations.",
+    category: "Core AI",
+    focus: ["KV cache", "Exact recall", "LLM systems"],
+  },
+  {
     id: "epilepsy-early-warning",
     href: "/works/epilepsy-early-warning-system/",
     title: "Epilepsy Early-Warning System",
