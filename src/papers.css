@@ -261,6 +261,22 @@
   margin-top: 0;
 }
 
+/* Dedicated treatment for the Goal Drift and TR-DocVQA paper records. */
+body:has(a[href*="goal-drift"]) .paper-hero {
+  background: linear-gradient(135deg, #172d3d 0%, #244f58 58%, #d2a15d 150%);
+}
+
+body:has(a[href*="tr-docvqa"]) .paper-hero {
+  background: linear-gradient(135deg, #3a2631 0%, #744858 58%, #d2a15d 150%);
+}
+
+body:has(a[href*="goal-drift"]) .paper-section:first-child,
+body:has(a[href*="tr-docvqa"]) .paper-section:first-child,
+body:has(a[href*="goal-drift"]) .paper-sidebar,
+body:has(a[href*="tr-docvqa"]) .paper-sidebar {
+  border-top: 3px solid var(--accent, #d2a15d);
+}
+
 .paper-hero {
   position: relative;
   overflow: hidden;
