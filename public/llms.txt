@@ -46,6 +46,11 @@
 - [Risk-Routed Heterogeneous KV Memory](https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/): A detailed experiment page investigating KV-cache compression as fidelity routing, with full KV precision for exact-critical spans and low-bit quantized KV for lower-risk background context.
 - [Risk-Routed KV Exact-Recall Benchmark](https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark): The public benchmark dataset for the project.
 
+## People
+
+- [Ahmet Rıfat Öztürk](https://ethosoft.org/person/ahmet-rifat-ozturk/): Ethosoft strategy lead, co-founder, and AI/data engineer working on Turkish NLP, small language models, medical AI, and robotics.
+- [Yağız Ekrem Dalar](https://ethosoft.org/person/yagiz-ekrem-dalar/): Ethosoft communications lead, AI researcher, and data engineer working on multimodal AI, reinforcement learning, Turkish NLP, and reproducible systems.
+
 ## External research profiles
 
 - [Ethosoft on GitHub](https://github.com/ethosoftai)

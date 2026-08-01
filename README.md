@@ -28,6 +28,7 @@ Research archive pages are static multi-page Vite entries:
 - `models/<slug>/index.html` — crawlable model and adapter landing pages
 - `experiments/<slug>/index.html` — crawlable experiment landing pages
 - `papers/<slug>/index.html` — crawlable publication landing pages
+- `person/<slug>/index.html` — crawlable team-member profile pages
 - `src/papers.css` — research archive styles
 - `src/works.css` — project archive styles
 - `scripts/generate-work-pages.mjs` — generates detail pages from the canonical Works records

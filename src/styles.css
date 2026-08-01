@@ -1455,6 +1455,14 @@ img {
   transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
+.member-links .member-profile-link {
+  width: auto;
+  padding-inline: 12px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
 .member-links a:hover {
   border-color: var(--salmon);
   background: var(--salmon);

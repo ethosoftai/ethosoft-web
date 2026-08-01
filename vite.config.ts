@@ -35,6 +35,8 @@ export default defineConfig({
         epilangPaper: "papers/epilang/index.html",
         myceliumPaper: "papers/mycelium/index.html",
         surprisePaper: "papers/surprise/index.html",
+        personAhmet: "person/ahmet-rifat-ozturk/index.html",
+        personYagiz: "person/yagiz-ekrem-dalar/index.html",
       },
     },
   },

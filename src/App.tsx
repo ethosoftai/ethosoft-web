@@ -490,6 +490,11 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
         <h3>{member.name}</h3>
         <p>{member.role}</p>
         <div className="member-links">
+          {member.profile && (
+            <a className="member-profile-link" href={member.profile}>
+              Profile
+            </a>
+          )}
           <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} LinkedIn`}>
             <LinkedInIcon size={17} />
           </a>

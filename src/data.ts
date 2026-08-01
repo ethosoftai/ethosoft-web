@@ -11,6 +11,7 @@ export type Project = {
 
 export type TeamMember = {
   id: string;
+  profile?: string;
   name: string;
   role: string;
   email: string;
@@ -152,6 +153,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "yagiz",
+    profile: "/person/yagiz-ekrem-dalar/",
     name: "Yağız Ekrem Dalar",
     role: "Communications Lead, AI & Data Engineer",
     email: "ekrem@ethosoft.org",
@@ -161,6 +163,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "rifat",
+    profile: "/person/ahmet-rifat-ozturk/",
     name: "Ahmet Rıfat Öztürk",
     role: "Strategy Lead, AI & Data Engineer",
     email: "ahmetrifat@ethosoft.org",
