@@ -23,12 +23,14 @@ Research archive pages are static multi-page Vite entries:
 
 - `papers/index.html` — publication index
 - `works/index.html` — projects, prototypes, and open research releases
+- `works/<slug>/index.html` — generated, crawlable project detail pages
 - `models/index.html` and `experiments/index.html` — legacy redirects to Works
 - `models/<slug>/index.html` — crawlable model and adapter landing pages
 - `experiments/<slug>/index.html` — crawlable experiment landing pages
 - `papers/<slug>/index.html` — crawlable publication landing pages
 - `src/papers.css` — research archive styles
 - `src/works.css` — project archive styles
+- `scripts/generate-work-pages.mjs` — generates detail pages from the canonical Works records
 
 Each paper page should include a visible abstract, DOI and author metadata, Scholar-compatible `citation_*` tags, and `ScholarlyArticle` JSON-LD. Update `public/sitemap.xml` and `public/llms.txt` whenever a publication is added.
 

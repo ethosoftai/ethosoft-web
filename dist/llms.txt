@@ -26,20 +26,20 @@
 
 ## Projects and works
 
-- [Epilepsy Early-Warning System](https://ethosoft.org/works/#epilepsy-early-warning): An eight-channel EEG and edge-AI research prototype covering ictal, preictal, postictal, and normal states; its warning horizon remains a design target rather than a clinically validated result.
-- [Explainable Cardiomegaly Screening](https://ethosoft.org/works/#cardiomegaly-screening): A competition system combining heart and lung segmentation, cardiothoracic measurements, CNN evidence, and LightGBM classification on frontal chest X-rays.
-- [Colonoscopy Polyp Segmentation](https://ethosoft.org/works/#polyp-segmentation): A multi-dataset U-Net-family study that documents validation performance, augmentation ablations, and cross-dataset variability.
-- [Ultrasound Heart-Failure Assessment](https://ethosoft.org/works/#ultrasound-heart-failure): An echocardiography-video concept for left-ventricle segmentation, volume estimation, and ejection-fraction decision support.
-- [Protein Mutation Modeling and G6PD Screening](https://ethosoft.org/works/#protein-mutation-screening): Linked AlphaFold, GNN, and sequence-ensemble mutation experiments plus a GNINA comparison of wild-type and R166H G6PD binding profiles over 3,799 filtered DrugCentral molecules.
-- [MODY2 Variant Classification](https://ethosoft.org/works/#mody2-variant-classification): An exploratory 356-variant GCK study using 3-mer encoding and ensemble classification.
-- [Fundus and OCT Eye Analysis](https://ethosoft.org/works/#eye-disease-imaging): A prototype concept for multimodal eye-disease classification and lesion localization.
-- [AI Digital Stethoscope](https://ethosoft.org/works/#digital-stethoscope): A heart-sound preprocessing, feature-extraction, and murmur-screening concept.
-- [Neuropathy and Myopathy EMG Analysis](https://ethosoft.org/works/#neuropathy-myopathy-emg): An early EMG research direction listed without implementation or performance claims.
-- [Traffic-Aware Eco-Routing](https://ethosoft.org/works/#eco-routing): A Flutter route-planning prototype combining graph search with vehicle- and traffic-aware fuel modeling.
-- [AI English Exam Evaluation](https://ethosoft.org/works/#english-exam-evaluation): A teacher-configurable writing, listening, reading, and speaking assessment prototype.
-- [Studium AI Study Coach](https://ethosoft.org/works/#studium-coach): A cross-platform YKS planning and study-analysis product concept.
-- [Context-Aware Cyberbullying Protection](https://ethosoft.org/works/#cyberbullying-protection): A multilingual moderation and online-wellbeing concept with explicit privacy, appeal, and bias-testing requirements.
-- [Machine Learning for Collider Events](https://ethosoft.org/works/#particle-physics): A research design for signal-versus-background learning on CERN/LHC collision and Monte Carlo data.
+- [Epilepsy Early-Warning System](https://ethosoft.org/works/epilepsy-early-warning-system/): An eight-channel EEG and edge-AI research prototype covering ictal, preictal, postictal, and normal states; its warning horizon remains a design target rather than a clinically validated result.
+- [Explainable Cardiomegaly Screening](https://ethosoft.org/works/explainable-cardiomegaly-screening/): A competition system combining heart and lung segmentation, cardiothoracic measurements, CNN evidence, and LightGBM classification on frontal chest X-rays.
+- [Colonoscopy Polyp Segmentation](https://ethosoft.org/works/colonoscopy-polyp-segmentation/): A multi-dataset U-Net-family study that documents validation performance, augmentation ablations, and cross-dataset variability.
+- [Ultrasound Heart-Failure Assessment](https://ethosoft.org/works/ultrasound-heart-failure-assessment/): An echocardiography-video concept for left-ventricle segmentation, volume estimation, and ejection-fraction decision support.
+- [Protein Mutation Modeling and G6PD Screening](https://ethosoft.org/works/protein-mutation-and-drug-screening/): Linked AlphaFold, GNN, and sequence-ensemble mutation experiments plus a GNINA comparison of wild-type and R166H G6PD binding profiles over 3,799 filtered DrugCentral molecules.
+- [MODY2 Variant Classification](https://ethosoft.org/works/mody2-variant-classification/): An exploratory 356-variant GCK study using 3-mer encoding and ensemble classification.
+- [Fundus and OCT Eye Analysis](https://ethosoft.org/works/fundus-and-oct-eye-analysis/): A prototype concept for multimodal eye-disease classification and lesion localization.
+- [AI Digital Stethoscope](https://ethosoft.org/works/ai-digital-stethoscope/): A heart-sound preprocessing, feature-extraction, and murmur-screening concept.
+- [Neuropathy and Myopathy EMG Analysis](https://ethosoft.org/works/neuropathy-and-myopathy-emg-analysis/): An early EMG research direction listed without implementation or performance claims.
+- [Traffic-Aware Eco-Routing](https://ethosoft.org/works/traffic-aware-eco-routing/): A Flutter route-planning prototype combining graph search with vehicle- and traffic-aware fuel modeling.
+- [AI English Exam Evaluation](https://ethosoft.org/works/ai-english-exam-evaluation/): A teacher-configurable writing, listening, reading, and speaking assessment prototype.
+- [Studium AI Study Coach](https://ethosoft.org/works/studium-ai-study-coach/): A cross-platform YKS planning and study-analysis product concept.
+- [Context-Aware Cyberbullying Protection](https://ethosoft.org/works/context-aware-cyberbullying-protection/): A multilingual moderation and online-wellbeing concept with explicit privacy, appeal, and bias-testing requirements.
+- [Machine Learning for Collider Events](https://ethosoft.org/works/machine-learning-for-collider-events/): A research design for signal-versus-background learning on CERN/LHC collision and Monte Carlo data.
 
 ## Experiments and benchmarks
 

@@ -122,6 +122,11 @@
   line-height: 1.08;
 }
 
+.work-record h3 a:hover,
+.work-record h3 a:focus-visible {
+  color: var(--salmon-dark);
+}
+
 .work-summary,
 .release-work-card > p {
   margin: 0;
@@ -204,11 +209,59 @@
   padding-top: 30px;
 }
 
+.work-detail-hero h1 {
+  max-width: 980px;
+}
+
+.work-detail-layout {
+  padding-block: clamp(72px, 10vw, 128px);
+  display: grid;
+  grid-template-columns: minmax(0, 820px) 220px;
+  gap: clamp(40px, 8vw, 100px);
+  justify-content: center;
+  align-items: start;
+}
+
+.work-detail-layout .work-record {
+  margin-top: 18px;
+}
+
+.work-detail-layout .work-record h3 {
+  display: none;
+}
+
+.work-detail-aside {
+  position: sticky;
+  top: 112px;
+  display: grid;
+}
+
+.work-detail-aside a {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.work-detail-aside a:hover,
+.work-detail-aside a:focus-visible {
+  color: var(--salmon-dark);
+}
+
 @media (max-width: 860px) {
   .works-intro,
   .works-grid,
-  .release-grid {
+  .release-grid,
+  .work-detail-layout {
     grid-template-columns: 1fr;
+  }
+
+  .work-detail-aside {
+    position: static;
   }
 
   .work-record-wide {

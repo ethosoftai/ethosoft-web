@@ -1118,6 +1118,18 @@ img {
   content: "";
 }
 
+.research-cards-single {
+  overflow: visible;
+}
+
+.research-cards-single .research-card-column {
+  flex-basis: min(980px, 100%);
+}
+
+.research-cards-single::after {
+  display: none;
+}
+
 .research-card-category {
   margin-bottom: 14px;
   min-height: 50px;

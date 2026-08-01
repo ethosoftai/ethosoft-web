@@ -5,8 +5,6 @@ import {
   ArrowUpRight,
   BookOpen,
   BrainCircuit,
-  Code2,
-  Database,
   Dna,
   ExternalLink,
   GraduationCap,
@@ -26,11 +24,9 @@ import {
   navigation,
   partners,
   projects,
-  researchReleases,
   team,
   type Project,
   type ProjectCategory,
-  type ResearchRelease,
   type TeamMember,
 } from "./data";
 
@@ -267,7 +263,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <span key={item}>{item}</span>
           ))}
         </div>
-        <a className="button button-primary" href={`/works/#${project.id}`}>
+        <a className="button button-primary" href={project.href}>
           Read the project record <ArrowUpRight size={17} />
         </a>
       </div>
@@ -344,125 +340,7 @@ function Projects() {
   );
 }
 
-function ResearchReleaseCard({
-  release,
-  index,
-  cardHref,
-  cardLabel,
-}: {
-  release: ResearchRelease;
-  index: number;
-  cardHref: string;
-  cardLabel: string;
-}) {
-  const MarkIcon = release.category === "model" ? BrainCircuit : Database;
-  const linkIcons = {
-    code: Code2,
-    dataset: Database,
-    model: BrainCircuit,
-  };
-
-  return (
-    <article className={`research-project-card clickable-research-card is-${release.category}`}>
-      <div className="research-project-mark" aria-hidden="true">
-        <MarkIcon />
-        <span>{String(index + 1).padStart(2, "0")}</span>
-      </div>
-      <div className="research-project-content">
-        <div className="research-project-meta">
-          <span>{release.status}</span>
-          {release.areas.map((area) => (
-            <span key={area}>{area}</span>
-          ))}
-        </div>
-        <h3>{release.title}</h3>
-        <p>{release.description}</p>
-        <blockquote>
-          <span>{release.highlightLabel}</span>
-          {release.highlight}
-        </blockquote>
-        <p className="research-project-caveat">{release.note}</p>
-        <div className="research-project-links">
-          {release.links.map((link) => {
-            const LinkIcon = linkIcons[link.kind];
-            return (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                <LinkIcon size={18} />
-                {link.label}
-                <ArrowUpRight size={17} />
-              </a>
-            );
-          })}
-        </div>
-      </div>
-      <a className="research-card-hitarea" href={cardHref} aria-label={cardLabel} />
-    </article>
-  );
-}
-
 function ResearchSpotlight() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [activeResearchCard, setActiveResearchCard] = useState(0);
-  const model = researchReleases.find((release) => release.category === "model");
-  const experiment = researchReleases.find(
-    (release) => release.category === "experiment",
-  );
-  const researchCardLabels = [
-    "Publications",
-    ...(model ? ["Open model release"] : []),
-    ...(experiment ? ["Open experiment"] : []),
-  ];
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    let animationFrame = 0;
-    const updateActiveCard = () => {
-      window.cancelAnimationFrame(animationFrame);
-      animationFrame = window.requestAnimationFrame(() => {
-        const cards = Array.from(
-          slider.querySelectorAll<HTMLElement>(".research-card-column"),
-        );
-        const activeIndex = cards.reduce((nearestIndex, card, index) => {
-          const currentDistance = Math.abs(
-            card.offsetLeft - slider.offsetLeft - slider.scrollLeft,
-          );
-          const nearestCard = cards[nearestIndex];
-          const nearestDistance = Math.abs(
-            nearestCard.offsetLeft - slider.offsetLeft - slider.scrollLeft,
-          );
-          return currentDistance < nearestDistance ? index : nearestIndex;
-        }, 0);
-
-        setActiveResearchCard(activeIndex);
-      });
-    };
-
-    slider.addEventListener("scroll", updateActiveCard, { passive: true });
-    window.addEventListener("resize", updateActiveCard);
-    updateActiveCard();
-
-    return () => {
-      window.cancelAnimationFrame(animationFrame);
-      slider.removeEventListener("scroll", updateActiveCard);
-      window.removeEventListener("resize", updateActiveCard);
-    };
-  }, []);
-
-  const showResearchCard = (index: number) => {
-    const slider = sliderRef.current;
-    const card = slider?.querySelectorAll<HTMLElement>(".research-card-column")[index];
-    if (!slider || !card) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    slider.scrollTo({
-      left: card.offsetLeft - slider.offsetLeft,
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
-    setActiveResearchCard(index);
-  };
-
   return (
     <section id="research" className="section research-spotlight" aria-labelledby="research-title">
       <SectionHeading
@@ -498,11 +376,7 @@ function ResearchSpotlight() {
         </a>
       </nav>
 
-      <div
-        ref={sliderRef}
-        className="research-cards-slider"
-        aria-label="Featured open research"
-      >
+      <div className="research-cards-slider research-cards-single" aria-label="Featured paper">
         <section className="research-card-column" aria-labelledby="publications-card-title">
           <a id="publications-card-title" className="research-card-category" href="/papers/">
             <span>
@@ -545,67 +419,7 @@ function ResearchSpotlight() {
           </article>
         </section>
 
-        {model && (
-          <section className="research-card-column" aria-labelledby="models-card-title">
-            <a
-              id="models-card-title"
-              className="research-card-category"
-              href="/models/qwen3-research-reasoning-json-rl/"
-            >
-              <span>
-                <strong>Open model release</strong>
-                <small>Research reasoning adapter</small>
-              </span>
-              <ArrowRight aria-hidden="true" />
-            </a>
-            <ResearchReleaseCard
-              release={model}
-              index={0}
-              cardHref="/models/qwen3-research-reasoning-json-rl/"
-              cardLabel="Read the Qwen3 research reasoning release"
-            />
-          </section>
-        )}
-
-        {experiment && (
-          <section className="research-card-column" aria-labelledby="experiments-card-title">
-            <a
-              id="experiments-card-title"
-              className="research-card-category"
-              href="/experiments/risk-routed-heterogeneous-kv-memory/"
-            >
-              <span>
-                <strong>Open experiment</strong>
-                <small>KV memory and exact recall</small>
-              </span>
-              <ArrowRight aria-hidden="true" />
-            </a>
-            <ResearchReleaseCard
-              release={experiment}
-              index={0}
-              cardHref="/experiments/risk-routed-heterogeneous-kv-memory/"
-              cardLabel="Read the risk-routed KV memory experiment"
-            />
-          </section>
-        )}
       </div>
-
-      <nav className="research-slider-navigation" aria-label="Choose a research feature">
-        {researchCardLabels.map((label, index) => (
-          <button
-            key={label}
-            type="button"
-            className={`research-slider-number ${
-              activeResearchCard === index ? "is-active" : ""
-            }`}
-            aria-label={`Show ${label}`}
-            aria-current={activeResearchCard === index ? "true" : undefined}
-            onClick={() => showResearchCard(index)}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </button>
-        ))}
-      </nav>
     </section>
   );
 }

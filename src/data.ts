@@ -2,6 +2,7 @@ export type ProjectCategory = "All" | "Core AI" | "Healthcare" | "Education";
 
 export type Project = {
   id: string;
+  href: string;
   title: string;
   description: string;
   category: Exclude<ProjectCategory, "All">;
@@ -18,23 +19,6 @@ export type TeamMember = {
   group: "advisor" | "leadership" | "team";
 };
 
-export type ResearchRelease = {
-  id: string;
-  category: "model" | "experiment";
-  title: string;
-  status: string;
-  areas: string[];
-  description: string;
-  highlightLabel: string;
-  highlight: string;
-  note: string;
-  links: {
-    label: string;
-    href: string;
-    kind: "code" | "dataset" | "model";
-  }[];
-};
-
 export const navigation = [
   { label: "Research", href: "#research" },
   { label: "Projects", href: "/works/" },
@@ -45,67 +29,10 @@ export const navigation = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const researchReleases: ResearchRelease[] = [
-  {
-    id: "risk-routed-kv-memory",
-    category: "experiment",
-    title: "Risk-Routed Heterogeneous KV Memory",
-    status: "Early research prototype",
-    areas: ["LLM systems", "KV cache", "Exact recall"],
-    description:
-      "An open-source investigation of KV-cache compression as fidelity routing: exact-critical spans retain full KV precision while lower-risk background context uses low-bit quantized KV.",
-    highlightLabel: "Research question",
-    highlight: "What memory representation should each token use?",
-    note:
-      "The current implementation is an inference-time quantize/dequantize proxy, not a packed low-bit storage kernel.",
-    links: [
-      {
-        label: "View source on GitHub",
-        href: "https://github.com/Ahmet2001/-risk-routed-heterogeneous-kv-memory",
-        kind: "code",
-      },
-      {
-        label: "Explore the dataset",
-        href: "https://huggingface.co/datasets/Mandotosh/risk-routed-kv-exact-recall-benchmark",
-        kind: "dataset",
-      },
-    ],
-  },
-  {
-    id: "qwen3-research-reasoning-json-rl",
-    category: "model",
-    title: "Qwen3-1.7B ResearchReasoning JSON RL",
-    status: "Open model release",
-    areas: ["Evidence-grounded QA", "Claim verification", "Structured JSON"],
-    description:
-      "A compact LoRA/PEFT adapter for source-aware research question answering, evidence selection, claim verification, uncertainty reporting, and strict JSON generation.",
-    highlightLabel: "HotpotQA diagnostic",
-    highlight: "27.0 EM / 36.91 F1",
-    note:
-      "Fixed-seed diagnostic results with the project's research JSON schema—not an official leaderboard submission.",
-    links: [
-      {
-        label: "Adapter on Hugging Face",
-        href: "https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL",
-        kind: "model",
-      },
-      {
-        label: "GGUF on Hugging Face",
-        href: "https://huggingface.co/Ethosoft/Qwen3-1.7B-ResearchReasoning-JSON-RL-GGUF",
-        kind: "model",
-      },
-      {
-        label: "View training code",
-        href: "https://github.com/Ahmet2001/QA-research-SLM",
-        kind: "code",
-      },
-    ],
-  },
-];
-
 export const projects: Project[] = [
   {
     id: "epilepsy-early-warning",
+    href: "/works/epilepsy-early-warning-system/",
     title: "Epilepsy Early-Warning System",
     description:
       "A wearable-to-edge prototype for classifying four EEG states and exploring pre-seizure alerts with an eight-channel signal pipeline.",
@@ -114,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     id: "cardiomegaly-screening",
+    href: "/works/explainable-cardiomegaly-screening/",
     title: "Explainable Cardiomegaly Screening",
     description:
       "A chest X-ray pipeline combining heart and lung segmentation, cardiothoracic measurements, CNN evidence, and a LightGBM classifier.",
@@ -122,6 +50,7 @@ export const projects: Project[] = [
   },
   {
     id: "polyp-segmentation",
+    href: "/works/colonoscopy-polyp-segmentation/",
     title: "Colonoscopy Polyp Segmentation",
     description:
       "A multi-dataset segmentation study evaluating U-Net-family architectures, augmentation choices, and cross-dataset behavior on colonoscopy images.",
@@ -130,6 +59,7 @@ export const projects: Project[] = [
   },
   {
     id: "protein-mutation-screening",
+    href: "/works/protein-mutation-and-drug-screening/",
     title: "Protein Mutation and Drug Screening",
     description:
       "Linked protein-mutation modeling and virtual-screening studies, including a focused R166H G6PD analysis across 3,799 filtered molecules.",
@@ -138,6 +68,7 @@ export const projects: Project[] = [
   },
   {
     id: "mody2-variant-classification",
+    href: "/works/mody2-variant-classification/",
     title: "MODY2 Variant Classification",
     description:
       "An exploratory GCK-variant classification study using 3-mer sequence encoding, class balancing, and a voting ensemble.",
@@ -146,6 +77,7 @@ export const projects: Project[] = [
   },
   {
     id: "eye-disease-imaging",
+    href: "/works/fundus-and-oct-eye-analysis/",
     title: "Fundus and OCT Eye Analysis",
     description:
       "A medical-imaging concept for classifying and localizing findings across fundus photography and OCT scans.",
@@ -154,6 +86,7 @@ export const projects: Project[] = [
   },
   {
     id: "english-exam-evaluation",
+    href: "/works/ai-english-exam-evaluation/",
     title: "AI English Exam Evaluation",
     description:
       "A teacher-configurable assessment prototype for writing, listening, reading, and speaking feedback with photographed-paper input.",
@@ -162,6 +95,7 @@ export const projects: Project[] = [
   },
   {
     id: "studium-coach",
+    href: "/works/studium-ai-study-coach/",
     title: "Studium AI Study Coach",
     description:
       "A cross-platform YKS study companion combining planning, practice analysis, motivation, Pomodoro sessions, and guidance tools.",
