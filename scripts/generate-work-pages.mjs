@@ -47,11 +47,11 @@ const extendedDetails = {
 };
 
 const sourceFiles = {
-  "epilepsy-early-warning": ["epilepsi/🧠 Epilepsi Erken Uyarı Sistemi.md", "epilepsi/açıklama.txt"],
-  "cardiomegaly-screening": ["teknofest2025syz/aciklama.txt", "teknofest2025syz/kardiyomegali/aciklama.txt"],
-  "polyp-segmentation": ["teknofest2025syz/polip/aciklama.txt"],
-  "ultrasound-heart-failure": ["ultrasonkalpyetmezligi/aciklama.txt"],
-  "protein-mutation-screening": ["protein/protein.txt"],
+  "epilepsy-early-warning": ["epilepsi/🧠 Epilepsi Erken Uyarı Sistemi.md", "epilepsi/açıklama.txt", "epilepsi/ornek.jpg"],
+  "cardiomegaly-screening": ["teknofest2025syz/aciklama.txt", "teknofest2025syz/kardiyomegali/aciklama.txt", "teknofest2025syz/kardiyomegali/HOMu73ABEeTHpZujok7R0D4cZBynuV0b.pdf", "teknofest2025syz/kardiyomegali/rpuph3s2f936j0ud9zcNFqTAZ8oPzYYR.pptx"],
+  "polyp-segmentation": ["teknofest2025syz/polip/aciklama.txt", "teknofest2025syz/polip/zFbc67p8cyrc54lNgMW2J7keU3dxlqpC.pdf"],
+  "ultrasound-heart-failure": ["ultrasonkalpyetmezligi/aciklama.txt", "ultrasonkalpyetmezligi/ornek.jpg"],
+  "protein-mutation-screening": ["protein/protein.txt", "protein/proteintubitak.docx", "protein/ornek.jpg"],
   "mody2-variant-classification": ["mody2/🧬 Yapay Zeka Destekli MODY2 Tanısında GCK Gen Mutasyonlarının Sınıflandırılması.md"],
   "eye-disease-imaging": ["göz/👁️ Fundus ve OCT Görüntüleri Aracılığıyla 25'ten Fazla Hastalığın Tespiti.md", "göz/aciklama.txt"],
   "digital-stethoscope": ["steteskop/🩺 Steteskop Üzerinden Kalp Sesi ile Murmur ve Üfürüm Sınıflandıran Yapay Zeka Sistemi.md"],
@@ -61,6 +61,7 @@ const sourceFiles = {
   "studium-coach": ["studium/📚 Studium - Yapay Zeka Destekli Kişisel Koçluk Platformu.md"],
   "cyberbullying-protection": ["siber/🛡️ Siber Zorbalık Tespiti ve Engelleme Sistemi.md"],
   "particle-physics": ["parcacikfizigi/🔬 Parçacık Fiziği Projesi — QCD, Higgs ve Dark Matter Tespiti.md", "parcacikfizigi/aciklama.txt"],
+  "music-scoring": ["Müzik_Skorlama.pdf"],
 };
 
 const sourceRoot = resolve(root, "public", "works", "source");
@@ -71,8 +72,10 @@ const originalSource = (id) => {
   if (!files.length) return "";
   return `<section class="work-original-source" aria-labelledby="original-source-title"><p class="research-kicker">Verbatim project material</p><h2 id="original-source-title">Original source text</h2><p class="source-note">The following text is reproduced exactly from the supplied project files. It is preserved for provenance; it may be in Turkish, use Markdown notation, or contain draft statements.</p>${files.map((relative) => {
     const absolute = resolve(sourceRoot, relative);
-    const content = readFileSync(absolute, "utf8");
-    return `<details><summary>${escapeHtml(relative)}</summary><pre>${escapeHtml(content)}</pre></details>`;
+    const isText = /\.(md|txt)$/i.test(relative);
+    const content = isText ? readFileSync(absolute, "utf8") : "";
+    const publicUrl = `/works/source/${relative.split("/").map((part) => encodeURIComponent(part)).join("/")}`;
+    return `<details><summary>${escapeHtml(relative)}</summary><div class="work-source-file-actions"><a class="work-source-download" href="${publicUrl}" download>Download original file <span aria-hidden="true">↗</span></a></div>${isText ? `<pre>${escapeHtml(content)}</pre>` : `<p class="source-note">Original binary file preserved for download.</p>`}</details>`;
   }).join("")}</section>`;
 };
 
@@ -197,7 +200,7 @@ for (const [id, slug] of workPages) {
             <p class="research-kicker">Explore</p>
             <a href="/works/">All project records <span aria-hidden="true">→</span></a>
             <a href="/papers/">Research papers <span aria-hidden="true">→</span></a>
-            <a href="/works/source/">Original project files <span aria-hidden="true">→</span></a>
+            <a href="#original-source-title">Original project files <span aria-hidden="true">↓</span></a>
             <a href="mailto:merhaba@ethosoft.org">Contact Ethosoft <span aria-hidden="true">→</span></a>
           </aside>
         </div>

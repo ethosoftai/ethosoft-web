@@ -308,6 +308,25 @@
   font-weight: 700;
 }
 
+.work-source-file-actions {
+  padding: 0 18px 14px;
+}
+
+.work-source-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--salmon-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.work-source-download:hover,
+.work-source-download:focus-visible {
+  text-decoration: underline;
+}
+
 .work-original-source pre {
   max-height: 720px;
   margin: 0;
