@@ -6,6 +6,9 @@
 
 - [NEDOQwen](https://ethosoft.org/papers/nedoqwen/): A 2026 Research Square preprint presenting an auditable, low-cost diagnosis-and-repair study for a Turkish-centric 824M-parameter language model. The page links DOI 10.21203/rs.3.rs-10384535/v1, a local usage guide, source code, two public model checkpoints, and two training datasets.
 - [Foresight Is Not Enough](https://ethosoft.org/papers/foresight-is-not-enough/): A 2026 preprint examining sentence-level future prediction, self-loop hard negatives, semantic reranking, and the representation-to-behavior calibration gap in small language models. DOI: 10.21203/rs.3.rs-10331341/v1.
+- [Testing Surprisal as a Compute-Allocation Signal](https://ethosoft.org/papers/surprise/): A 2026 preregistered long-horizon development study testing causal surprisal routing in a byte-level hybrid attention/Mamba-2 language model. The intermediate advantage disappears at the 50,000-step endpoint, and the sealed final test is not opened. DOI: 10.5281/zenodo.21718745.
+- [When Safety Is Not Load-Bearing](https://ethosoft.org/papers/mycelium/): The MYCELIUM counterfactual dependability study of mandatory-path safety mechanisms in language models. The work is accepted for COLM 2026 Workshop AIMS, while the IEEE TDSC manuscript is under review. Its public-safe Zenodo artifact reports a negative behavioral load-bearing result. Concept DOI: 10.5281/zenodo.21275744.
+- [When Training Order Becomes the Algorithm](https://ethosoft.org/papers/epilang/): An EpiLang preprint studying endpoint-induced collapse and memorization without systematic rule generalization in a controlled modulo-11 register-language task. DOI: 10.5281/zenodo.21718516.
 
 ## Research index
 
