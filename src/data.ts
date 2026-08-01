@@ -50,6 +50,24 @@ export const projects: Project[] = [
     focus: ["KV cache", "Exact recall", "LLM systems"],
   },
   {
+    id: "ai-music-scoring",
+    href: "/works/ai-music-scoring/",
+    title: "AI Music Scoring",
+    description:
+      "An integrated audio-and-lyrics pipeline combining source separation, transcription, NLP, acoustic features, and genre-aware scoring.",
+    category: "Core AI",
+    focus: ["Audio AI", "Lyrics NLP", "Scoring"],
+  },
+  {
+    id: "dart-rift",
+    href: "/works/dart-rift/",
+    title: "DART-RIFT",
+    description:
+      "A GPU-accelerated SPH shock-physics and Bayesian-inference project for probabilistic Dimorphos interior-structure estimation.",
+    category: "Core AI",
+    focus: ["Astrophysics", "SPH simulation", "Bayesian inference"],
+  },
+  {
     id: "epilepsy-early-warning",
     href: "/works/epilepsy-early-warning-system/",
     title: "Epilepsy Early-Warning System",
@@ -148,7 +166,7 @@ export const team: TeamMember[] = [
     role: "Technology Lead, AI & Data Engineer",
     email: "nedim@ethosoft.org",
     linkedin: "https://www.linkedin.com/in/nmsofficial/",
-    image: "nedim.jpeg",
+    image: "nedim.png",
     group: "leadership",
   },
   {
