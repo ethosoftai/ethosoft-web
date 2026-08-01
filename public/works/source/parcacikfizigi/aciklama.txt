@@ -1,0 +1,1 @@
+CERN veri setlerinden yararlanarak QCD, Higgs ve Dark Matter tespiti yapıyoruz. Ek olarak monte carlo simülasyonu ile modelimizi anlık test edebiliyoruz. Karanlık madde için missing energy den yararlanıyoz.

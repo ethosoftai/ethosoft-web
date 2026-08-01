@@ -1,0 +1,1 @@
+25ten fazla hastalığı Fundus ve OCT görüntüleri aracılığıyla tespit ediyoruz. (prototip: Gemini ile gözün hangi bölgesinde sorun olduğunu lokalize ediyoruz.)

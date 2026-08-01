@@ -1,0 +1,597 @@
+\documentclass[11pt,a4paper]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage[left=0.8in,top=0.8in,right=0.8in,bottom=0.8in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+%----------------------------------------------------------------------------------------
+%	COLORS & STYLES
+%----------------------------------------------------------------------------------------
+\definecolor{titleblue}{HTML}{00199e}
+\definecolor{subtitleblue}{HTML}{2ec1e0}
+\definecolor{darktext}{HTML}{222222}
+\definecolor{lightgray}{HTML}{777777}
+
+\color{darktext}
+\linespread{0.95}
+\setlength{\parskip}{0.15em}
+
+\titleformat{\section}{\Large\bfseries\color{titleblue}}{}{0em}{}[\vspace{-0.55em}\textcolor{titleblue}{\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{0.85em}{0.35em}
+
+\titleformat{\subsection}{\normalsize\bfseries\color{darktext}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.1em}
+
+\newcommand{\blueitem}[1]{\textcolor{subtitleblue}{\textbf{#1}}}
+\newcommand{\daterange}[1]{\hfill \textcolor{lightgray}{\textit{#1}}}
+
+\setlist[itemize]{label=\textbullet, leftmargin=*, noitemsep, topsep=1pt, parsep=0pt}
+
+% Sayfa numarası (uluslararası CV'lerde beklenir)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\textcolor{lightgray}{\small Nedim Mutlu Sezer --- Sayfa \thepage}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	HEADER
+%----------------------------------------------------------------------------------------
+{\Huge \textbf{\textcolor{titleblue}{Nedim Mutlu Sezer}}}
+
+\vspace{0.25em}
+{\large \textcolor{lightgray}{Yapay Zeka Araştırmacısı --- NLP, Biyomedikal Sinyal İşleme, Multimodal Öğrenme}}
+
+\vspace{0.5em}
+
+\begin{minipage}[t]{0.48\textwidth}
+İstanbul, Türkiye \\
+Uyruk: Türkiye Cumhuriyeti \\
+Mobil: +90 531 297 1400 \\
+E-posta: \href{mailto:nedim@ethosoft.org}{nedim@ethosoft.org}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+ORCID: \href{https://orcid.org/0009-0001-3499-6067}{0009-0001-3499-6067} \\
+LinkedIn: \href{https://linkedin.com/in/nmsofficial}{linkedin.com/in/nmsofficial} \\
+GitHub: \href{https://github.com/NMSOfficial}{github.com/NMSOfficial}
+\end{minipage}
+
+\vspace{0.4em}
+
+%----------------------------------------------------------------------------------------
+%	ARAŞTIRMA PROFİLİ
+%----------------------------------------------------------------------------------------
+\section*{Araştırma Profili}
+Doğal dil işleme, dil modeli değerlendirmesi, biyomedikal sinyal işleme ve multimodal öğrenme alanlarında çalışan lise düzeyinde bir araştırmacıyım. Çalışmalarımın merkezinde, dil modellerinde raporlanan başarımın ne kadarının gerçek yetenekten ne kadarının deneysel yapaylıklardan kaynaklandığını ayrıştıran ön kayıtlı (preregistered) ve yeniden üretilebilir değerlendirme protokolleri yer alıyor. Üç çalışmada birinci yazar ve proje lideri olarak; eğitim sırası yanlılığı, uyarlanabilir hesaplama tahsisi ve güvenlik mekanizmalarının karşı-olgusal doğrulanması konularında negatif ve boş sonuçları da şeffaf biçimde raporlayan araştırmalar yürüttüm. Paralel olarak biyomedikal görüntü ve sinyallerden (röntgen, kolonoskopi, EEG, EKG, EMG, ekokardiyografi, OCT/Fundus, kalp sesi) gerçek zamanlı çıkarım yapan klinik karar destek sistemleri geliştiriyor; biyoenformatik alanında protein yapı modellemesi ve hesaplamalı ilaç taraması, temel bilimlerde ise yüksek enerji fiziği veri analizi üzerine çalışıyorum. Ayrıca İstanbul Teknik Üniversitesi ve Türkiye Uzay Ajansı işbirliğindeki UZDES merkezinde uzay destek sistemleri üzerine araştırma yapıyor ve kendi mimarisine sahip bir Türkçe büyük dil modelinin ön-eğitim hazırlığını sürdürüyorum.
+
+\textbf{Araştırma İlgi Alanları:} Dil Modeli Değerlendirmesi ve Denetimi $\cdot$ Ön Kayıtlı Deney Tasarımı ve Yeniden Üretilebilirlik $\cdot$ Uyarlanabilir/Koşullu Hesaplama $\cdot$ Pekiştirmeli Öğrenme $\cdot$ Yapay Zeka Güvenliği ve Güvenlik Mekanizmalarının Doğrulanması $\cdot$ Büyük Dil Modelleri ve Ön-Eğitim $\cdot$ Düşük Kaynaklı Dillerde NLP $\cdot$ Durum-Uzayı Modelleri (SSM/Mamba) $\cdot$ Gecikmeli Sinir Ağları ve Kararlılık Analizi $\cdot$ Biyomedikal Sinyal İşleme $\cdot$ Multimodal Öğrenme $\cdot$ Biyoenformatik ve Protein Modellemesi $\cdot$ Uç Cihazlarda Verimli Çıkarım
+
+%----------------------------------------------------------------------------------------
+%	EĞİTİM
+%----------------------------------------------------------------------------------------
+\section*{Eğitim}
+
+\blueitem{Pertevniyal Lisesi, İstanbul, Türkiye} \daterange{2024 -- 2029}
+\begin{itemize}
+    \item Fen ve Matematik ağırlıklı Anadolu Lisesi programı (1 yıl hazırlık sınıfı dahil). Beklenen mezuniyet: Haziran 2029.
+    \item \textbf{Genel Not Ortalaması:} 95.48 / 100.00
+    \item \textbf{Danışman Öğretmen:} Remzi Öz
+    \item \textbf{Burs:} T.C. Milli Eğitim Bakanlığı İOKBS (İlköğretim ve Ortaöğretim Kurumları Bursluluk Sınavı) kapsamında, akademik başarı ve gelir kriterine dayalı devlet bursu --- lise öğrenimi boyunca aylık ödeme.
+\end{itemize}
+
+\vspace{0.2em}
+\textbf{İlgili Ders ve Çalışma Alanları:} Makine Öğrenmesi, Derin Öğrenme, Sinyal İşleme, Üretken Yapay Zeka, Doğal Dil İşleme, Bilgisayarlı Görü, Veri İşleme, Model Optimizasyonu, Eğitim ve Çıkarım Sistemleri, Multimodal Sistemler, Türkçeye Özgü Yapay Zeka Modelleri.
+
+%----------------------------------------------------------------------------------------
+%	YAYINLAR
+%----------------------------------------------------------------------------------------
+\section*{Yayınlar}
+
+\textit{Yazar adının kalın gösterildiği çalışmalarda ortak yazarım; ayrıca ``Proje Lideri'' ibaresi bulunan çalışmaların birinci yazarı ve yürütücüsüyüm.}
+
+\subsection*{Hakemli Konferans Bildirileri (Kabul Edilmiş)}
+\begin{enumerate}[leftmargin=*, itemsep=0.35em, topsep=2pt]
+    \item \textbf{Sezer, N. M.} (Proje Lideri), Aksoy, Ö. F., Öztürk, A. R., Salihoğlu, F. A., Dalar, Y. E. (2026). \textit{Removal Cost as a Measurement Axis for Open-Weight Language Model Safety.} \\
+    \textbf{AIMS: AI Measurement Science Workshop}, COLM 2026 ile eş konumlu, Hilton Union Square, San Francisco, ABD --- 9 Ekim 2026. \\
+    \textit{Çift kör hakem değerlendirmesi; her bildiri için en az üç bağımsız hakem raporu.}
+    \begin{itemize}
+        \item Açık ağırlıklı (open-weight) dil modellerinde güvenlik mekanizmalarının değerlendirilmesi için, mekanizmanın modelden \emph{çıkarılmasının maliyeti} temelinde yeni bir ölçüm ekseni önerildi.
+        \item Bir güvenlik bileşeninin varlığını doğrulamak yerine, kaldırıldığında sistemin ne kadar bozulduğunu ölçerek mekanizmanın gerçekten yük taşıyıp taşımadığının sınanması amaçlandı.
+        \item MYCELIUM çalışma hattının bir parçasıdır (bkz. İnceleme Aşamasında ve Veri Setleri bölümleri).
+    \end{itemize}
+
+    \item Dalar, Y. E., \textbf{Sezer, N. M.}, Salihoğlu, F. A., Öztürk, A. R., Aksoy, Ö. F. (2026). \textit{A GPU-Accelerated Stability Atlas for Delayed Neural Networks in Sensor-Driven AI Systems.} \\
+    \textbf{ISTAI 2026 --- 1. Uluslararası Sensör Teknolojileri ve Yapay Zeka Sistemleri Konferansı}, İstanbul Topkapı Üniversitesi Konferans Salonu, İstanbul, Türkiye --- 12--15 Ekim 2026. \\
+    \textit{Kör hakem değerlendirmesi sonucunda \textbf{sözlü sunum} olarak kabul edildi.}
+    \begin{itemize}
+        \item Sensör güdümlü yapay zeka sistemlerinde kullanılan gecikmeli sinir ağlarının (delayed neural networks) kararlılık analizi için GPU hızlandırmalı bir yaklaşım geliştirildi.
+        \item Parametre uzayının taranmasıyla, sistemin kararlı ve kararsız çalışma bölgelerini haritalayan bir ``kararlılık atlası'' oluşturuldu.
+    \end{itemize}
+
+    \item Dalar, Y. E., Aksoy, Ö. F., \textbf{Sezer, N. M.}, Öztürk, A. R., Salihoğlu, F. A. (2026). \textit{UGTC: Uncertainty-Gated Temporal Credit --- A Modular Advantage Estimator for Actor-Critic RL.} \\
+    \textbf{ExWBC: Towards Robust Execution of Long-Horizon Whole-Body Control Tasks} Çalıştayı, \\
+    RSS 2026 --- 22. Robotics: Science and Systems Konferansı, University of Technology Sydney, Sidney, Avustralya --- 13--17 Temmuz 2026. \\
+    \textit{Çift kör hakem değerlendirmesi.} \\
+    Ön baskı: \href{https://doi.org/10.5281/zenodo.19714886}{10.5281/zenodo.19714886}
+    \begin{itemize}
+        \item Aktör-kritik pekiştirmeli öğrenme için, hızlı ve yavaş kritikleri belirsizlik temelli bir kapılama (gating) mekanizmasıyla harmanlayan modüler bir avantaj kestiricisi önerildi.
+        \item Yaklaşım, durum bazında yanlılık--varyans dengesinin ayrı ayrı ayarlanmasına imkân vermekte; mimariye özgü ekleme noktaları üzerinden PPO, TD3, SAC ve DreamerV3 ile doğrudan bütünleşmektedir.
+        \item MuJoCo, Procgen, MetaWorld ML45 ve Crafter ölçütlerinde değerlendirilerek REDQ ve meta-gradyan yöntemleri gibi güçlü temel çizgilere kıyasla örneklem verimliliğinde iyileşme raporlandı.
+        \item Başarısızlık durumları ayrıca incelenerek, yöntemin hangi koşullarda fayda sağlayacağını öngören basit bir ölçüt tanımlandı.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Ön Baskılar (Preprints)}
+\begin{enumerate}[leftmargin=*, itemsep=0.35em, topsep=2pt, start=4]
+    \item \textbf{Sezer, N. M.} (Proje Lideri), Salihoğlu, F. A., Öztürk, A. R., Aksoy, Ö. F., Dalar, Y. E. (2026). \textit{When Training Order Becomes the Algorithm: Endpoint-Induced Collapse and Memorization Without Rule Generalization.} (EpiLang Çalışması). Zenodo. \\
+    DOI: \href{https://doi.org/10.5281/zenodo.21718516}{10.5281/zenodo.21718516} --- Kod: \href{https://github.com/NMSOfficial/EpiLang}{github.com/NMSOfficial/EpiLang}
+    \begin{itemize}
+        \item Sentetik yürütme (execution) görevlerinde toplam doğruluk metriğinin, veri sırasından kaynaklanan kestirme öğrenmeleri (shortcut) nasıl gizlediği incelendi.
+        \item Qwen3.5-0.8B modelinin mod-11 aritmetik görevinde, örneklerin homojen kalıntı bloklarıyla sıralanması durumunda modelin her girdi için tek bir sınıf ürettiği (endpoint-induced collapse) gösterildi.
+        \item Bayt düzeyinde özdeş iki kontrol koşulu (blokların ters çevrilmesi ve kalıntıların iç içe geçirilmesi) ve üç ön kayıtlı (preregistered) eğitim tohumu ile deney yürütüldü.
+        \item Sıralama yanlılığının giderilmesinin eğitim başarımını 176 örnek üzerinden ortalama 106.7 örnek artırdığı, ancak genelleme başarımını iyileştirmediği (-3.3 örnek) tespit edilerek iki farklı başarısızlık kipi birbirinden ayrıştırıldı.
+        \item Örnek sırası, örnekleyici durumu ve epoch bitiş kompozisyonunun dil modeli akıl yürütme çalışmalarında birinci sınıf bilimsel değişkenler olarak ele alınması gerektiği savunuldu.
+        \item Tam yeniden üretilebilirlik eki (reproducibility supplement), kaynak kodu ve SHA-256 doğrulama özetleriyle birlikte açık erişimle yayımlandı.
+    \end{itemize}
+
+    \item \textbf{Sezer, N. M.} (Proje Lideri), Aksoy, Ö. F., Dalar, Y. E., Salihoğlu, F. A., Öztürk, A. R. (2026). \textit{Testing Surprisal as a Compute-Allocation Signal: A Preregistered Long-Horizon Study of Causal Token Routing.} Zenodo. \\
+    DOI: \href{https://doi.org/10.5281/zenodo.21718745}{10.5281/zenodo.21718745} --- Kod: \href{https://github.com/NMSOfficial/surprise-ca}{github.com/NMSOfficial/surprise-ca}
+    \begin{itemize}
+        \item Bayt düzeyinde hibrit dikkat/Mamba-2 mimarisinde, nedensel şaşırtıcılık (causal surprisal) sinyalinin ek hesaplama tahsisi için güvenilir bir ölçüt olup olmadığı ön kayıtlı bir protokolle test edildi.
+        \item Sıklıkla birbirine karıştırılan üç mekanizma ayrıştırıldı: parametresiz sıralayıcı, sonraki parçanın hesaplama bütçesini öngören 705 parametreli ağ ve seçili konumlarda çalışan seyrek bağlamsal iyileştirici.
+        \item Yedi deney kolu, üç eşleştirilmiş sıcak başlangıçtan 50.000 adım boyunca bağımsız olarak eğitildi; toplam 21 uzun ufuklu eğitim koşusu ve 84 tam geliştirme değerlendirmesi gerçekleştirildi.
+        \item Ön kayıtlı 50.000 adım bitiş noktasında beş üstünlük karşılaştırmasının hiçbirinin geçilmediği, öğrenilen bütçe politikasının neredeyse sabit kaldığı raporlandı.
+        \item Kalite ve mekanizma kapılarının ikisi de başarısız olduğu için mühürlü nihai test açılmadı; sonuçlar performans iddiası olarak değil geliştirme kanıtı olarak sunuldu. Negatif sonucun şeffaf raporlanması yoluyla ön kayıt disiplini uygulandı.
+    \end{itemize}
+
+    \item Öztürk, A. R., Dalar, Y. E., \textbf{Sezer, N. M.}, Salihoğlu, F. A. (2026). \textit{NEDOQwen: Diagnosing and Repairing a Turkish-Centric 0.824B Language Model.} Research Square. \\
+    DOI: \href{https://doi.org/10.21203/rs.3.rs-10384535/v1}{10.21203/rs.3.rs-10384535/v1}
+    \begin{itemize}
+        \item 824M parametreli, Türkçe odaklı decoder-only bir dil modelinin düşük maliyetli teşhis ve hedefli onarım süreci üzerine denetlenebilir bir vaka çalışması.
+        \item 600 adımlık onarım aşaması ile TurkishMMLU-sub doğruluğu \%18.11'den \%21.00'a, TUMLU-mini Türkçe doğruluğu \%21.33'ten \%32.22'ye yükseltildi.
+        \item Modelin iç değerlendirme ile dış benchmark performansı arasındaki uyumsuzluğu, tokenizer kapsama sınırlılıklarını ve cevap-etiketi yanlılığını (answer-label bias) ortaya koyan bir iş akışı önerildi.
+    \end{itemize}
+
+    \item Öztürk, A. R., Dalar, Y. E., Aksoy, Ö. F., \textbf{Sezer, N. M.}, Salihoğlu, F. A. (2026). \textit{Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard Negatives, and the Calibration Gap in Small Language Models.} Research Square. \\
+    DOI: \href{https://doi.org/10.21203/rs.3.rs-10331341/v1}{10.21203/rs.3.rs-10331341/v1}
+    \begin{itemize}
+        \item Cümle düzeyinde gelecek-tahmini başlığı ve self-loop hard negative örnekleriyle eğitilmiş DistilGPT-2 ölçeğindeki ForesightLM-v2 modelinde temsil--davranış boşluğu incelendi.
+        \item WikiText-103 üzerinde üç farklı seed ile yürütülen deneyler ve WritingPrompts ikinci alan doğrulaması gerçekleştirildi.
+        \item Sabit havuzlu üretim kontrolleri ile toplam kazanımların büyük kısmının öğrenilen gelecek teriminden değil, çok adaylı anlamsal yeniden sıralamadan (semantic reranking) kaynaklandığı gösterildi.
+    \end{itemize}
+
+\end{enumerate}
+
+\subsection*{İnceleme Aşamasında (Under Review)}
+\begin{enumerate}[leftmargin=*, itemsep=0.35em, topsep=2pt, start=8]
+    \item \textbf{Sezer, N. M.} (Proje Lideri), Aksoy, Ö. F., Öztürk, A. R., Salihoğlu, F. A., Dalar, Y. E. \textit{When Safety Is Not Load-Bearing: Counterfactual Dependability Evaluation of Mandatory-Path Safety Mechanisms in Language Models} (MYCELIUM Çalışması). \\
+    \textbf{IEEE Transactions on Dependable and Secure Computing (TDSC)} --- sunuldu, hakem değerlendirmesi sürüyor (Temmuz 2026).
+    \begin{itemize}
+        \item Dil modellerine entegre edilen güvenlik mekanizmalarının, karşı-olgusal kaldırma (counterfactual removal) ve zorunlu-yol (mandatory-path) entegrasyon testleri altında gerçekten yük taşıyan bileşenler hâline gelip gelmediği incelendi.
+        \item Değerlendirme; toplu eğitim/değerlendirme ölçümleri ve insan hakemliği (human adjudication) süreçleriyle desteklendi.
+        \item Çalışmanın kamuya açık ek materyali, sorumlu yayın ilkeleri gözetilerek Zenodo üzerinden yayımlandı (aşağıya bakınız).
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Veri Setleri ve Araştırma Çıktıları}
+\begin{enumerate}[leftmargin=*, itemsep=0.35em, topsep=2pt, start=9]
+    \item \textbf{Sezer, N. M.} (Proje Lideri), Aksoy, Ö. F., Öztürk, A. R., Salihoğlu, F. A., Dalar, Y. E. (2026). \textit{MYCELIUM TDSC Public-Safe Artifact: Counterfactual Evaluation of Mandatory-Path Safety Mechanisms in Language Models.} Zenodo (Veri Seti). \\
+    DOI: \href{https://doi.org/10.5281/zenodo.21275744}{10.5281/zenodo.21275744} --- Kod: \href{https://github.com/NMSOfficial/mycelium}{github.com/NMSOfficial/mycelium}
+    \begin{itemize}
+        \item Yukarıdaki TDSC çalışmasının kamuya açık ek materyali.
+        \item Arşiv; makale materyali, toplu eğitim/değerlendirme tabloları, insan hakemliği özetleri, manifestolar ve üstveriyi içermektedir.
+        \item Sorumlu yayın ilkesi gereği ham istemler, ham model çıktıları, özel üretim kayıtları ve özel etiketleme paketleri bilinçli olarak hariç tutulmuştur.
+    \end{itemize}
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	DENEYİM
+%----------------------------------------------------------------------------------------
+\section*{Araştırma ve Mesleki Deneyim}
+
+\blueitem{Yapay Zeka Araştırma Stajyeri --- İstanbul Teknik Üniversitesi} \daterange{May 2026 -- Devam Ediyor}\\
+\textit{Uzay Destek Sistemleri Uygulama ve Araştırma Merkezi (UZDES) --- Türkiye Uzay Ajansı (TUA) işbirliğiyle, İstanbul, Türkiye}
+\begin{itemize}
+    \item Türkiye Uzay Ajansı ile yönetimsel düzeyde entegre çalışan ve Milli Uzay Programı'nın ihtiyaçlarına yönelik kurulan UZDES merkezinde, uzay destek sistemleri üzerine araştırma yürütüyorum.
+    \item Merkez; uzay görevlerinin bütününü yöneten komuta-kontrol altyapısının yanı sıra enerji, uzay havası, iletişim, navigasyon ve yapay zeka destek sistemleri üzerine çalışmaktadır.
+    \item Milli Uzay Programı kapsamındaki \textbf{Ay Araştırma Programı} --- Türkiye'nin Ay'a sert iniş görevi --- çalışmalarında görev alıyorum.
+\end{itemize}
+
+\blueitem{Kurucu Ortak \& CTO --- Ethosoft} \daterange{Eyl 2024 -- Devam Ediyor}\\
+\textit{Bilişim Vadisi kayıtlı teknoloji şirketi, İstanbul / Kocaeli, Türkiye --- Beş kurucu ortaktan biri}
+\begin{itemize}
+    \item Kurumsal uygulamalar için veri işleme, model eğitimi ve arayüz (GUI) geliştirme süreçlerini yöneterek uçtan uca yapay zeka işlem hatları (pipeline) tasarladım ve canlıya aldım.
+    \item Röntgen görüntülerinde anormallik tespiti için derin öğrenme modelleri geliştirdim ve bunları gerçek zamanlı çıkarım yapacak şekilde bir mobil uygulamaya entegre ettim.
+    \item Türkçe için tokenizer davranışının denetlenmesi ve kapsama analizine yönelik çalışmalar yürüttüm; bulgular NEDOQwen ön baskısında raporlandı.
+    \item Topluluk etkileşimi ve bilgi paylaşımını teşvik etmek amacıyla akademi ve sanayiden konuşmacıların katıldığı dört büyük yapay zeka etkinliği organize ettim ve ev sahipliği yaptım.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	PROJELER
+%----------------------------------------------------------------------------------------
+\section*{Araştırma Projeleri}
+
+%======================= DİL MODELLERİ =======================
+\subsection*{Dil Modelleri ve Yapay Zeka Metodolojisi}
+
+\blueitem{Gelişmiş Türkçe Büyük Dil Modeli (LLM)} \daterange{2026 -- Devam Ediyor}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Kendi mimarisine sahip bir Türkçe büyük dil modeli için ön-eğitim (pretraining) veri seti derleme, temizleme ve filtreleme işlem hattını tasarlıyorum.
+    \item Mevcut Türkçe tokenizer'lardaki kapsama ve morfolojik hizalama sorunlarını analiz ederek tokenizasyon verimliliğini artırmaya yönelik iyileştirmeler geliştirdim.
+    \item Durum-uzayı (state-space) verimliliğini ve uzun bağlam (long-context) performansını optimize etmek amacıyla Mamba mimarilerinin büyük dil modellerine entegrasyonu üzerine Ar-Ge çalışmaları yürütüyorum.
+\end{itemize}
+
+\blueitem{EEG2Video: Beyin Dalgalarından Video Üretimi} \daterange{2026 -- Devam Ediyor}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Araştırma ve geliştirme amaçlı olarak EMOTIV firmasından EEG başlık sponsorluğu temin ettim.
+    \item İnsan hayal gücünden (beyin dalgalarından) video üretebilen üretken modeller geliştirmek üzere veri toplama protokollerini yürütüyorum.
+    \item Model eğitimi için GPU kümesi (cluster) erişimi sağladım ve sistem mimarisinin tasarımını sürdürüyorum.
+\end{itemize}
+
+%======================= BİYOMEDİKAL =======================
+\subsection*{Biyomedikal Yapay Zeka ve Klinik Karar Destek Sistemleri}
+
+\blueitem{Kardiyomegali Tespiti: Bölütleme Tabanlı KTO Hesaplama ve Hibrit Sınıflandırma} \daterange{2025}\\
+\textit{TEKNOFEST 2025 Uluslararası Sağlıkta Yapay Zeka Yarışması --- Lise Kategorisi} \\
+\textit{Takım: ÇGMPL Neuronauts (Ethosoft ekibinin önceki adı) --- Rol: Model geliştirme, veri işleme ve optimizasyon}
+\begin{itemize}
+    \item Coğrafi ve kurumsal çeşitlilik gösteren beş göğüs radyografi veri seti (PadChest, MIMIC-CXR, CheXpert, VinDr-CXR, ChestX-ray14) birleştirilerek yaklaşık 39.500 görüntülük bir eğitim kümesi oluşturuldu; genellenebilirlik için yalnızca PA projeksiyonlu görüntüler dahil edildi.
+    \item Kardiyotorasik oranın (KTO) otomatik hesaplanması için kalp bölütlemesinde U-Net++ (\%87.26 IoU), akciğer bölütlemesinde ResNet101 omurgalı DeepLabV3+ (sağ \%91.11 / sol \%89.53 IoU) mimarileri eğitildi; maskelere Canny kenar tespiti uygulanarak genişlik oranı hesaplandı.
+    \item TEKNOFEST komitesinin sağladığı 102 görüntülük özel doğrulama setinde \%7.5 SMAPE, \%7.3 MAPE ve 0.42 MAE hata oranlarıyla klinik ölçüm güvenilirliği doğrulandı.
+    \item KTO, sağ/sol kalp alanları, kalp/akciğer alan oranı ve özgün CNN mimarisinden (yaklaşık 3M parametre, \%30 Spatial Dropout, L2 düzenlileştirme) elde edilen olasılık skorundan oluşan beş bileşenli hibrit öznitelik vektörü tasarlandı.
+    \item ChestX-ray14 üzerinden ayrılan dengeli 3.000 görüntülük bağımsız test kümesinde LightGBM sınıflandırıcı ile \textbf{\%91.4 F1 skoru ve \%96 AUC} elde edildi.
+    \item StyleGAN2-ADA ile sentetik veri üretimi, Gamma düzeltimi + CLAHE ön işleme ve Optuna ile 150 denemelik hiperparametre araması uygulanarak her adımın F1 katkısı ayrı ayrı ölçüldü.
+    \item Model kararlarının klinik izlenebilirliği için Grad-CAM ve SHAP analizleri yapıldı; öznitelik katkı sıralaması raporlandı.
+\end{itemize}
+
+\blueitem{Kolonoskopi Görüntülerinden Polip Bölütlemesi} \daterange{2025}\\
+\textit{TEKNOFEST 2025 Uluslararası Sağlıkta Yapay Zeka Yarışması --- Lise Kategorisi} \\
+\textit{Takım: ÇGMPL Neuronauts (Ethosoft ekibinin önceki adı) --- Rol: Model geliştirme, veri işleme ve optimizasyon}
+\begin{itemize}
+    \item 12 açık kaynaklı veri setinden (CVC-ClinicDB, CVC-ColonDB, ETIS, Kvasir-SEG, BKAI-IGH, PolypDB vb.) 23.841 görüntülük birleşik bir külliyat derlendi; elastik deformasyon ile 10.425 görüntü çoğaltılarak veri çeşitliliği artırıldı.
+    \item Görüntüler Base64 ile kodlanıp maskeler Run-Length Encoding ile sıkıştırılarak Raspberry Pi 4 üzerinde çalışan SQLite tabanlı bir veri altyapısı kuruldu; depolama maliyeti düşürülürken erişim hızı korundu.
+    \item Attention U-Net, Gelişmiş Attention U-Net, U-Net++, DeepLabV3+, PVT-Cascade ve SSFormer-S + Patch Refinement Network mimarileri karşılaştırmalı olarak eğitilip değerlendirildi.
+    \item Öğrenme oranı taraması (1e-3 / 1e-4 / 1e-5) ile en uygun değer deneysel olarak belirlendi; U-Net++ mimarisi PolypDB üzerinde \textbf{0.8907 ortalama IoU} ile en yüksek başarımı sağladı.
+    \item Bilateral filtreleme, histogram eşitleme, özgün kombinasyon kayıp fonksiyonu, görüntü veri üreticisi ve CAWR (Cosine Annealing with Warm Restarts) öğrenme oranı çizelgesi projeye özgü katkılar olarak geliştirildi.
+\end{itemize}
+
+\blueitem{Epilepsi Erken Uyarı Sistemi: Giyilebilir Nöbet Tahmin Platformu} \daterange{2025 -- Devam Ediyor}\\
+\textit{Ethosoft --- ODTÜ MEMS Araştırma Grubu işbirliğiyle}
+\begin{itemize}
+    \item Temple University EEG Corpus (TUEG) veri setine resmi erişim hakkı elde edilerek sekiz kanallı EEG kayıtları işlendi ve nöbet sürecinin dört evresi (iktal, preiktal, postiktal, normal) için sınıflandırma problemi tanımlandı.
+    \item Çok Ölçekli Zamansal Özellik Çıkarım Modülü, Kanal Dikkat ve Füzyon Modülü ile Zamansal Bağlam Öğrenme Modülü'nden oluşan hibrit bir mimari tasarlandı; yüksek ve düşük frekans bileşenleri ayrı ayrı değerlendirildi.
+    \item Sistem, nöbeti gerçekleşmeden \textbf{2--5 dakika önce} öngörecek şekilde optimize edildi; EEG sinyalleri 5 saniyelik sekanslar hâlinde işlenmektedir.
+    \item Sekiz elektrotlu giyilebilir EEG kafa bandı, OpenBCI Cyton çipi ve Raspberry Pi tabanlı uç cihaz (edge AI) çıkarım hattı ile uçtan uca donanım mimarisi kuruldu; ODTÜ MEMS ekibiyle donanım geliştirme işbirliği yürütülüyor.
+    \item Flutter ile geliştirilen mobil uygulama gerçek zamanlı risk takibi, ilaç kullanım takibi ve nöbet anında konum bilgisi içeren otomatik SMS bildirimi sağlıyor.
+\end{itemize}
+
+\blueitem{Multimodal EKG ve Klinik Veri Tabanlı Kardiyak Teşhis Sistemi} \daterange{2025}\\
+\textit{Ethosoft --- Biruni Üniversitesi işbirliğiyle}
+\begin{itemize}
+    \item Biruni Üniversitesi'nde klinik veri keşfi ve EKG veri seti toplama çalışması yürüttüm.
+    \item PhysioNet yetkilendirme sürecini tamamlayarak MIMIC-IV veri setine resmi araştırmacı erişimi sağladım.
+    \item Kapsamlı multimodal hasta analizi için MIMIC-IV klinik veri tabanı ile MIMIC-IV-ECG veri setini entegre edip senkronize ettim.
+    \item Klinik performans doğrulamasında \%94.23 Macro F1 skoru elde eden multimodal bir teşhis modeli geliştirdim.
+\end{itemize}
+
+\blueitem{Steteskop Kayıtlarından Kalp Sesi ve Üfürüm Sınıflandırması} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Dijital steteskop ile kaydedilen kalp seslerinin normal, murmur ve üfürüm sınıflarına otomatik ayrıştırılması için bir sinyal işleme ve derin öğrenme hattı geliştirdim.
+    \item Gürültü giderme ve normalizasyon sonrası MFCC (Mel-frekans kepstral katsayıları), RMS enerji ve sıfır geçiş oranı (ZCR) öznitelikleri çıkarılarak zaman ve frekans domeni birlikte analiz edildi.
+    \item Temporal CNN tabanlı mimari ile geleneksel makine öğrenmesi yaklaşımları (SVM, Random Forest) karşılaştırmalı olarak değerlendirildi; doğrulama çapraz-doğrulama (cross-validation) ile yapıldı.
+    \item Nihai model üç sınıflı ayrımda \textbf{\%82 F1} skoruna ulaştı.
+    \item Bluetooth bağlantılı dijital steteskoplarla uyumlu, mobil ve web arayüzü üzerinden erişilebilen bir değerlendirme sistemi tasarlandı.
+\end{itemize}
+
+\blueitem{Ekokardiyografi Görüntülerinden Kalp Yetmezliği Tespiti ve EF Tahmini} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Kalp ultrasonu (ekokardiyografi) görüntülerinden sol ventrikül sınırlarının otomatik belirlenmesi, diyastol ve sistol sonu hacimlerinin hesaplanması ve bu değerlerden ejeksiyon fraksiyonu (EF) tahmini yapılması hedeflendi.
+    \item Çok Ölçekli Görsel Özellik Çıkarım Modülü, Uzamsal Dikkat ve Özellik Füzyon Modülü ile ardışık ultrason karelerindeki kasılma hareketini analiz eden Zamansal Hareket Analizi Modülü'nden oluşan bir mimari tasarlandı.
+    \item Sistem, düşük ve korunmuş EF durumlarını ayırt ederek kalp yetmezliği açısından erken karar desteği sağlamaktadır; nihai model \textbf{\%93 F1} skoruna ulaştı.
+\end{itemize}
+
+\blueitem{OCT ve Fundus Görüntülerinden Çok Sınıflı Göz Hastalığı Teşhisi ve Lokalizasyon} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Mendeley Data başta olmak üzere açık kaynaklı havuzlardan derlenen OCT ve Fundus veri setleriyle \textbf{25'ten fazla göz hastalığının} (glokom, makula dejenerasyonu, diyabetik retinopati, katarakt, retina damar tıkanıklığı vb.) tespitine yönelik modeller geliştirdim.
+    \item Kontrast iyileştirme, Gaussian bulanıklaştırma ve histogram eşitleme adımlarından oluşan bir ön işleme hattı kurdum; dikkat mekanizması ve transfer öğrenme ile CNN tabanlı sınıflandırıcılar eğitildi.
+    \item Doğrulama aşamasında \textbf{\%73 Macro F1} skoru elde eden multimodal bir teşhis modeli geliştirdim.
+    \item Hastalığın gözün hangi bölgesinde bulunduğunu belirlemek üzere Gemini API'nin görüntü işleme yeteneği üzerinden bir \textbf{lokalizasyon prototipi} kuruldu; bu bileşenin niceliksel doğruluğu henüz bağımsız olarak doğrulanmamıştır.
+    \item Standart akıllı telefon kameralarıyla yüksek kaliteli Fundus görüntülemesi sağlayan, saha kullanımı ve acil durum bölgeleri için optimize edilmiş taşınabilir bir teşhis cihazı tasarladım.
+    \item Sistem, PACS ve HBYS klinik bilgi sistemleriyle uyumlu ve otomatik raporlama yapabilen bir platform olarak kurgulandı.
+    \item Proje, EU Code Week Hackathon'da Türkiye ve Avrupa birinciliği ile Jüri Özel Ödülü'nü kazandı.
+\end{itemize}
+
+\blueitem{Kanser Tespiti için Derin Öğrenme Modeli} \daterange{2025}\\
+\textit{Ethosoft --- İstinye Üniversitesi DataMedX Hackathon}
+\begin{itemize}
+    \item Yarışma organizasyonu tarafından sağlanan klinik veri seti üzerinde kanser tespitine yönelik bir sınıflandırma modeli geliştirdim.
+    \item Çalışma, hackathon süresi içinde tamamlanarak birincilik ödülü kazandı.
+\end{itemize}
+
+\blueitem{İğne EMG Sinyallerinden Nöropati ve Miyopati Ayrımı} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Mustapha Pacha Üniversite Hastanesi (Cezayir) Nöroloji Bölümü'nde toplanan ve Mendeley Data üzerinden yayımlanan iğne (intramüsküler) EMG külliyatı kullanıldı; veri seti 191 nöropati/miyopati hastası ve 50 sağlıklı birey olmak üzere 241 katılımcıdan, biceps brachii ve deltoid kaslarının izometrik kasılmaları sırasında kaydedilmiş ham sinyalleri içermektedir.
+    \item Normal, nöropatik ve miyopatik motor ünite aktivitesini üç sınıflı olarak ayrıştıran bir sınıflandırma sistemi geliştirildi.
+\end{itemize}
+
+%======================= BİYOENFORMATİK =======================
+\subsection*{Biyoenformatik ve Hesaplamalı Biyoloji}
+
+\blueitem{G6PD R166H Mutasyonu için Yapay Zeka Destekli İlaç Simülasyon Platformu} \daterange{2025}\\
+\textit{Ethosoft --- TÜBİTAK 2204-A Araştırma Projeleri Yarışması} \\
+\textit{Kod ve veri: \href{https://github.com/NMSOfficial/dockingdemo}{github.com/NMSOfficial/dockingdemo}}
+\begin{itemize}
+    \item Dünya genelinde 400 milyondan fazla kişiyi etkileyen G6PD enzim eksikliğine yol açan, DSÖ sınıf II kategorisindeki R166H (c.497G>A, p.Arg166His) mutasyonu çalışma hedefi olarak seçildi; varyant tanımı ClinVar, yabanıl tip dizi UniProt (P11413) üzerinden elde edildi.
+    \item Yabanıl tip ve mutant G6PD proteinleri \textbf{AlphaFold 3} ile çevrimdışı yerel sunucu üzerinde modellendi; pLDDT ortalaması yabanıl tipte 89.3 iken mutantta 76.4'e düştü ve mutasyon bölgesi çevresinde (160--175 aralığı) lokal kararlılığın 65'in altına indiği gösterilerek yapısal destabilizasyon niceliksel olarak ortaya konuldu.
+    \item DrugCentral kütüphanesindeki 8.000'den fazla bileşik, RDKit ile moleküler ağırlık ve dönebilir bağ sayısı kriterlerine göre filtrelenerek 3.799 moleküle indirgendi; ilaç-benzerliği (drug-likeness) ön elemesi uygulandı.
+    \item GNINA yazılımıyla her iki protein formu için sanal tarama (docking) yapıldı; bağlanma pozları klasik enerji skorlarının yanı sıra CNN tabanlı derin öğrenme skorlarıyla yeniden puanlandı.
+    \item Moleküller yalnızca bağlanma enerjisine göre değil, yabanıl tip ile mutant arasındaki seçicilik farkına ($\Delta\Delta$G) göre de sıralanarak mutant yapıyı stabilize edebilecek \textbf{farmakolojik şaperon} adayları belirlendi.
+    \item Seçicilik ve bağlanma gücü dengesi gözetilerek, klinikte onaylı bir bileşik olan \textbf{asetazolamid} nihai aday olarak seçildi: yabanıl tipe $-4.64$ kcal/mol ile zayıf, mutant forma ise $-7.31$ kcal/mol ile belirgin biçimde güçlü bağlanma sergiledi ($\Delta\Delta$G $= -2.67$ kcal/mol).
+    \item Aday molekülün her iki protein formundaki bağlanma davranışı, 3.5 \AA{} temas eşiği kullanılarak PyMOL ile karşılaştırmalı olarak görselleştirildi.
+    \item Sonuçların incelenebilmesi için protein yapısı, tarama sonuçları ve cep voksellemesini 3B olarak sunan Flask tabanlı etkileşimli bir demo arayüzü geliştirildi.
+    \item Çalışmanın devamında, protein dizilerinden mutasyon varlığını öngören ensemble makine öğrenmesi modeli (\%72 F1) ile 3B yapılar üzerinde çalışan grafik sinir ağı (GNN, \%84 F1) karşılaştırıldı; iki yaklaşımın birleştirildiği \textbf{multimodal model \%94 F1} skoruna ulaşarak her iki tek-modaliteli yaklaşımı da geride bıraktı.
+    \item Kapsamlı akademik teknik rapor hazırlanarak TÜBİTAK'tan yüksek değerlendirme puanı ve resmi onay alındı.
+\end{itemize}
+
+\blueitem{MODY2 Tanısında GCK Gen Mutasyonlarının Yapay Zeka ile Sınıflandırılması} \daterange{2025}\\
+\textit{Ethosoft --- TÜBİTAK 2204-A Araştırma Projeleri Yarışması}
+\begin{itemize}
+    \item Klinik olarak sıklıkla tip 1 veya tip 2 diyabetle karıştırılan MODY2'nin genetik tanısına yönelik olarak, ClinVar ve LOVD veri tabanlarından 317 patojenik ve 39 iyi huylu GCK varyantı derlendi.
+    \item Genetik diziler 3-mer (trinükleotit) k-mer frekans vektörleriyle sayısallaştırıldı; 3-mer temsilinin 4-mer ve 5-mer temsillerine kıyasla daha kararlı sonuç verdiği deneysel olarak gösterildi.
+    \item Belirgin sınıf dengesizliği SMOTE ile giderildi; test kümesi 20 patojenik ve 20 iyi huylu örnekle dengeli biçimde ayrıldı.
+    \item XGBoost, LightGBM, Random Forest, KNN, Lojistik Regresyon, Gradient Boosting, CatBoost ve SVM olmak üzere sekiz sınıflandırıcının birleştirildiği bir Voting Classifier geliştirildi.
+    \item Model, patojenik ve iyi huylu mutasyonları \textbf{\%78.35 doğruluk, 0.7987 ROC AUC ve 0.8313 PR AUC} ile ayırt etti.
+\end{itemize}
+
+%======================= TEMEL BİLİMLER =======================
+\subsection*{Temel Bilimler ve Bilimsel Hesaplama}
+
+\blueitem{Kuantum: Çarpışma Olaylarının Sınıflandırılması ve Dedektör Simülasyon Araç Takımı} \daterange{2026}\\
+\textit{Ethosoft --- Kod: \href{https://github.com/NMSOfficial/kuantum}{github.com/NMSOfficial/kuantum}}
+\begin{itemize}
+    \item Yüksek enerjili çarpışma olaylarını \textbf{Higgs bozonu adayı}, \textbf{karanlık madde imzası} ve \textbf{QCD arka planı} olmak üzere üç sınıfa ayıran bir derin öğrenme sınıflandırıcısı eğitildi.
+    \item Sınıflandırıcı olarak, tablosal veri için tasarlanmış sütun-dikkatli (column attention) bir transformer mimarisi olan TabAttention kullanıldı: 33 sürekli öznitelik, 4 katman, 8 dikkat başlığı, 32 boyutlu gömme ve üç sınıflı çıktı.
+    \item Karanlık madde araştırmasında, dedektörden kaçan parçacıkların bıraktığı \textbf{kayıp enine enerji (MET)} imzasından yararlanıldı; MET geri tepme vektörleri, merkezi ve b-etiketli jetler, prompt foton ve ileri hadronik duşlar gibi analiz nesneleri modellendi.
+    \item Monte Carlo olay üreteci, parametrik dedektör geometrisi ve Geant4 esinli GPU hızlandırmalı parçacık taşınım (transport) yaklaşımı içeren modüler bir simülasyon işlem hattı geliştirildi; katman bazında enerji birikimi hesaplanabilmektedir.
+    \item Gerçek deney geometrilerinin (ATLAS/CMS alt sistemleri) GDML ve ROOT formatlarından içe aktarılmasını sağlayan bir yükleyici yazıldı.
+    \item Tesir kesiti sayımı, taşınım tanılaması ve anomali gözetimi görevlerini üstlenen çok-etmenli (multi-agent) bir analiz paneli tasarlandı.
+    \item PyVista tabanlı gerçek zamanlı 3B görselleştirme, Three.js/WebXR ile bağımsız sanal gerçeklik sahnesi dışa aktarımı ve otomatik \LaTeX{} rapor üretimi modülleri geliştirildi.
+    \item Proje, pytest tabanlı otomatik test paketiyle birlikte açık kaynak olarak yayımlandı.
+\end{itemize}
+
+%======================= UYGULAMALI SİSTEMLER =======================
+\subsection*{Uygulamalı Yapay Zeka Sistemleri ve Platformlar}
+
+\blueitem{Yapay Zeka Destekli Devre Tasarımı} \daterange{2026}\\
+\textit{Ethosoft --- WEROB / RoboCup 2026 Incheon Çalıştayı'nda sunuldu}
+\begin{itemize}
+    \item Elektronik devre tasarımı sürecini yapay zeka desteğiyle otomatikleştiren bir sistem geliştirdim.
+    \item Beş öğrenci üzerinde yürütülen pilot değerlendirmede, sistemin öğrencilerin proje tamamlama ve öğrenme hızını yaklaşık \%40 oranında artırdığı gözlemlendi.
+\end{itemize}
+
+\blueitem{Studium --- Yapay Zeka Destekli Kişisel Öğrenme ve Koçluk Platformu} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Her yıl yaklaşık 2.5 milyon YKS adayının karşılaştığı planlama, rehberlik ve motivasyon sorunlarına yönelik, akademik ve psikolojik süreçleri tek platformda yöneten bir sistem geliştirdim.
+    \item Kişiselleştirilmiş çalışma programı üretimi, deneme sınavı analizi, Pomodoro desteği, YKS puan hesaplama motoru ve yapay zeka destekli üniversite tercih rehberliği modülleri kurgulandı.
+    \item Flutter ile Android, Windows ve web platformları için geliştirildi; Gemini 2.5 Pro entegrasyonu ile özgür yazılım modeli benimsendi.
+    \item Eylül 2025'te prototip, Kasım 2025'te tam sistem tamamlandı; platform geliştirme aşamasını bitirmiş olup henüz kamuya açık olarak yayımlanmamıştır.
+\end{itemize}
+
+\blueitem{Bıdık --- Yapay Zeka Destekli Yönetim Bilişim Sistemi} \daterange{2026 -- Devam Ediyor}\\
+\textit{ETHOS Yapay Zeka Takımı, Pertevniyal Lisesi --- Rol: Geliştirici}
+\begin{itemize}
+    \item Kurumsal toplantılarda otomatik not çıkarma, konuşmadan metne dönüştürme, görev atama ve proje durumu takibi yapabilen entegre bir yapay zeka asistanının geliştirilmesinde görev alıyorum.
+    \item Sistem, uzun süreli kurumsal hafıza ve bağlam takibi üzerine kurgulanmakta olup şirket içi iletişim kopukluklarının azaltılmasını hedeflemektedir.
+    \item Proje ulusal basında yer aldı (Hürriyet, Ocak 2026).
+\end{itemize}
+
+\blueitem{İngilizce Sınavlarının Otomatik Değerlendirilmesi} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Writing, listening, reading ve speaking becerilerinin dördünü birden otomatik puanlayan, mobil ve web üzerinden erişilebilen bir değerlendirme sistemi geliştirdim.
+    \item Yazılı sınavlar, telefon kamerasıyla çekilen el yazısı kâğıtlardan veya doğrudan girilen metinlerden; gramer, kelime dağarcığı, cümle yapısı ve anlam bütünlüğü kriterlerine göre değerlendiriliyor.
+    \item Konuşma sınavında telaffuz, akıcılık ve dil bilgisi kullanımı; dinleme ve okuma sınavlarında ise yapay zeka ile üretilen seviyeye özel içerikler üzerinden değerlendirme yapılıyor.
+    \item Puanlama, öğretmenin tanımladığı ölçütlere göre yapılandırılabilir biçimde tasarlandı.
+\end{itemize}
+
+\blueitem{Siber Zorbalık Tespiti ve Önleme Sistemi} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Çevrimiçi sohbet platformlarında mesajları gönderilmeden önce analiz ederek zorbalık içeriğini tespit eden ve engelleyen bir sistem geliştirdim.
+    \item Sistem yalnızca sözcük eşleştirmesiyle değil, bağlam ve duygu analiziyle çalışarak trolleme, alay etme ve aşağılama gibi örtük zorbalık biçimlerinin yanı sıra etnik, cinsiyet ve din temelli ayrımcı içerikleri de yakalıyor.
+    \item Yinelenen ihlaller için kademeli uyarı mekanizması, ebeveyn bildirim modülü ve kullanıcı geri bildirimiyle model iyileştirme döngüsü tasarlandı.
+    \item Çok dilli destek ile farklı dil ve kültürlerde çalışabilecek biçimde kurgulandı.
+\end{itemize}
+
+\blueitem{Trafik Duyarlı Yakıt Verimli Rota Hesaplama Sistemi} \daterange{2025}\\
+\textit{Ethosoft}
+\begin{itemize}
+    \item Yalnızca mesafeyi değil trafik yoğunluğu, yol tipi, eğim ve araç yakıt tüketim parametrelerini de dikkate alarak enerji verimli rota öneren bir navigasyon sistemi geliştirdim.
+    \item OpenStreetMap, Google Maps API ve Mapbox API kaynaklarından yol ağı ve gerçek zamanlı trafik verisi entegre edildi.
+    \item A* ve Dijkstra algoritmaları, yakıt tüketimi tahmini için Gaussian Mixture Regression modeliyle birleştirildi.
+    \item Flutter ile Android ve iOS için geliştirilen uygulama, gerçek dünya trafik verisiyle test edildi; geleneksel navigasyon uygulamalarına kıyasla daha düşük yakıt tüketimi sağladığı ve trafik yoğunluğu arttıkça avantajın belirginleştiği gözlemlendi.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	YAZILIM
+%----------------------------------------------------------------------------------------
+\section*{Yazılım ve Açık Kaynak Çıktıları}
+\begin{itemize}
+    \item \textbf{EpiLang} --- Sentetik programlama dillerinin geçerli anlambilimini öğrenme ve yürütme üzerine yeniden üretilebilir araştırma kod tabanı. Üreteçler, sözdizimi/anlambilim yorumlayıcıları, değerlendiriciler, değişmez (immutable) deney konfigürasyonları, ön kayıt (preregistration) belgesi, bilimsel denetim raporları ve TRUBA üzerinde yürütülen koşuların Slurm reçeteleri; 88 test dosyası ve üç Apptainer konteyner tanımı. Apache-2.0. \\
+    \href{https://github.com/NMSOfficial/EpiLang}{github.com/NMSOfficial/EpiLang}
+    \item \textbf{surprise-ca} --- Nedensel şaşırtıcılığın uyarlanabilir hesaplamayı yönlendirip yönlendiremeyeceğini sınayan araştırma kod tabanı. NumPy tabanlı araştırma iskeleti, bölütleme ve bellek için sentetik deneyler, çok-tohumlu koşu orkestrasyonu, FLOP muhasebesi ve ölçekleme vekil analizleri; sonuç özetleri ve SHA-256 dosya manifestosuyla birlikte yayımlandı. \\
+    \href{https://github.com/NMSOfficial/surprise-ca}{github.com/NMSOfficial/surprise-ca}
+    \item \textbf{MYCELIUM} --- Bir dil modeli güvenlik mekanizmasının davranışsal olarak yük taşıyıp taşımadığını sınayan, kamuya açık güvenli (public-safe) kod tabanı. Dört düşük ranklı çapa ailesine sahip zorunlu-yol sarmalayıcısı; kaldırma, hatalı yönlendirme, güvenlik ailesi sıfırlama ve temel yol atlatma gibi karşı-olgusal yürütme araçları. Ham istem, model çıktısı ve ağırlıklar sorumlu yayın ilkesi gereği bilinçli olarak hariç tutuldu; köken (provenance) kayıtları ve SHA-256 özetleri dahil edildi. MIT. \\
+    \href{https://github.com/NMSOfficial/mycelium}{github.com/NMSOfficial/mycelium}
+    \item \textbf{kuantum} --- Çarpışma olayı sınıflandırma modeli ve dedektör simülasyon araç takımı. Monte Carlo olay üretimi, GPU hızlandırmalı parçacık taşınımı, GDML/ROOT geometri içe aktarımı, PyVista 3B görselleştirme ve Three.js/WebXR dışa aktarımı. Python, PyTorch. \\
+    \href{https://github.com/NMSOfficial/kuantum}{github.com/NMSOfficial/kuantum}
+    \item \textbf{dockingdemo} --- G6PD farmakolojik şaperon çalışmasının yeniden üretilebilir veri ve görselleştirme paketi. AlphaFold ile üretilmiş yabanıl tip ve R166H mutant yapıları (PDB/CIF), 3.799 molekülün tam GNINA tarama sonuçları ve aday molekül pozları; Flask tabanlı etkileşimli inceleme arayüzü. Python, Flask, Biopython. \\
+    \href{https://github.com/NMSOfficial/dockingdemo}{github.com/NMSOfficial/dockingdemo}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	ÖDÜLLER
+%----------------------------------------------------------------------------------------
+\section*{Ödüller ve Başarılar}
+\begin{itemize}
+    \item \textbf{Avrupa 1.'liği \& Türkiye 1.'liği, Jüri Özel Ödülü} --- EU Code Week Hackathon, 2026. \\
+    Taşınabilir, akıllı telefon entegreli Fundus teşhis cihazı projesi ile.
+    \item \textbf{1.'lik} --- İstinye Üniversitesi DataMedX Hackathon, yarışma tarafından sağlanan veri seti üzerinde geliştirilen kanser tespit modeli ile.
+    \item \textbf{1.'lik} --- Mindbricks Hackathon, Bıdık girişimi ile.
+    \item \textbf{2.'lik} --- Başakşehir Living Lab Yarışması, kardiyomegali tespit sistemi ile.
+    \item \textbf{Türkiye 3.'lüğü \& Lise Kategorisinde Yarışma Tarihindeki En Yüksek Sunum Puanı (resmi kayıt)} --- TEKNOFEST 2025 Uluslararası Sağlıkta Yapay Zeka Yarışması. \\
+    Kardiyomegali tespiti ve kolonoskopi polip bölütlemesi görevlerinde geliştirilen özgün sistemlerle.
+    \item \textbf{Finalist (iki yıl üst üste)} --- Mersin Üniversitesi 14. (2025) ve 15. (2026) Ar-Ge Proje Pazarı, kardiyomegali tespit sistemi ile.
+    \item \textbf{Ücretsiz Ofis / Kuluçka Hakkı} --- Bilişim Vadisi. Üst düzey devlet yetkililerine sunulan yüksek etkili Ar-Ge projeleri neticesinde kazanıldı.
+    \item \textbf{LGS 2024: Türkiye genelinde ilk \%0.74'lük dilim} --- Milli Eğitim Bakanlığı Liselere Geçiş Sınavı.
+    \item \textbf{İOKBS Devlet Bursu} --- Akademik başarı ve gelir kriterine dayalı, ulusal düzeyde yarışmalı burs.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	KONFERANS & SUNUM
+%----------------------------------------------------------------------------------------
+\section*{Konferans, Çalıştay ve Davetli Konuşmalar}
+
+\subsection*{Konferans ve Çalıştay Katılımları}
+\begin{itemize}
+    \item \textbf{RSS 2026 --- 22. Robotics: Science and Systems Konferansı}, University of Technology Sydney, Sidney, Avustralya --- 13--17 Temmuz 2026. \\
+    ExWBC: Towards Robust Execution of Long-Horizon Whole-Body Control Tasks Çalıştayı. \\
+    Kabul edilmiş bildiri: Aktör-kritik pekiştirmeli öğrenme için belirsizlik kapılamalı avantaj kestirimi.
+    \item \textbf{AIMS: AI Measurement Science Workshop}, COLM 2026, San Francisco, ABD --- 9 Ekim 2026. \\
+    Kabul edilmiş bildiri: Açık ağırlıklı dil modellerinde güvenlik ölçümü.
+    \item \textbf{ISTAI 2026 --- 1. Uluslararası Sensör Teknolojileri ve Yapay Zeka Sistemleri Konferansı}, İstanbul Topkapı Üniversitesi, İstanbul, Türkiye --- 12--15 Ekim 2026. \\
+    \textbf{Sözlü sunum:} Sensör güdümlü sistemlerde gecikmeli sinir ağları için GPU hızlandırmalı kararlılık atlası.
+    \item \textbf{WEROB --- RoboCup 2026 Çalıştayı}, Incheon, Güney Kore, 2026. \\
+    Sözlü sunum: Yapay zeka destekli devre tasarımı sistemi.
+\end{itemize}
+
+\subsection*{Davetli Konuşmalar}
+\begin{itemize}
+    \item \textbf{Ataköy Uluslararası Gençlik Merkezi}, İstanbul --- Yapay zeka üzerine davetli sunum.
+    \item \textbf{Tenzile Erdoğan Kız Anadolu İmam Hatip Lisesi}, İstanbul --- TEKNOFEST yarışma süreci ve yapay zeka projeleri üzerine davetli söyleşi.
+\end{itemize}
+
+\subsection*{Etkinlik Organizasyonu}
+\begin{itemize}
+    \item \textbf{``Oyunlar ve Yapay Zeka'' Etkinlik Serisi} --- Ethosoft / Pertevniyal Lisesi, İstanbul. \\
+    Akademi ve sanayiden konuşmacıların ağırlandığı dört etkinliğin organizasyonu ve ev sahipliği. Davetli konuşmacılar:
+    \begin{itemize}
+        \item Doç. Dr. Behçet Uğur Töreyin (İstanbul Teknik Üniversitesi) --- Yapay zekada görüntü işleme.
+        \item Ahmet Arif Türkmen (Trendyol, Doğal Dil İşleme).
+        \item Furkan Ünüvar.
+        \item Google Türkiye'den davetli konuşmacı.
+    \end{itemize}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	BASIN
+%----------------------------------------------------------------------------------------
+\section*{Basında Yer Alma}
+\begin{itemize}
+    \item Çalkap, M. (16 Ocak 2026). \textit{``Geleceğin CEO'su Bıdık''}, Hürriyet Gazetesi. \\
+    Takımın geliştirdiği yapay zeka destekli yönetim bilişim sistemi ile EU Code Week yarışmasındaki Türkiye birinciliği hakkında haber. \\
+    \href{https://www.hurriyet.com.tr/gundem/gelecegin-ceosu-bidik-43085682}{hurriyet.com.tr/gundem/gelecegin-ceosu-bidik-43085682}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	ARAŞTIRMA ALTYAPISI
+%----------------------------------------------------------------------------------------
+\section*{Araştırma Altyapısı, Veri Erişimi ve Sponsorluklar}
+\begin{itemize}
+    \item \textbf{TRUBA (Türk Ulusal Bilim e-Altyapısı)} --- TÜBİTAK ULAKBİM yüksek başarımlı hesaplama (HPC) kaynaklarına araştırmacı erişimi; Kolyoz GPU kümesi dahil model eğitimi ve büyük ölçekli veri işleme.
+    \item \textbf{Temple University EEG Corpus (TUEG)} --- Nöbet tespiti araştırmaları için resmi veri seti erişim izni.
+    \item \textbf{PhysioNet / MIMIC-IV, MIMIC-IV-ECG \& CheXmask} --- Kimlik doğrulamalı araştırmacı yetkilendirmesi ve klinik veri erişimi.
+    \item \textbf{National Institutes of Health (NIH) Veri Tabanları} --- Genomik ve protein dizilim verisi erişimi.
+    \item \textbf{Klinik ve Biyomedikal Görüntü Külliyatları} --- PadChest, CheXpert, VinDr-CXR, ChestX-ray14 (göğüs radyografisi); CVC-ClinicDB, Kvasir-SEG, BKAI-IGH, PolypDB (kolonoskopi); Mendeley Data (OCT ve Fundus).
+    \item \textbf{Genetik ve Kimyasal Veri Tabanları} --- ClinVar, LOVD, UniProt, DrugCentral, DrugBank.
+    \item \textbf{CERN Açık Veri} --- Proton--proton çarpışma veri setleri ve Monte Carlo simülasyon külliyatları.
+    \item \textbf{EMOTIV} --- EEG başlık donanım sponsorluğu (EEG2Video projesi için).
+    \item \textbf{Asırlık Okullar Vakfı} --- RoboCup 2026 Incheon (Güney Kore) katılımı için uluslararası seyahat ve ulaşım desteği.
+    \item \textbf{Bilişim Vadisi} --- Ar-Ge projeleri karşılığında kazanılan ücretsiz ofis ve kuluçka desteği.
+    \item \textbf{Özel GPU Kümesi} --- Büyük dil modeli ve üretken model eğitimi için temin edilen hesaplama kaynağı.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	İŞBİRLİKLERİ
+%----------------------------------------------------------------------------------------
+\section*{Kurumsal İşbirlikleri}
+\begin{itemize}
+    \item \textbf{İstanbul Teknik Üniversitesi UZDES Merkezi \& Türkiye Uzay Ajansı (TUA)} --- Milli Uzay Programı kapsamında uzay destek sistemleri araştırması.
+    \item \textbf{ODTÜ MEMS Araştırma Grubu} --- Giyilebilir EEG sinyal alım cihazı geliştirilmesi.
+    \item \textbf{Biruni Üniversitesi} --- Klinik EKG veri toplama ve keşif çalışması.
+    \item \textbf{TRUBA / TÜBİTAK ULAKBİM} --- Yüksek başarımlı hesaplama kaynakları.
+    \item \textbf{Bilişim Vadisi} --- Ar-Ge ve kuluçka ortaklığı.
+    \item \textbf{Asırlık Okullar Vakfı} --- Uluslararası konferans katılımı desteği.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	YETKİNLİKLER
+%----------------------------------------------------------------------------------------
+\section*{Teknik Yetkinlikler}
+\begin{itemize}
+    \item \textbf{Programlama Dilleri:} Python, C/C++, CUDA, Dart
+    \item \textbf{Derin Öğrenme Çerçeveleri:} PyTorch, TensorFlow/Keras, JAX, Hugging Face Transformers
+    \item \textbf{Model Mimarileri:} Transformer, Mamba / Durum-Uzayı Modelleri (SSM), U-Net++, DeepLabV3+, Attention U-Net, Vision Transformer, Grafik Sinir Ağları (GNN), Temporal CNN, hibrit multimodal mimariler
+    \item \textbf{Klasik Makine Öğrenmesi:} scikit-learn, LightGBM, XGBoost, CatBoost, topluluk (ensemble) ve Voting/Stacking yöntemleri, Optuna ile hiperparametre optimizasyonu
+    \item \textbf{Sinyal ve Görüntü İşleme:} OpenCV, MFCC/ZCR öznitelik çıkarımı, EEG/EKG/EMG ön işleme, CLAHE, histogram eşitleme, elastik deformasyon
+    \item \textbf{Biyoenformatik:} AlphaFold 3, GNINA (moleküler docking), RDKit, k-mer dizi temsili, SMOTE
+    \item \textbf{Açıklanabilirlik:} SHAP, Grad-CAM
+    \item \textbf{Optimizasyon ve Dağıtım:} TensorRT, model kuantizasyonu, düşük gecikmeli çıkarım, uç cihaz (edge) dağıtımı
+    \item \textbf{Altyapı ve Araçlar:} Linux (Ubuntu), SLURM / HPC iş yönetimi, Git, Docker, SQLite, Raspberry Pi, OpenBCI Cyton, Flutter (Android/iOS/web)
+    \item \textbf{Araştırma Metodolojisi:} Ön kayıtlı (preregistered) deney tasarımı, eşleştirilmiş/çok-tohumlu (multi-seed) deney protokolleri, ablasyon ve karşı-olgusal kontroller, yeniden üretilebilirlik paketleme (SHA-256 manifest, kaynak arşivi), mühürlü test seti disiplini
+    \item \textbf{Uzmanlık Alanları:} Çekişmeli Makine Öğrenmesi (Adversarial ML), Model Sağlamlığı (Robustness), Yapay Zeka Güvenliği, Biyomedikal Sinyal İşleme, Model Değerlendirme ve Benchmark Denetimi
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	DİLLER & SERTİFİKALAR
+%----------------------------------------------------------------------------------------
+\section*{Diller ve Sertifikalar}
+\begin{itemize}
+    \item \textbf{Türkçe} --- Anadil
+    \item \textbf{İngilizce} --- İleri düzey. Duolingo English Test: \textbf{129 / 160} (Haziran 2026).
+    \item \textbf{Almanca} --- Başlangıç (A1 düzeyi, öz-değerlendirme)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	ÜYELİKLER & İLGİ ALANLARI
+%----------------------------------------------------------------------------------------
+\section*{Üyelikler ve Ders Dışı Etkinlikler}
+\begin{itemize}
+    \item \textbf{ETHOS Yapay Zeka Takımı}, Pertevniyal Lisesi --- Üye, 2025 -- Devam Ediyor.
+    \item \textbf{PertevRota Doğa Sporları Kulübü}, Pertevniyal Lisesi --- Üye.
+    \item \textbf{Yüzme} --- Arnavutköy yerel yüzme yarışması, 2.'lik derecesi (2018).
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	REFERANSLAR
+%----------------------------------------------------------------------------------------
+\section*{Referanslar}
+\begin{itemize}
+    \item \textbf{Prof. Dr. Behçet Uğur Töreyin} --- İstanbul Teknik Üniversitesi, Bilişim Enstitüsü ve Yapay Zeka \& Veri Mühendisliği Bölümü. Hesaplamalı Zeka için İşaret İşleme (SPaCI) Araştırma Grubu Kurucusu ve Yöneticisi.
+    \item \textbf{Doç. Dr. Cihan Topal} --- İstanbul Teknik Üniversitesi, Yapay Zeka \& Veri Mühendisliği Bölümü. Visea Innovative kurucusu.
+    \item \textbf{Dr. Öğr. Üyesi Yusuf Hüseyin Şahin} --- İstanbul Teknik Üniversitesi, Bilgisayar Mühendisliği Bölümü.
+    \item \textbf{Remzi Öz} --- Danışman Öğretmen, Pertevniyal Lisesi.
+\end{itemize}
+
+\vspace{0.3em}
+\textit{İletişim bilgileri istek üzerine sunulur.}
+
+\end{document}

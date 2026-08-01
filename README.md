@@ -24,6 +24,7 @@ Research archive pages are static multi-page Vite entries:
 - `papers/index.html` — publication index
 - `works/index.html` — projects, prototypes, and open research releases
 - `works/<slug>/index.html` — generated, crawlable project detail pages
+- `/works/source/` — original project briefs, reports, presentations, images, and supporting files
 - `models/index.html` and `experiments/index.html` — legacy redirects to Works
 - `models/<slug>/index.html` — crawlable model and adapter landing pages
 - `experiments/<slug>/index.html` — crawlable experiment landing pages

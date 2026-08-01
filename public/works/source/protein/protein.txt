@@ -1,0 +1,3 @@
+**Protein İlaç Etkileşimi Araştırması | TÜBİTAK 2204-A**
+
+Bu projede, NIH bünyesindeki NCBI veri tabanından alınan insanlara ait cDNA ve protein dizileri AlphaFold ile üç boyutlu yapılara dönüştürülmüş; bu yapılarla eğitilen GNN modeli, protein dizilerinden mutasyon varlığını tespit eden XGBoost ve ensemble tabanlı makine öğrenmesi modeliyle karşılaştırılmıştır. Ardından iki yaklaşım birleştirilerek multimodal bir model geliştirilmiş ve F1 skorları makine öğrenmesi için %72, GNN için %84, multimodal model için ise %94 olarak ölçülmüştür. Ayrıca mutant proteinlerin DrugBank’teki ilaçlarla etkileşimleri GNINA kullanılarak analiz edilerek bazı ilaçların protein yapı ve işlevlerini normal hâline yaklaştırma potansiyeli araştırılmıştır.
