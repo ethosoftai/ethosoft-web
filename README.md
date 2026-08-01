@@ -22,12 +22,13 @@ Content lives in `src/data.ts`, the interface in `src/App.tsx`, and styles in `s
 Research archive pages are static multi-page Vite entries:
 
 - `papers/index.html` — publication index
-- `models/index.html` — models and adapters index
-- `experiments/index.html` — experiments and benchmarks index
+- `works/index.html` — projects, prototypes, and open research releases
+- `models/index.html` and `experiments/index.html` — legacy redirects to Works
 - `models/<slug>/index.html` — crawlable model and adapter landing pages
 - `experiments/<slug>/index.html` — crawlable experiment landing pages
 - `papers/<slug>/index.html` — crawlable publication landing pages
 - `src/papers.css` — research archive styles
+- `src/works.css` — project archive styles
 
 Each paper page should include a visible abstract, DOI and author metadata, Scholar-compatible `citation_*` tags, and `ScholarlyArticle` JSON-LD. Update `public/sitemap.xml` and `public/llms.txt` whenever a publication is added.
 

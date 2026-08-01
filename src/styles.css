@@ -632,6 +632,12 @@ img {
   gap: 14px;
 }
 
+.section-cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
 .project-card {
   position: relative;
   min-height: 390px;
@@ -1006,7 +1012,7 @@ img {
   max-width: 980px;
   margin: 0 0 48px 104px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 

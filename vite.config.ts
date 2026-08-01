@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: "index.html",
         papers: "papers/index.html",
+        works: "works/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",
         experiments: "experiments/index.html",

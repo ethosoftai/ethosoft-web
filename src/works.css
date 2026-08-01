@@ -1,0 +1,228 @@
+.works-body {
+  background:
+    radial-gradient(circle at 100% 28%, rgba(230, 206, 154, 0.13), transparent 24%),
+    var(--paper);
+}
+
+.works-hero h1 {
+  max-width: 980px;
+}
+
+.works-intro {
+  padding-block: clamp(64px, 9vw, 108px);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 8vw, 110px);
+  border-bottom: 1px solid var(--line);
+}
+
+.works-intro h2 {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.works-intro-copy > p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.works-jump-links {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.works-jump-links a {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 254, 250, 0.62);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.works-jump-links a:hover,
+.works-jump-links a:focus-visible {
+  border-color: var(--salmon);
+  color: var(--salmon-dark);
+}
+
+.works-section {
+  padding-block: clamp(76px, 10vw, 130px);
+  scroll-margin-top: 86px;
+}
+
+.works-section + .works-section {
+  border-top: 1px solid var(--line);
+}
+
+.works-grid,
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.work-record,
+.release-work-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(26px, 4vw, 42px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 254, 250, 0.8);
+  box-shadow: 0 20px 60px rgba(64, 44, 31, 0.06);
+  scroll-margin-top: 104px;
+}
+
+.work-record::after {
+  content: attr(data-work-number);
+  position: absolute;
+  right: 18px;
+  top: 8px;
+  color: rgba(221, 118, 94, 0.08);
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(4.4rem, 10vw, 7.5rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.work-record > *,
+.release-work-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 13px;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.work-record h3,
+.release-work-card h3,
+.competition-note h3 {
+  margin: 25px 0 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.work-summary,
+.release-work-card > p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.work-facts {
+  margin: 28px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.work-facts > div {
+  padding-block: 15px;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.work-facts dt {
+  color: var(--ink);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.work-facts dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.work-evidence {
+  margin: 24px 0 0;
+  padding: 16px 17px;
+  border-left: 3px solid var(--salmon);
+  border-radius: 0 12px 12px 0;
+  background: var(--salmon-soft);
+  color: #5d3c32;
+  font-size: 0.77rem;
+}
+
+.work-evidence strong {
+  color: var(--salmon-dark);
+}
+
+.work-record-wide {
+  max-width: 900px;
+}
+
+.competition-note {
+  margin-top: 22px;
+  padding: clamp(28px, 5vw, 52px);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 90% 15%, rgba(221, 118, 94, 0.22), transparent 28%),
+    var(--ink);
+  color: var(--white);
+}
+
+.competition-note h3 {
+  margin-top: 0;
+}
+
+.competition-note p:last-child {
+  max-width: 830px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.release-work-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.release-work-card .paper-card-link {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+@media (max-width: 860px) {
+  .works-intro,
+  .works-grid,
+  .release-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-record-wide {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .works-intro {
+    padding-inline: 0;
+  }
+
+  .work-facts > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

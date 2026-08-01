@@ -37,7 +37,7 @@ export type ResearchRelease = {
 
 export const navigation = [
   { label: "Research", href: "#research" },
-  { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "/works/" },
   { label: "Approach", href: "#approach" },
   { label: "Team", href: "#team" },
   { label: "Achievements", href: "#achievements" },
@@ -105,68 +105,68 @@ export const researchReleases: ResearchRelease[] = [
 
 export const projects: Project[] = [
   {
-    id: "eeg2video",
-    title: "EEG2Video",
+    id: "epilepsy-early-warning",
+    title: "Epilepsy Early-Warning System",
     description:
-      "A research project that uses artificial intelligence to transform imagined sequences captured through EEG signals into video.",
-    category: "Core AI",
-    focus: ["EEG", "Generative AI", "Multimodal learning"],
-  },
-  {
-    id: "epilepsi",
-    title: "Early Epilepsy Detection",
-    description:
-      "An early detection and warning system that analyzes EEG signals to identify patterns preceding epileptic seizures.",
+      "A wearable-to-edge prototype for classifying four EEG states and exploring pre-seizure alerts with an eight-channel signal pipeline.",
     category: "Healthcare",
-    focus: ["Biosignals", "Early warning", "Decision support"],
+    focus: ["TUH EEG", "Edge AI", "Wearable sensing"],
   },
   {
-    id: "protein",
-    title: "Protein Mutation Analysis",
+    id: "cardiomegaly-screening",
+    title: "Explainable Cardiomegaly Screening",
     description:
-      "A multimodal AI system that analyzes how protein mutations contribute to disease.",
+      "A chest X-ray pipeline combining heart and lung segmentation, cardiothoracic measurements, CNN evidence, and a LightGBM classifier.",
     category: "Healthcare",
-    focus: ["Bioinformatics", "Multimodal AI", "Risk analysis"],
+    focus: ["Chest X-ray", "Segmentation", "Explainable AI"],
   },
   {
-    id: "kalp",
-    title: "Heart Disease Diagnosis",
+    id: "polyp-segmentation",
+    title: "Colonoscopy Polyp Segmentation",
     description:
-      "A decision-support system that automatically detects more than ten heart conditions using clinical data and ECG signals.",
+      "A multi-dataset segmentation study evaluating U-Net-family architectures, augmentation choices, and cross-dataset behavior on colonoscopy images.",
     category: "Healthcare",
-    focus: ["ECG", "Clinical data", "Classification"],
+    focus: ["Colonoscopy", "U-Net++", "Dataset shift"],
   },
   {
-    id: "goz",
-    title: "Eye Disease Detection",
+    id: "protein-mutation-screening",
+    title: "Protein Mutation and Drug Screening",
     description:
-      "A system that classifies twenty eye conditions and detects lesions from fundus and OCT images.",
+      "Linked protein-mutation modeling and virtual-screening studies, including a focused R166H G6PD analysis across 3,799 filtered molecules.",
     category: "Healthcare",
-    focus: ["Medical imaging", "OCT", "Lesion detection"],
+    focus: ["AlphaFold", "Graph neural networks", "GNINA"],
   },
   {
-    id: "gogus",
-    title: "Chest X-Ray Analysis",
+    id: "mody2-variant-classification",
+    title: "MODY2 Variant Classification",
     description:
-      "Disease detection, localization, and automated radiology report generation from chest X-ray images.",
+      "An exploratory GCK-variant classification study using 3-mer sequence encoding, class balancing, and a voting ensemble.",
     category: "Healthcare",
-    focus: ["Radiology", "Localization", "Reporting"],
+    focus: ["GCK variants", "3-mer encoding", "Ensemble learning"],
   },
   {
-    id: "beyin",
-    title: "Multimodal Brain Analysis",
+    id: "eye-disease-imaging",
+    title: "Fundus and OCT Eye Analysis",
     description:
-      "A system designed to reliably detect neurological conditions by jointly evaluating MRI, CT, and EEG modalities.",
+      "A medical-imaging concept for classifying and localizing findings across fundus photography and OCT scans.",
     category: "Healthcare",
-    focus: ["MRI", "CT", "EEG"],
+    focus: ["Fundus", "OCT", "Lesion localization"],
   },
   {
-    id: "solvio",
-    title: "Solvio",
+    id: "english-exam-evaluation",
+    title: "AI English Exam Evaluation",
     description:
-      "An education platform that automatically evaluates English exams and provides students with personalized feedback.",
+      "A teacher-configurable assessment prototype for writing, listening, reading, and speaking feedback with photographed-paper input.",
     category: "Education",
-    focus: ["NLP", "Assessment", "Personalization"],
+    focus: ["Rubric scoring", "Multimodal input", "Feedback"],
+  },
+  {
+    id: "studium-coach",
+    title: "Studium AI Study Coach",
+    description:
+      "A cross-platform YKS study companion combining planning, practice analysis, motivation, Pomodoro sessions, and guidance tools.",
+    category: "Education",
+    focus: ["Flutter", "Gemini", "Personalized planning"],
   },
 ];
 

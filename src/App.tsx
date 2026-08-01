@@ -145,7 +145,7 @@ function Hero() {
             engineering rigor, and human values to the same table.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#projects">
+            <a className="button button-primary" href="/works/">
               Explore our projects <ArrowRight size={18} />
             </a>
             <a className="button button-secondary" href="#contact">
@@ -267,8 +267,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <span key={item}>{item}</span>
           ))}
         </div>
-        <a className="button button-primary" href="mailto:merhaba@ethosoft.org">
-          Discuss this project <Mail size={17} />
+        <a className="button button-primary" href={`/works/#${project.id}`}>
+          Read the project record <ArrowUpRight size={17} />
         </a>
       </div>
     </div>
@@ -294,7 +294,7 @@ function Projects() {
         index="01"
         kicker="Focus areas"
         title="AI built for real-world problems."
-        description="Our research and product areas span biosignals, medical imaging, generative AI, and personalized education."
+        description="A selection from our documented research and product work. The complete archive separates prototypes, exploratory studies, and reported results."
       />
 
       <div className="filter-bar" role="group" aria-label="Filter projects by category">
@@ -329,6 +329,12 @@ function Projects() {
             </article>
           );
         })}
+      </div>
+
+      <div className="section-cta">
+        <a className="button button-primary" href="/works/">
+          Explore all project records <ArrowRight size={18} />
+        </a>
       </div>
 
       {selectedProject && (
@@ -403,8 +409,8 @@ function ResearchSpotlight() {
   );
   const researchCardLabels = [
     "Publications",
-    ...(model ? ["Models and adapters"] : []),
-    ...(experiment ? ["Experiments and benchmarks"] : []),
+    ...(model ? ["Open model release"] : []),
+    ...(experiment ? ["Open experiment"] : []),
   ];
 
   useEffect(() => {
@@ -464,7 +470,7 @@ function ResearchSpotlight() {
         index="02"
         kicker="Open research"
         title="Open research, built to be examined."
-        description="Explore our papers, open-source prototypes, benchmark datasets, controlled experiments, and the evidence behind the systems we build."
+        description="Papers have their own publication archive. Projects, prototypes, models, benchmarks, and ongoing systems are documented separately in Works."
       />
 
       <nav className="research-section-cards" aria-label="Open research sections">
@@ -479,25 +485,14 @@ function ResearchSpotlight() {
           </span>
           <ArrowUpRight aria-hidden="true" />
         </a>
-        <a className="research-section-card" href="/models/">
+        <a className="research-section-card" href="/works/">
           <span className="research-section-card-icon" aria-hidden="true">
             <BrainCircuit />
           </span>
           <span className="research-section-card-copy">
             <small>02</small>
-            <strong>Models &amp; adapters</strong>
-            <span>Weights, adapters &amp; local formats</span>
-          </span>
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-        <a className="research-section-card" href="/experiments/">
-          <span className="research-section-card-icon" aria-hidden="true">
-            <Database />
-          </span>
-          <span className="research-section-card-copy">
-            <small>03</small>
-            <strong>Experiments</strong>
-            <span>Benchmarks, datasets &amp; prototypes</span>
+            <strong>Works</strong>
+            <span>Projects, prototypes &amp; open releases</span>
           </span>
           <ArrowUpRight aria-hidden="true" />
         </a>
@@ -552,18 +547,22 @@ function ResearchSpotlight() {
 
         {model && (
           <section className="research-card-column" aria-labelledby="models-card-title">
-            <a id="models-card-title" className="research-card-category" href="/models/">
+            <a
+              id="models-card-title"
+              className="research-card-category"
+              href="/models/qwen3-research-reasoning-json-rl/"
+            >
               <span>
-                <strong>Models &amp; adapters</strong>
-                <small>Weights, adapters &amp; local formats</small>
+                <strong>Open model release</strong>
+                <small>Research reasoning adapter</small>
               </span>
               <ArrowRight aria-hidden="true" />
             </a>
             <ResearchReleaseCard
               release={model}
               index={0}
-              cardHref="/models/"
-              cardLabel="Browse models and adapters"
+              cardHref="/models/qwen3-research-reasoning-json-rl/"
+              cardLabel="Read the Qwen3 research reasoning release"
             />
           </section>
         )}
@@ -573,19 +572,19 @@ function ResearchSpotlight() {
             <a
               id="experiments-card-title"
               className="research-card-category"
-              href="/experiments/"
+              href="/experiments/risk-routed-heterogeneous-kv-memory/"
             >
               <span>
-                <strong>Experiments &amp; benchmarks</strong>
-                <small>Code, datasets &amp; prototypes</small>
+                <strong>Open experiment</strong>
+                <small>KV memory and exact recall</small>
               </span>
               <ArrowRight aria-hidden="true" />
             </a>
             <ResearchReleaseCard
               release={experiment}
               index={0}
-              cardHref="/experiments/"
-              cardLabel="Browse experiments and benchmarks"
+              cardHref="/experiments/risk-routed-heterogeneous-kv-memory/"
+              cardLabel="Read the risk-routed KV memory experiment"
             />
           </section>
         )}
