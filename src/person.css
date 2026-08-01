@@ -79,6 +79,10 @@
   align-items: start;
 }
 
+.person-layout > * {
+  min-width: 0;
+}
+
 .person-section {
   padding-block: 56px;
   border-bottom: 1px solid var(--line);
