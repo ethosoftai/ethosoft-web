@@ -39,6 +39,7 @@ export default defineConfig({
         surprisePaper: "papers/surprise/index.html",
         personAhmet: "person/ahmet-rifat-ozturk/index.html",
         personYagiz: "person/yagiz-ekrem-dalar/index.html",
+        personNedim: "person/nedim-mutlu-sezer/index.html",
       },
     },
   },

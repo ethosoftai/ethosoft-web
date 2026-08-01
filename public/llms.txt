@@ -52,6 +52,7 @@
 
 - [Ahmet Rıfat Öztürk](https://ethosoft.org/person/ahmet-rifat-ozturk/): Ethosoft strategy lead, co-founder, and AI/data engineer working on Turkish NLP, small language models, medical AI, and robotics.
 - [Yağız Ekrem Dalar](https://ethosoft.org/person/yagiz-ekrem-dalar/): Ethosoft communications lead, AI researcher, and data engineer working on multimodal AI, reinforcement learning, Turkish NLP, and reproducible systems.
+- [Nedim Mutlu Sezer](https://ethosoft.org/person/nedim-mutlu-sezer/): Ethosoft co-founder and CTO, AI researcher, and project lead working on model evaluation, Turkish language models, biomedical AI, multimodal learning, and high-performance scientific computing.
 
 ## External research profiles
 

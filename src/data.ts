@@ -162,6 +162,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "nedim",
+    profile: "/person/nedim-mutlu-sezer/",
     name: "Nedim Mutlu Sezer",
     role: "Technology Lead, AI & Data Engineer",
     email: "nedim@ethosoft.org",
