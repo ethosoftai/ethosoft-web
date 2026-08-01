@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npm run generate:works && vite",
     "generate:works": "node scripts/generate-work-pages.mjs",
-    "build": "npm run generate:works && tsc -b && vite build",
+    "generate:people": "node scripts/inject-person-sources.mjs",
+    "build": "npm run generate:works && npm run generate:people && tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false"
   },
