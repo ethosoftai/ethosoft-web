@@ -31,6 +31,7 @@ export default defineConfig({
         lunarImageEnhancementWork: "works/lunar-image-enhancement/index.html",
         nedoTokenizerWork: "works/nedotokenizer/index.html",
         apps: "apps/index.html",
+        conferencesWorkshops: "conferences-workshops/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",
         experiments: "experiments/index.html",

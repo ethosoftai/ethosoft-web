@@ -386,6 +386,17 @@ function ResearchSpotlight() {
           </span>
           <ArrowUpRight aria-hidden="true" />
         </a>
+        <a className="research-section-card" href="/conferences-workshops/">
+          <span className="research-section-card-icon" aria-hidden="true">
+            <Trophy />
+          </span>
+          <span className="research-section-card-copy">
+            <small>04</small>
+            <strong>Conferences</strong>
+            <span>International events &amp; competitions</span>
+          </span>
+          <ArrowUpRight aria-hidden="true" />
+        </a>
       </nav>
 
       <div className="research-cards-slider research-cards-single" aria-label="Featured paper">
