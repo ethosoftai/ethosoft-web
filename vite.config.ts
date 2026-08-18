@@ -33,6 +33,7 @@ export default defineConfig({
         apps: "apps/index.html",
         conferencesWorkshops: "conferences-workshops/index.html",
         confSouthKorea: "conferences-workshops/south-korea/index.html",
+        confColm: "conferences-workshops/colm/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",
         experiments: "experiments/index.html",
