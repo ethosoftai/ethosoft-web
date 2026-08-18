@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run generate:works && vite",
+    "dev": "npm run generate:works && npm run generate:conferences && vite",
     "generate:works": "node scripts/generate-work-pages.mjs",
+    "generate:conferences": "node scripts/generate-conference-pages.mjs",
     "generate:people": "node scripts/inject-person-sources.mjs",
-    "build": "npm run generate:works && npm run generate:people && tsc -b && vite build",
+    "build": "npm run generate:works && npm run generate:conferences && npm run generate:people && tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false"
   },
