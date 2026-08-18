@@ -29,6 +29,7 @@ export default defineConfig({
         musicScoringWork: "works/ai-music-scoring/index.html",
         dartRiftWork: "works/dart-rift/index.html",
         lunarImageEnhancementWork: "works/lunar-image-enhancement/index.html",
+        nedoTokenizerWork: "works/nedotokenizer/index.html",
         apps: "apps/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",

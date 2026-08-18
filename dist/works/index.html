@@ -42,7 +42,7 @@
         },
         "mainEntity": {
           "@type": "ItemList",
-        "numberOfItems": 19,
+        "numberOfItems": 20,
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "url": "https://ethosoft.org/works/epilepsy-early-warning-system/", "name": "Epilepsy Early-Warning System" },
             { "@type": "ListItem", "position": 2, "url": "https://ethosoft.org/works/explainable-cardiomegaly-screening/", "name": "Explainable Cardiomegaly Screening" },
@@ -63,6 +63,7 @@
             ,{ "@type": "ListItem", "position": 17, "url": "https://ethosoft.org/works/ai-music-scoring/", "name": "AI Music Scoring" }
             ,{ "@type": "ListItem", "position": 18, "url": "https://ethosoft.org/works/dart-rift/", "name": "DART-RIFT" }
             ,{ "@type": "ListItem", "position": 19, "url": "https://ethosoft.org/works/lunar-image-enhancement/", "name": "Lunar Image Enhancement" }
+            ,{ "@type": "ListItem", "position": 20, "url": "https://ethosoft.org/works/nedotokenizer/", "name": "NEDO Turkish Tokenizer" }
           ]
         }
       }
@@ -100,7 +101,7 @@
             by their project records.
           </p>
           <div class="archive-stats" aria-label="Works archive statistics">
-            <span><strong>17</strong> project records</span>
+            <span><strong>18</strong> project records</span>
             <span><strong>2</strong> open research releases</span>
             <span><strong>4</strong> focus areas</span>
           </div>
@@ -372,6 +373,19 @@
             <div><dt>Public repositories</dt><dd><a href="https://github.com/ethosoftai/SA-GAN">GitHub: ethosoftai/SA-GAN</a> · <a href="https://github.com/Ahmet2001/TUA">GitHub: Ahmet2001/TUA</a></dd></div>
           </dl>
           <p class="work-evidence"><strong>Evidence boundary:</strong> this is an active work-in-progress research project. The repositories document architecture, data preparation, and training infrastructure; a completed quantitative evaluation (e.g. PSNR/SSIM against held-out lunar terrain) is not yet published.</p>
+        </article>
+        <article id="nedo-tokenizer" class="work-record" data-work-number="18">
+          <div class="work-meta"><span class="paper-status">Open research · Work in progress</span><span>Turkish NLP · Tokenization</span></div>
+          <h3><a href="/works/nedotokenizer/">NEDO Turkish Tokenizer</a></h3>
+          <p class="work-summary">A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family.</p>
+          <dl class="work-facts">
+            <div><dt>Approach</dt><dd>Combines Turkish dictionary resources, morphological segmentation, and more than 260 Turkish suffix patterns with vocabulary design aimed at preserving morphological integrity rather than treating agglutinative word forms as arbitrary character spans.</dd></div>
+            <div><dt>First deployment</dt><dd>Used as the tokenizer for <a href="/papers/nedoqwen/">NEDOQwen 0.8B</a>, where tokenizer scope and model evaluation behavior were studied together.</dd></div>
+            <div><dt>Roadmap</dt><dd>A comparative benchmark against other tokenizers is in preparation, covering tokenization efficiency, morphological-boundary preservation, tokens-per-word cost, segmentation behavior, and downstream LLM training impact.</dd></div>
+            <div><dt>Program context</dt><dd>NEDO is the first layer of the Mercan model family's planned pipeline: tokenizer → pretraining corpus → SFT/reasoning data → training pipeline → Turkish base models.</dd></div>
+            <div><dt>Public release</dt><dd><a href="https://huggingface.co/Ethosoft/NedoTurkishTokenizer">Hugging Face: Ethosoft/NedoTurkishTokenizer</a></dd></div>
+          </dl>
+          <p class="work-evidence"><strong>Evidence boundary:</strong> the tokenizer and its morphological ruleset are released; a completed, published benchmark against comparison tokenizers is still in preparation and not yet part of this record.</p>
         </article>
         </div>
       </section>

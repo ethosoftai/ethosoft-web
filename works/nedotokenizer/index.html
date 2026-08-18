@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta name="description" content="A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ethosoft.org/works/nedotokenizer/" />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ethosoft" />
+    <meta property="og:title" content="NEDO Turkish Tokenizer | Ethosoft Works" />
+    <meta property="og:description" content="A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family." />
+    <meta property="og:url" content="https://ethosoft.org/works/nedotokenizer/" />
+    <meta property="og:image" content="https://ethosoft.org/logolar/ethos-03.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>NEDO Turkish Tokenizer | Ethosoft Works</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/papers.css" />
+    <link rel="stylesheet" href="/src/works.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","name":"NEDO Turkish Tokenizer","description":"A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family.","url":"https://ethosoft.org/works/nedotokenizer/","mainEntityOfPage":"https://ethosoft.org/works/nedotokenizer/","dateModified":"2026-08-01","inLanguage":"en","author":{"@type":"Organization","name":"Ethosoft","url":"https://ethosoft.org/"},"keywords":["Turkish NLP","Tokenization"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethosoft","item":"https://ethosoft.org/"},{"@type":"ListItem","position":2,"name":"Works","item":"https://ethosoft.org/works/"},{"@type":"ListItem","position":3,"name":"NEDO Turkish Tokenizer","item":"https://ethosoft.org/works/nedotokenizer/"}]}]}</script>
+  </head>
+  <body class="research-body works-body">
+    <a class="skip-link" href="#work-content">Skip to project details</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home"><img src="/logolar/ethos-02.png" alt="" width="44" height="44" /><span>Ethosoft</span></a>
+        <nav aria-label="Research navigation"><a href="/papers/">Papers</a><a aria-current="page" href="/works/">Works</a><a href="/apps/">Apps</a><a href="/#team">Team</a><a href="/">Main site</a></nav>
+      </div>
+    </header>
+    <main id="work-content">
+      <article>
+        <header class="paper-hero work-detail-hero">
+          <div class="research-shell paper-hero-inner">
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Ethosoft</a><span aria-hidden="true">/</span><a href="/works/">Works</a><span aria-hidden="true">/</span><span>NEDO Turkish Tokenizer</span></nav>
+            <div class="paper-labels"><span class="paper-status">Open research · Work in progress</span><span>Turkish NLP · Tokenization</span></div>
+            <h1>NEDO Turkish Tokenizer</h1>
+            <p class="paper-deck">A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family.</p>
+            <div class="preprint-notice"><strong>Project record</strong><p>This page reports the maturity and evidence documented in Ethosoft's working archive. It does not imply peer review, regulatory clearance, or clinical validation.</p></div>
+          </div>
+        </header>
+        <div class="research-shell work-detail-layout">
+          <div>
+            <p class="research-kicker">Methods and evidence</p>
+            <article id="nedo-tokenizer" class="work-record" data-work-number="18">
+          <div class="work-meta"><span class="paper-status">Open research · Work in progress</span><span>Turkish NLP · Tokenization</span></div>
+          <h3><a href="/works/nedotokenizer/">NEDO Turkish Tokenizer</a></h3>
+          <p class="work-summary">A morphology-aware tokenizer for Turkish that segments text using root-and-suffix structure rather than frequency statistics alone, built as the first layer of the planned Mercan Turkish model family.</p>
+          <dl class="work-facts">
+            <div><dt>Approach</dt><dd>Combines Turkish dictionary resources, morphological segmentation, and more than 260 Turkish suffix patterns with vocabulary design aimed at preserving morphological integrity rather than treating agglutinative word forms as arbitrary character spans.</dd></div>
+            <div><dt>First deployment</dt><dd>Used as the tokenizer for <a href="/papers/nedoqwen/">NEDOQwen 0.8B</a>, where tokenizer scope and model evaluation behavior were studied together.</dd></div>
+            <div><dt>Roadmap</dt><dd>A comparative benchmark against other tokenizers is in preparation, covering tokenization efficiency, morphological-boundary preservation, tokens-per-word cost, segmentation behavior, and downstream LLM training impact.</dd></div>
+            <div><dt>Program context</dt><dd>NEDO is the first layer of the Mercan model family's planned pipeline: tokenizer → pretraining corpus → SFT/reasoning data → training pipeline → Turkish base models.</dd></div>
+            <div><dt>Public release</dt><dd><a href="https://huggingface.co/Ethosoft/NedoTurkishTokenizer">Hugging Face: Ethosoft/NedoTurkishTokenizer</a></dd></div>
+          </dl>
+          <p class="work-evidence"><strong>Evidence boundary:</strong> the tokenizer and its morphological ruleset are released; a completed, published benchmark against comparison tokenizers is still in preparation and not yet part of this record.</p>
+        </article>
+            <section class="work-detail-expanded" aria-labelledby="expanded-methods"><p class="research-kicker">Expanded project brief</p><h2 id="expanded-methods">Starting from how the model reads Turkish, not just which model to use.</h2><p>Turkish is agglutinative and morphologically rich: a single root can carry many different meanings and grammatical roles through chained suffixes (<em>ev → evler → evlerimiz → evlerimizden</em>). A tokenizer that treats this structure as arbitrary or purely statistical character spans can under-use the morphological information Turkish carries, which affects context-window efficiency, training token counts, inference cost, and how well word forms are represented internally.</p><p>NEDO Turkish Tokenizer's approach is to process Turkish words using root, suffix, and morphological structure rather than frequency statistics alone. Development combined Turkish dictionary resources, morphological segmentation, Turkish suffix structures, vocabulary design, token-efficiency evaluation, and language-model compatibility. The current ruleset accounts for more than 260 Turkish suffix patterns alongside a Turkish-lexicon-informed approach to segmentation.</p><p>NEDO's first significant deployment was as the tokenizer behind <a href="/papers/nedoqwen/">NEDOQwen 0.8B</a>, where tokenizer scope, model evaluation behavior, and Turkish language-modeling problems were studied together. That experience treated the tokenizer as a directly investigable part of model behavior rather than only a data-preparation utility.</p><p>NEDO is designed as the first layer of a longer pipeline for the planned <strong>Mercan</strong> Turkish model family: tokenizer → pretraining corpus → SFT/reasoning data → training pipeline → Turkish base models trained from scratch. A comparative benchmark against other tokenizers—covering tokenization efficiency, morphological-boundary preservation, tokens-per-word cost, segmentation behavior across Turkish text types, and downstream LLM training impact—is in preparation.</p><div class="expanded-callout"><strong>Status:</strong> the tokenizer and its morphological ruleset are released as open research. The comprehensive comparative benchmark referenced in the project's public materials is still in preparation and is not yet part of this record.</div></section>
+            
+          </div>
+          <aside class="work-detail-aside">
+            <p class="research-kicker">Explore</p>
+            <a href="/works/">All project records <span aria-hidden="true">→</span></a>
+            <a href="/papers/">Research papers <span aria-hidden="true">→</span></a>
+            <a href="#original-source-title">Original project files <span aria-hidden="true">↓</span></a>
+            <a href="mailto:merhaba@ethosoft.org">Contact Ethosoft <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </article>
+    </main>
+    <footer class="research-footer"><div class="research-shell research-footer-inner"><a class="brand" href="/"><img src="/logolar/ethos-02.png" alt="" width="40" height="40" /><span>Ethosoft</span></a><p>Human-centered artificial intelligence research.</p><a href="/works/">Browse all works</a></div></footer>
+  </body>
+</html>
