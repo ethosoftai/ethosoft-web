@@ -28,6 +28,8 @@ export default defineConfig({
         colliderEventsWork: "works/machine-learning-for-collider-events/index.html",
         musicScoringWork: "works/ai-music-scoring/index.html",
         dartRiftWork: "works/dart-rift/index.html",
+        lunarImageEnhancementWork: "works/lunar-image-enhancement/index.html",
+        apps: "apps/index.html",
         models: "models/index.html",
         researchReasoningModel: "models/qwen3-research-reasoning-json-rl/index.html",
         experiments: "experiments/index.html",

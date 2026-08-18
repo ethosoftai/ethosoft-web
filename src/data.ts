@@ -23,6 +23,7 @@ export type TeamMember = {
 export const navigation = [
   { label: "Research", href: "#research" },
   { label: "Projects", href: "/works/" },
+  { label: "Apps", href: "/apps/" },
   { label: "Approach", href: "#approach" },
   { label: "Team", href: "#team" },
   { label: "Achievements", href: "#achievements" },

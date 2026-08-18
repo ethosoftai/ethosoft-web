@@ -12,6 +12,7 @@ import {
   Mail,
   Menu,
   Microscope,
+  Rocket,
   ScanLine,
   ShieldCheck,
   Sparkles,
@@ -371,6 +372,17 @@ function ResearchSpotlight() {
             <small>02</small>
             <strong>Works</strong>
             <span>Projects, prototypes &amp; open releases</span>
+          </span>
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+        <a className="research-section-card" href="/apps/">
+          <span className="research-section-card-icon" aria-hidden="true">
+            <Rocket />
+          </span>
+          <span className="research-section-card-copy">
+            <small>03</small>
+            <strong>Apps</strong>
+            <span>Research into products</span>
           </span>
           <ArrowUpRight aria-hidden="true" />
         </a>

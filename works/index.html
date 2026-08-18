@@ -45,7 +45,7 @@
         },
         "mainEntity": {
           "@type": "ItemList",
-        "numberOfItems": 18,
+        "numberOfItems": 19,
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "url": "https://ethosoft.org/works/epilepsy-early-warning-system/", "name": "Epilepsy Early-Warning System" },
             { "@type": "ListItem", "position": 2, "url": "https://ethosoft.org/works/explainable-cardiomegaly-screening/", "name": "Explainable Cardiomegaly Screening" },
@@ -65,6 +65,7 @@
             { "@type": "ListItem", "position": 16, "url": "https://ethosoft.org/experiments/risk-routed-heterogeneous-kv-memory/", "name": "Risk-Routed Heterogeneous KV Memory" }
             ,{ "@type": "ListItem", "position": 17, "url": "https://ethosoft.org/works/ai-music-scoring/", "name": "AI Music Scoring" }
             ,{ "@type": "ListItem", "position": 18, "url": "https://ethosoft.org/works/dart-rift/", "name": "DART-RIFT" }
+            ,{ "@type": "ListItem", "position": 19, "url": "https://ethosoft.org/works/lunar-image-enhancement/", "name": "Lunar Image Enhancement" }
           ]
         }
       }
@@ -81,6 +82,7 @@
         <nav aria-label="Research navigation">
           <a href="/papers/">Papers</a>
           <a aria-current="page" href="/works/">Works</a>
+          <a href="/apps/">Apps</a>
           <a href="/#team">Team</a>
           <a href="/">Main site</a>
         </nav>
@@ -98,7 +100,7 @@
             by their project records.
           </p>
           <div class="archive-stats" aria-label="Works archive statistics">
-            <span><strong>16</strong> project records</span>
+            <span><strong>17</strong> project records</span>
             <span><strong>2</strong> open research releases</span>
             <span><strong>4</strong> focus areas</span>
           </div>
@@ -357,6 +359,19 @@
             <div><dt>Public repository</dt><dd><a href="https://github.com/Yagiz-D-Ekrem-Dolar/dart-rift">GitHub: Yagiz-D-Ekrem-Dolar/dart-rift</a></dd></div>
           </dl>
           <p class="work-evidence"><strong>Evidence boundary:</strong> the repository describes a validated simulation foundation and an inference target. It explicitly does not claim a completed Dimorphos scientific result before Hera observations; impact runs and posterior conclusions remain future project phases.</p>
+        </article>
+        <article id="lunar-image-enhancement" class="work-record" data-work-number="17">
+          <div class="work-meta"><span class="paper-status">Work in progress</span><span>Space technologies · Super-resolution</span></div>
+          <h3><a href="/works/lunar-image-enhancement/">Lunar Image Enhancement</a></h3>
+          <p class="work-summary">A self-attention GAN that reconstructs high-resolution lunar terrain from coarse orbital elevation data, developed within İTÜ UZDES's space-technologies program.</p>
+          <dl class="work-facts">
+            <div><dt>Setting</dt><dd>İstanbul Technical University — UZDES (Space Systems Design and Test Laboratory), space technologies track.</dd></div>
+            <div><dt>Method</dt><dd>A Self-Attention GAN (SA-GAN) generator/discriminator pair upsamples 60 m/px lunar digital elevation models (DEMs) toward 2 m/px resolution.</dd></div>
+            <div><dt>Data</dt><dd>Digital Terrain Model and PDS-derived lunar elevation data, organized into training pairs with dataset and metadata manifests.</dd></div>
+            <div><dt>Related program work</dt><dd>The same UZDES space-technologies effort also includes autonomous lunar-rover path planning (global A* search with SAC-based local control) over NASA LRO topography.</dd></div>
+            <div><dt>Public repositories</dt><dd><a href="https://github.com/ethosoftai/SA-GAN">GitHub: ethosoftai/SA-GAN</a> · <a href="https://github.com/Ahmet2001/TUA">GitHub: Ahmet2001/TUA</a></dd></div>
+          </dl>
+          <p class="work-evidence"><strong>Evidence boundary:</strong> this is an active work-in-progress research project. The repositories document architecture, data preparation, and training infrastructure; a completed quantitative evaluation (e.g. PSNR/SSIM against held-out lunar terrain) is not yet published.</p>
         </article>
         </div>
       </section>
