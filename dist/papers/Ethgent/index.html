@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbf7f1" />
+    <meta
+      name="description"
+      content="Ethgent separates a customisable agent, a connection layer with an open pool of workers, and a workflow factory, so a language model can be fitted to a real system with credentials kept in workers and side effects approved by the host."
+    />
+    <meta
+      name="keywords"
+      content="Ethgent, LLM agents, agent architecture, tool use, workflow factory, MCP, human approval, excessive agency, open contribution, MarketingStudio, MarketingPool"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://ethosoft.org/papers/Ethgent/" />
+    <link
+      rel="alternate"
+      type="application/pdf"
+      href="https://ethosoft.org/papers/Ethgent/ethgent_system_explanation.pdf"
+    />
+    <link rel="icon" type="image/png" href="/logolar/ethos-02.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      property="og:title"
+      content="Ethgent: Fitting an Agent to a System by Separating Agent, Connection and Workflow Factory | Ethosoft"
+    />
+    <meta
+      property="og:description"
+      content="An open, domain-neutral design for fitting a language-model agent to a real system: configurable agents, workers that hold the credentials, host-approved side effects and exportable deterministic workflows."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ethosoft Research" />
+    <meta property="og:url" content="https://ethosoft.org/papers/Ethgent/" />
+    <meta property="article:published_time" content="2026-10-11" />
+    <meta property="article:section" content="Artificial Intelligence" />
+    <meta property="article:tag" content="LLM agents" />
+    <meta property="article:tag" content="Agent architecture" />
+    <meta property="article:tag" content="Workflow automation" />
+    <meta property="article:tag" content="AI safety" />
+    <meta name="twitter:card" content="summary" />
+
+    <meta
+      name="citation_title"
+      content="Ethgent: Fitting an Agent to a System by Separating Agent, Connection and Workflow Factory"
+    />
+    <meta name="citation_author" content="Ahmet Rıfat Öztürk" />
+    <meta name="citation_author_orcid" content="https://orcid.org/0009-0001-2941-0412" />
+    <meta name="citation_author_institution" content="Ethosoft" />
+    <meta name="citation_author_email" content="ahmetrifat@ethosoft.org" />
+    <meta name="citation_author" content="Yağız Ekrem Dalar" />
+    <meta name="citation_author_orcid" content="https://orcid.org/0009-0009-3522-4403" />
+    <meta name="citation_author_institution" content="Ethosoft" />
+    <meta name="citation_author_email" content="ekrem@ethosoft.org" />
+    <meta name="citation_author" content="Ömer Faruk Aksoy" />
+    <meta name="citation_author_orcid" content="https://orcid.org/0009-0000-4680-0431" />
+    <meta name="citation_author_institution" content="Ethosoft" />
+    <meta name="citation_author_email" content="omer@ethosoft.org" />
+    <meta name="citation_author" content="Nedim Mutlu Sezer" />
+    <meta name="citation_author_orcid" content="https://orcid.org/0009-0001-3499-6067" />
+    <meta name="citation_author_institution" content="Ethosoft" />
+    <meta name="citation_author_email" content="nedim@ethosoft.org" />
+    <meta name="citation_author" content="Feyzi Arda Salihoğlu" />
+    <meta name="citation_author_orcid" content="https://orcid.org/0009-0006-5841-1664" />
+    <meta name="citation_author_institution" content="Ethosoft" />
+    <meta name="citation_author_email" content="feyziarda.salihoglu@ethosoft.org" />
+    <meta name="citation_date" content="2026/10/11" />
+    <meta name="citation_publication_date" content="2026/10/11" />
+    <meta name="citation_technical_report_institution" content="Ethosoft" />
+    <meta name="citation_publisher" content="Ethosoft" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_keywords" content="LLM agents; agent architecture; tool use; workflow automation; human approval; Model Context Protocol" />
+    <meta
+      name="citation_pdf_url"
+      content="https://ethosoft.org/papers/Ethgent/ethgent_system_explanation.pdf"
+    />
+    <meta
+      name="citation_abstract_html_url"
+      content="https://ethosoft.org/papers/Ethgent/"
+    />
+
+    <title>Ethgent: Fitting an Agent to a System | Ethosoft</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://ethosoft.org/papers/Ethgent/#paper",
+            "url": "https://ethosoft.org/papers/Ethgent/",
+            "mainEntityOfPage": "https://ethosoft.org/papers/Ethgent/",
+            "headline": "Ethgent: Fitting an Agent to a System by Separating Agent, Connection and Workflow Factory",
+            "description": "A domain-neutral design that separates a customisable agent, a connection layer with an open pool of workers, and a workflow factory, with credentials kept in workers and side effects approved by the host.",
+            "abstract": "A language model becomes useful inside a real system only when it is fitted to that system: given the right instructions and tools, a way to read what happens there, a way to act on it, and limits on what it may do. We describe a small set of open-source components that separate these concerns instead of fusing them in one process: a customisable agent whose agents and tools are configuration (Ethgent), a connection layer and open pool of workers, connectors and contracts (Marketing Agent Assets), a workflow factory that turns capabilities into deterministic, exportable tools (MarketingStudio), and a worked example that runs the combination on one machine (MarketingPool).",
+            "datePublished": "2026-10-11",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "creativeWorkStatus": "Preprint",
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "keywords": [
+              "Ethgent",
+              "LLM agents",
+              "agent architecture",
+              "tool use",
+              "workflow automation",
+              "human approval",
+              "Model Context Protocol"
+            ],
+            "author": [
+              { "@type": "Person", "name": "Ahmet Rıfat Öztürk", "sameAs": "https://orcid.org/0009-0001-2941-0412", "affiliation": { "@type": "Organization", "name": "Ethosoft" } },
+              { "@type": "Person", "name": "Yağız Ekrem Dalar", "sameAs": "https://orcid.org/0009-0009-3522-4403", "affiliation": { "@type": "Organization", "name": "Ethosoft" } },
+              { "@type": "Person", "name": "Ömer Faruk Aksoy", "sameAs": "https://orcid.org/0009-0000-4680-0431", "affiliation": { "@type": "Organization", "name": "Ethosoft" } },
+              { "@type": "Person", "name": "Nedim Mutlu Sezer", "sameAs": "https://orcid.org/0009-0001-3499-6067", "affiliation": { "@type": "Organization", "name": "Ethosoft" } },
+              { "@type": "Person", "name": "Feyzi Arda Salihoğlu", "sameAs": "https://orcid.org/0009-0006-5841-1664", "affiliation": { "@type": "Organization", "name": "Ethosoft" } }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Ethosoft",
+              "url": "https://ethosoft.org/"
+            },
+            "encoding": {
+              "@type": "MediaObject",
+              "contentUrl": "https://ethosoft.org/papers/Ethgent/ethgent_system_explanation.pdf",
+              "encodingFormat": "application/pdf"
+            },
+            "subjectOf": [
+              { "@type": "SoftwareSourceCode", "name": "Ethgent (BrowserAgent)", "codeRepository": "https://github.com/Ahmet2001/BrowserAgent" },
+              { "@type": "SoftwareSourceCode", "name": "MarketingStudio", "codeRepository": "https://github.com/Ahmet2001/MarketingStudio" },
+              { "@type": "SoftwareSourceCode", "name": "MarketingPool", "codeRepository": "https://github.com/Ahmet2001/MarketingPool" }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Ethosoft", "item": "https://ethosoft.org/" },
+              { "@type": "ListItem", "position": 2, "name": "Papers", "item": "https://ethosoft.org/papers/" },
+              { "@type": "ListItem", "position": 3, "name": "Ethgent", "item": "https://ethosoft.org/papers/Ethgent/" }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" crossorigin href="/assets/styles-D6hdV_Ml.css">
+    <link rel="stylesheet" crossorigin href="/assets/papers-C1yT-TSH.css">
+  </head>
+  <body class="research-body">
+    <a class="skip-link" href="#paper-content">Skip to paper</a>
+    <header class="research-header">
+      <div class="research-header-inner">
+        <a class="brand" href="/" aria-label="Ethosoft home">
+          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
+          <span>Ethosoft</span>
+        </a>
+        <nav aria-label="Research navigation">
+          <a href="/papers/">All papers</a>
+          <a href="/papers/Ethgent/ethgent_system_explanation.pdf">Paper</a>
+          <a href="https://github.com/Ahmet2001/BrowserAgent">Code</a>
+          <a href="/">Main site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="paper-content">
+      <article>
+        <header class="paper-hero">
+          <div class="research-shell paper-hero-inner">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Ethosoft</a>
+              <span aria-hidden="true">/</span>
+              <a href="/papers/">Papers</a>
+              <span aria-hidden="true">/</span>
+              <span>Ethgent</span>
+            </nav>
+
+            <div class="paper-labels">
+              <span class="paper-status">Preprint</span>
+              <span>Systems Paper</span>
+              <span>Open Source</span>
+            </div>
+
+            <h1>
+              Ethgent: Fitting an Agent to a System by Separating Agent, Connection
+              and Workflow Factory
+            </h1>
+
+            <p class="paper-deck">
+              A customisable agent, a connection layer that is also an open pool of
+              workers, and a workflow factory, with credentials kept in workers and
+              side effects approved by the host, not by the model.
+            </p>
+
+            <ul class="author-list" aria-label="Paper authors">
+              <li><a href="https://orcid.org/0009-0001-2941-0412">Ahmet Rıfat Öztürk <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0009-3522-4403">Yağız Ekrem Dalar <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0000-4680-0431">Ömer Faruk Aksoy <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0001-3499-6067">Nedim Mutlu Sezer <span>ORCID</span></a></li>
+              <li><a href="https://orcid.org/0009-0006-5841-1664">Feyzi Arda Salihoğlu <span>ORCID</span></a></li>
+            </ul>
+
+            <div class="paper-identifiers">
+              <div><span>Date</span><strong>October 11, 2026</strong></div>
+              <div><span>Affiliation</span><strong>Ethosoft</strong></div>
+              <div><span>Pages</span><strong>16</strong></div>
+              <div><span>License</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>
+            </div>
+
+            <div class="preprint-notice">
+              <strong>Preprint notice</strong>
+              <p>This manuscript is a preprint published by Ethosoft and has not undergone peer review.</p>
+            </div>
+
+            <div class="paper-actions">
+              <a class="paper-action-primary" href="/papers/Ethgent/ethgent_system_explanation.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+              <a href="https://github.com/Ahmet2001/BrowserAgent">Ethgent source code</a>
+              <a href="https://github.com/Ahmet2001/MarketingPool">Worked example</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="research-shell paper-layout">
+          <aside class="paper-toc" aria-label="On this page">
+            <p>On this page</p>
+            <a href="#abstract">Abstract</a>
+            <a href="#research-question">Research question</a>
+            <a href="#key-findings">Key findings</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#artifacts">Open artifacts</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#citation">Citation</a>
+          </aside>
+
+          <div class="paper-content">
+            <section id="abstract" aria-labelledby="abstract-title">
+              <p class="research-kicker">Author abstract</p>
+              <h2 id="abstract-title">Abstract</h2>
+              <p class="abstract-text">
+                A language model becomes useful inside a real system only when it is
+                <em>fitted</em> to that system: given the right instructions and tools, a way
+                to read what happens there, a way to act on it, and limits on what it may do.
+                Fitting should not mean building a new agent for every domain. We describe a
+                small set of open-source components that separate these concerns instead of
+                fusing them in one process: a customisable agent whose agents and tools are
+                configuration (Ethgent), a connection layer and open pool of workers,
+                connectors and contracts (Marketing Agent Assets), a workflow factory that
+                turns capabilities into deterministic, exportable tools (MarketingStudio), and
+                a worked example that runs the combination on one machine (MarketingPool). Our
+                working domain is marketing, but the design is domain-neutral: what changes
+                between domains is the instructions, the tools and the connections, and we say
+                precisely which parts those are. We built no second domain, so that is an
+                argument from the design, not a result. The aim is an open contribution system:
+                through GitHub and a common export format, different people can add an agent, a
+                tool, a skill or a worker, and an organisation can assemble them into an
+                extension that runs inside its own system. Credentials stay with workers;
+                anything that changes the outside world is approved by the host, not by the
+                model; every component works without the others and they meet through plain
+                files and small contracts. We report what we ran: a workflow written in the
+                factory, exported, installed and called by an agent backed by a hosted model,
+                including one that needs approval, one that takes a file and one that needs a
+                package, two design faults that this exercise exposed and fixed, and a measured
+                comparison (a three-step task and an eight-step chain, two models of one vendor,
+                15 to 20 runs per cell): giving the agent a workflow as one tool instead of the
+                same steps as separate tools cut tokens by 10 to 40 percent on three steps and
+                by a factor of about two on eight, with no statistically detectable difference
+                in reliability. We also ran the agent as a worker inside the backend service of
+                a real application of ours: the application’s contract checker passed (19 of
+                19), the agent saw only the lessons the application approves, and a database
+                role limited it to its own queue. We do not report an end-to-end deployment
+                against real platforms, and we say where the evidence ends.
+              </p>
+            </section>
+
+            <section id="research-question" aria-labelledby="research-question-title">
+              <p class="research-kicker">Research question</p>
+              <h2 id="research-question-title">What has to change when an agent moves to a new system?</h2>
+              <p>
+                Agent systems usually fuse prompts, model credentials, platform keys and
+                business logic into one process, so each new domain means a new agent. Ethgent
+                asks which parts of an agent are fixed and which are fitted to a domain, and
+                whether keeping them apart lets people contribute agents, tools, skills and
+                workers that an organisation can assemble inside its own system, without the
+                model ever holding the keys or approving its own side effects.
+              </p>
+            </section>
+
+            <section id="key-findings" aria-labelledby="key-findings-title">
+              <p class="research-kicker">Results</p>
+              <h2 id="key-findings-title">Key findings</h2>
+              <div class="finding-grid">
+                <article>
+                  <span>01</span>
+                  <h3>A workflow as one tool costs less.</h3>
+                  <p>Against the same steps as separate tools, tokens fell by 10 to 40 percent on a three-step task and by about half on an eight-step chain.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <h3>Reliability did not measurably change.</h3>
+                  <p>On the eight-step chain 2 of 60 workflow answers and 5 of 60 separate-tool answers were wrong (p = 0.44, Fisher exact).</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <h3>The agent works inside a real backend.</h3>
+                  <p>Run as a worker in an open-source application, the contract checker passed 19 of 19 and the agent saw only the assets the application approves.</p>
+                </article>
+                <article>
+                  <span>04</span>
+                  <h3>The model never approves itself.</h3>
+                  <p>Tools that change the outside world are gated by the host: a person, an explicit per-job grant, or a refusal when neither is present.</p>
+                </article>
+              </div>
+            </section>
+
+            <section id="architecture" aria-labelledby="architecture-title">
+              <p class="research-kicker">System design</p>
+              <h2 id="architecture-title">Four parts, each usable on its own</h2>
+              <dl class="method-list">
+                <div><dt>Ethgent</dt><dd>An orchestrator that delegates to sub-agents, each owning its tools; agents, tools and prompts are configuration that travels as installable packs</dd></div>
+                <div><dt>Marketing Agent Assets</dt><dd>The connection layer and open pool of workers, connectors and contracts; workers hold the credentials and validate requests against schemas</dd></div>
+                <div><dt>MarketingStudio</dt><dd>A workflow factory that turns capabilities into deterministic tools exported as agent bundles or MCP servers</dd></div>
+                <div><dt>MarketingPool</dt><dd>A worked example that runs agent, pool and workers together on one machine with Docker</dd></div>
+                <div><dt>Trust boundary</dt><dd>The agent writes requests to a queue; side effects are approved at call time by the host, never by the model</dd></div>
+                <div><dt>Evaluation</dt><dd>Workflow-as-tool versus separate tools on three- and eight-step tasks, two models of one vendor, 15 to 20 runs per cell</dd></div>
+              </dl>
+            </section>
+
+            <section id="artifacts" aria-labelledby="artifacts-title">
+              <p class="research-kicker">Open research</p>
+              <h2 id="artifacts-title">Code and paper</h2>
+              <div class="artifact-links">
+                <a href="/papers/Ethgent/ethgent_system_explanation.pdf">
+                  <span>Full preprint, 16 pages</span>
+                  <strong>Paper · PDF</strong>
+                </a>
+                <a href="https://github.com/Ahmet2001/BrowserAgent">
+                  <span>Agent architecture, reasoning and decision-making</span>
+                  <strong>GitHub · BrowserAgent (Ethgent)</strong>
+                </a>
+                <a href="https://github.com/Ahmet2001/MarketingPool/tree/main/marketing-agent-assets">
+                  <span>Reusable capabilities, toolboxes and skills</span>
+                  <strong>GitHub · Marketing Agent Assets</strong>
+                </a>
+                <a href="https://github.com/Ahmet2001/MarketingStudio">
+                  <span>Development environment for capabilities and workflows</span>
+                  <strong>GitHub · MarketingStudio</strong>
+                </a>
+                <a href="https://github.com/Ahmet2001/MarketingPool">
+                  <span>Agent, assets and workers brought together</span>
+                  <strong>GitHub · MarketingPool</strong>
+                </a>
+                <a href="https://github.com/ethosoftai/karatahta-oss">
+                  <span>Application used for the backend-service test</span>
+                  <strong>GitHub · Kara Tahta</strong>
+                </a>
+              </div>
+            </section>
+
+            <section id="limitations" aria-labelledby="limitations-title">
+              <p class="research-kicker">Scope</p>
+              <h2 id="limitations-title">Limitations</h2>
+              <ul class="paper-bullets">
+                <li>No real platform was touched; publishing and platform data were not exercised end to end.</li>
+                <li>The comparison is small: one vendor, two models, short chains and 15 to 20 runs per cell.</li>
+                <li>Approval is per tool, so approving an exported workflow approves all of its steps.</li>
+                <li>The contribution system is a mechanism, not yet a community; there is no registry or review of contributions.</li>
+                <li>Other domains, such as trading or human resources, are consistent with the design but were not built.</li>
+              </ul>
+            </section>
+
+            <section id="citation" aria-labelledby="citation-title">
+              <p class="research-kicker">Reuse and citation</p>
+              <h2 id="citation-title">Cite this preprint</h2>
+              <p>
+                Öztürk, A. R., Dalar, Y. E., Aksoy, Ö. F., Sezer, N. M., &amp;
+                Salihoğlu, F. A. (2026). <em>Ethgent: Fitting an Agent to a System by
+                Separating Agent, Connection and Workflow Factory</em>. Ethosoft preprint.
+                <a href="https://ethosoft.org/papers/Ethgent/">https://ethosoft.org/papers/Ethgent/</a>
+              </p>
+              <p><a href="/papers/Ethgent/citation.bib">Download the BibTeX citation</a></p>
+              <pre class="bibtex" aria-label="BibTeX citation"><code>@techreport{ozturk2026ethgent,
+  title       = {Ethgent: Fitting an Agent to a System by Separating
+                 Agent, Connection and Workflow Factory},
+  author      = {Öztürk, Ahmet Rıfat and Dalar, Yağız Ekrem and
+                 Aksoy, Ömer Faruk and Sezer, Nedim Mutlu and
+                 Salihoğlu, Feyzi Arda},
+  institution = {Ethosoft},
+  type        = {Preprint},
+  year        = {2026},
+  month       = {October},
+  url         = {https://ethosoft.org/papers/Ethgent/},
+  note        = {Not peer reviewed. CC BY 4.0}
+}</code></pre>
+            </section>
+
+            <section class="paper-faq" aria-labelledby="faq-title">
+              <p class="research-kicker">Quick answers</p>
+              <h2 id="faq-title">Questions this paper answers</h2>
+              <details>
+                <summary>What is Ethgent?</summary>
+                <p>Ethgent is an open-source, customisable agent: an orchestrator that delegates to sub-agents, each owning a set of tools, with agents, tools and prompts described as configuration and shared as packs.</p>
+              </details>
+              <details>
+                <summary>Does the agent hold platform credentials?</summary>
+                <p>No. The agent writes validated requests to a queue; workers that own the credentials check each request and act, and read-only workers refuse anything outside their allowlist.</p>
+              </details>
+              <details>
+                <summary>Is a workflow tool better than separate tools?</summary>
+                <p>It was cheaper: tokens fell by tens of percent on three steps and by about half on eight. Reliability did not differ detectably in the runs reported.</p>
+              </details>
+              <details>
+                <summary>Does it work outside marketing?</summary>
+                <p>The design is domain-neutral, but no second domain was built, so this is an argument from the design rather than a result.</p>
+              </details>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="research-footer">
+      <div class="research-shell research-footer-inner">
+        <a class="brand" href="/">
+          <img src="/logolar/ethos-02.png" alt="" width="40" height="40" />
+          <span>Ethosoft</span>
+        </a>
+        <p>Human-centered artificial intelligence research.</p>
+        <a href="/papers/">Browse all papers</a>
+      </div>
+    </footer>
+  </body>
+</html>

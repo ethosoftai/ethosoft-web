@@ -50,6 +50,7 @@ export default defineConfig({
         personArda: "person/feyzi-arda-salihoglu/index.html",
         trDocvqaPaper: "papers/tr-docvqa-synth/index.html",
         goalDriftPaper: "papers/goal-drift/index.html",
+        ethgentPaper: "papers/Ethgent/index.html",
       },
     },
   },
