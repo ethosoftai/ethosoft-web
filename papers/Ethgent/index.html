@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#fbf7f1" />
     <meta
       name="description"
-      content="Ethgent separates a customisable agent, a connection layer with an open pool of workers, and a workflow factory, so a language model can be fitted to a real system with credentials kept in workers and side effects approved by the host."
+      content="How a company can put a language-model agent inside its own backend service: Ethgent separates a customisable agent, a connection layer with an open pool of workers, and a workflow factory, with credentials kept in workers and side effects approved by the host."
     />
     <meta
       name="keywords"
@@ -100,7 +100,7 @@
             "mainEntityOfPage": "https://ethosoft.org/papers/Ethgent/",
             "headline": "Ethgent: Fitting an Agent to a System by Separating Agent, Connection and Workflow Factory",
             "description": "A domain-neutral design that separates a customisable agent, a connection layer with an open pool of workers, and a workflow factory, with credentials kept in workers and side effects approved by the host.",
-            "abstract": "A language model becomes useful inside a real system only when it is fitted to that system: given the right instructions and tools, a way to read what happens there, a way to act on it, and limits on what it may do. We describe a small set of open-source components that separate these concerns instead of fusing them in one process: a customisable agent whose agents and tools are configuration (Ethgent), a connection layer and open pool of workers, connectors and contracts (Marketing Agent Assets), a workflow factory that turns capabilities into deterministic, exportable tools (MarketingStudio), and a worked example that runs the combination on one machine (MarketingPool).",
+            "abstract": "A company that wants a language-model agent to work for it has to put that agent inside its own backend service, join it to the application and the outside world, and shape its orchestration to the company's own work. A model becomes useful there only when it is fitted: given the right instructions and tools, a way to read what happens, a way to act on it, and limits on what it may do. We describe a small set of open-source components that separate these concerns instead of fusing them in one process: a customisable agent whose agents and tools are configuration (Ethgent), a connection layer and open pool of workers, connectors and contracts (Marketing Agent Assets), a workflow factory that turns capabilities into deterministic, exportable tools (MarketingStudio), and a worked example that runs the combination on one machine (MarketingPool).",
             "datePublished": "2026-10-11",
             "inLanguage": "en",
             "isAccessibleForFree": true,
@@ -207,7 +207,7 @@
             <div class="paper-identifiers">
               <div><span>Date</span><strong>October 11, 2026</strong></div>
               <div><span>Affiliation</span><strong>Ethosoft</strong></div>
-              <div><span>Pages</span><strong>16</strong></div>
+              <div><span>Pages</span><strong>18</strong></div>
               <div><span>License</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>
             </div>
 
@@ -241,10 +241,14 @@
               <p class="research-kicker">Author abstract</p>
               <h2 id="abstract-title">Abstract</h2>
               <p class="abstract-text">
-                A language model becomes useful inside a real system only when it is
-                <em>fitted</em> to that system: given the right instructions and tools, a way
-                to read what happens there, a way to act on it, and limits on what it may do.
-                Fitting should not mean building a new agent for every domain. We describe a
+                A company that wants a language-model agent to work for it has to put that
+                agent inside its own backend service, join it to the application and the outside
+                world, and shape its orchestration to the company’s own work. This paper is about
+                that relationship between the agent, the backend service and the system around
+                it. A model becomes useful there only when it is <em>fitted</em>: given the right
+                instructions and tools, a way to read what happens, a way to act on it, and limits
+                on what it may do. Fitting should not mean building a new agent for every company
+                or domain. We describe a
                 small set of open-source components that separate these concerns instead of
                 fusing them in one process: a customisable agent whose agents and tools are
                 configuration (Ethgent), a connection layer and open pool of workers,
@@ -278,11 +282,14 @@
 
             <section id="research-question" aria-labelledby="research-question-title">
               <p class="research-kicker">Research question</p>
-              <h2 id="research-question-title">What has to change when an agent moves to a new system?</h2>
+              <h2 id="research-question-title">How does a company put an agent inside its own backend?</h2>
               <p>
-                Agent systems usually fuse prompts, model credentials, platform keys and
-                business logic into one process, so each new domain means a new agent. Ethgent
-                asks which parts of an agent are fixed and which are fitted to a domain, and
+                A company that wants an agent to work for it has to place it inside its own
+                backend service, join it to its application and the outside world, and shape its
+                orchestration to its own work. Agent systems usually fuse prompts, model
+                credentials, platform keys and business logic into one process, so each new
+                company or domain means a new agent. Ethgent asks which parts of an agent are
+                fixed and which are fitted, and
                 whether keeping them apart lets people contribute agents, tools, skills and
                 workers that an organisation can assemble inside its own system, without the
                 model ever holding the keys or approving its own side effects.
@@ -334,7 +341,7 @@
               <h2 id="artifacts-title">Code and paper</h2>
               <div class="artifact-links">
                 <a href="/papers/Ethgent/ethgent_system_explanation.pdf">
-                  <span>Full preprint, 16 pages</span>
+                  <span>Full preprint, 18 pages</span>
                   <strong>Paper · PDF</strong>
                 </a>
                 <a href="https://github.com/Ahmet2001/BrowserAgent">
@@ -368,6 +375,8 @@
                 <li>The comparison is small: one vendor, two models, short chains and 15 to 20 runs per cell.</li>
                 <li>Approval is per tool, so approving an exported workflow approves all of its steps.</li>
                 <li>The contribution system is a mechanism, not yet a community; there is no registry or review of contributions.</li>
+                <li>No company outside the authors has adapted it; every backend run used an application and configuration of our own.</li>
+                <li>The asset and platform-data sub-agents are built-in code in one copy of the agent and have not been reused outside the project.</li>
                 <li>Other domains, such as trading or human resources, are consistent with the design but were not built.</li>
               </ul>
             </section>
