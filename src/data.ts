@@ -20,16 +20,124 @@ export type TeamMember = {
   group: "advisor" | "leadership" | "team";
 };
 
+export type Paper = {
+  slug: string;
+  title: string;
+  short: string;
+  date?: string;
+  status: string;
+};
+
+export type Product = {
+  id: string;
+  name: string;
+  tagline: string;
+  status: string;
+  href: string;
+  category: Exclude<ProjectCategory, "All">;
+};
+
 export const navigation = [
   { label: "Research", href: "#research" },
-  { label: "Projects", href: "/works/" },
-  { label: "Apps", href: "/apps/" },
-  { label: "Conferences", href: "/conferences-workshops/" },
-  { label: "Approach", href: "#approach" },
+  { label: "Products", href: "#products" },
+  { label: "Works", href: "#projects" },
   { label: "Team", href: "#team" },
   { label: "Achievements", href: "#achievements" },
-  { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
+];
+
+// Mirrors the cards in papers/index.html; newest first.
+export const papers: Paper[] = [
+  {
+    slug: "Ethgent",
+    title: "Ethgent: Fitting an Agent to a System by Separating Agent, Connection and Workflow Factory",
+    short: "Ethgent",
+    date: "2026-10-11",
+    status: "Preprint",
+  },
+  {
+    slug: "surprise",
+    title: "Testing Surprisal as a Compute-Allocation Signal: A Preregistered Long-Horizon Study of Causal Token Routing",
+    short: "Surprisal routing",
+    date: "2026-07-31",
+    status: "Zenodo preprint",
+  },
+  {
+    slug: "epilang",
+    title: "When Training Order Becomes the Algorithm: Endpoint-Induced Collapse and Memorization Without Rule Generalization",
+    short: "EpiLang",
+    date: "2026-07-31",
+    status: "Zenodo preprint",
+  },
+  {
+    slug: "nedoqwen",
+    title: "NEDOQwen: An Auditable Low-Cost Diagnosis-and-Repair Study for a Turkish-Centric 0.824B Language Model",
+    short: "NEDOQwen",
+    date: "2026-07-16",
+    status: "Preprint",
+  },
+  {
+    slug: "foresight-is-not-enough",
+    title: "Foresight Is Not Enough: Sentence-Level Future Signals, Self-Loop Hard Negatives, and the Calibration Gap in Small Language Models",
+    short: "Foresight",
+    date: "2026-07-14",
+    status: "Preprint",
+  },
+  {
+    slug: "mycelium",
+    title: "When Safety Is Not Load-Bearing: Counterfactual Dependability Evaluation of Mandatory-Path Safety Mechanisms in Language Models",
+    short: "MYCELIUM",
+    date: "2026-07-09",
+    status: "COLM 2026 workshop",
+  },
+  {
+    slug: "tr-docvqa-synth",
+    title: "TR-DocVQA-Synth: A Large-Scale Synthetic Visual Question Answering Dataset for Turkish Business Documents",
+    short: "TR-DocVQA-Synth",
+    date: "2026-06-05",
+    status: "Anonymized manuscript",
+  },
+  {
+    slug: "goal-drift",
+    title: "Goal Drift",
+    short: "Goal Drift",
+    status: "OpenReview preprint",
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: "mercan",
+    name: "Mercan",
+    tagline: "A Turkish language model trained end to end on our own data, tokenizer and runtime.",
+    status: "Live",
+    href: "https://mercan.ethosoft.org/",
+    category: "Core AI",
+  },
+  {
+    id: "zero2hero",
+    name: "Zero2Hero",
+    tagline: "A 37-week technology programme taking students from computer basics to generative AI.",
+    status: "2026–27 cohort",
+    href: "https://zero2hero.ethosoft.org/",
+    category: "Education",
+  },
+  {
+    id: "karatahta",
+    name: "Karatahta",
+    tagline: "Write a topic or photograph a question and get a narrated maths or science lesson video.",
+    status: "Open source · AGPL-3.0",
+    href: "https://github.com/ethosoftai/karatahta-oss",
+    category: "Education",
+  },
+  {
+    id: "pasific",
+    name: "Pasific",
+    tagline: "An Ethosoft product under active development.",
+    status: "In development",
+    href: "https://pasific.ethosoft.org/",
+    category: "Core AI",
+  },
 ];
 
 export const projects: Project[] = [
@@ -187,7 +295,7 @@ export const team: TeamMember[] = [
     id: "rifat",
     profile: "/person/ahmet-rifat-ozturk/",
     name: "Ahmet Rıfat Öztürk",
-    role: "Strategy Lead, AI & Data Engineer",
+    role: "Lead of Product, AI & Data Engineer",
     email: "ahmetrifat@ethosoft.org",
     linkedin:
       "https://www.linkedin.com/in/ahmet-r%C4%B1fat-%C3%B6zt%C3%BCrk-161896293/",

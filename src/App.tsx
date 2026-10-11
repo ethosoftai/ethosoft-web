@@ -1,55 +1,54 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  ArrowRight,
-  ArrowUp,
-  ArrowUpRight,
-  BookOpen,
-  BrainCircuit,
-  Dna,
-  ExternalLink,
-  GraduationCap,
-  HeartPulse,
-  Mail,
-  Menu,
-  Microscope,
-  Rocket,
-  ScanLine,
-  ShieldCheck,
-  Sparkles,
-  Trophy,
-  Users,
-  X,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ArrowUp, ArrowUpRight, Mail, Menu, X } from "lucide-react";
 import {
   achievements,
   navigation,
+  papers,
   partners,
+  products,
   projects,
   team,
-  type Project,
   type ProjectCategory,
   type TeamMember,
 } from "./data";
+import ResearchMap from "./ResearchMap";
 
-const categoryIcons = {
-  "Core AI": BrainCircuit,
-  Healthcare: HeartPulse,
-  Education: GraduationCap,
-};
+const domains: Exclude<ProjectCategory, "All">[] = ["Core AI", "Healthcare", "Education"];
 
-function LinkedInIcon({ size = 20 }: { size?: number }) {
+const formatDate = (iso?: string) =>
+  iso
+    ? new Date(`${iso}T00:00:00`).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      })
+    : "Submitted";
+
+function useReveal() {
+  useEffect(() => {
+    const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      items.forEach((item) => item.classList.add("is-in"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        }),
+      { rootMargin: "0px 0px -10% 0px" },
+    );
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+}
+
+function LinkedInIcon({ size = 18 }: { size?: number }) {
   return (
-    <svg
-      aria-hidden="true"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
       <path d="M2 9h4v12H2z" />
       <circle cx="4" cy="4" r="2" />
@@ -77,10 +76,8 @@ function Header() {
     <header className={`site-header ${scrolled || menuOpen ? "is-scrolled" : ""}`}>
       <div className="header-inner">
         <a className="brand" href="#hero" aria-label="Ethosoft home">
-          <img src="/logolar/ethos-02.png" alt="" width="44" height="44" />
-          <span>Ethosoft</span>
+          <img src="/logolar/ethos-wordmark.png" alt="Ethosoft" width="148" height="26" />
         </a>
-
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => (
             <a key={item.href} href={item.href}>
@@ -88,7 +85,9 @@ function Header() {
             </a>
           ))}
         </nav>
-
+        <a className="header-cta" href="#contact">
+          Work with us <ArrowUpRight size={16} />
+        </a>
         <button
           className="menu-button"
           type="button"
@@ -100,18 +99,9 @@ function Header() {
           {menuOpen ? <X /> : <Menu />}
         </button>
       </div>
-
-      <nav
-        id="mobile-navigation"
-        className={`mobile-nav ${menuOpen ? "is-open" : ""}`}
-        aria-label="Mobile navigation"
-      >
+      <nav id="mobile-navigation" className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
         {navigation.map((item, index) => (
-          <a
-            key={item.href}
-            href={item.href}
-            onClick={() => setMenuOpen(false)}
-          >
+          <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             {item.label}
           </a>
@@ -122,326 +112,229 @@ function Header() {
 }
 
 function Hero() {
+  const stats = [
+    { value: papers.length, label: "Publications" },
+    { value: projects.length, label: "Research projects" },
+    { value: achievements.length, label: "Awards & placements" },
+    { value: team.length, label: "Team members" },
+  ];
+
   return (
     <section id="hero" className="hero" aria-labelledby="hero-title">
-      <div className="hero-glow hero-glow-one" />
-      <div className="hero-glow hero-glow-two" />
-
-      <div className="hero-inner">
+      <div className="shell hero-grid">
         <div className="hero-copy">
-          <div className="eyebrow hero-eyebrow">
-            <Sparkles size={16} />
-            Human-centered artificial intelligence
-          </div>
+          <p className="kicker">
+            <span className="kicker-dot" /> Ethosoft · Human-centered AI research
+          </p>
           <h1 id="hero-title">
-            We turn ideas into research,
-            <span>and research into impact.</span>
+            We turn ideas into research, <em>and research into impact.</em>
           </h1>
-          <p>
+          <p className="hero-lede">
             Across healthcare, education, and core AI, we bring scientific curiosity,
             engineering rigor, and human values to the same table.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="/works/">
-              Explore our projects <ArrowRight size={18} />
+            <a className="btn btn-ink" href="/papers/">
+              Read our research <ArrowRight size={18} />
             </a>
-            <a className="button button-secondary" href="#contact">
-              Work with us
+            <a className="btn btn-line" href="/works/">
+              Explore all works
             </a>
           </div>
         </div>
-
-        <div className="hero-visual" aria-hidden="true">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="visual-core">
-            <img src="/logolar/ethos-03.png" alt="" width="340" height="172" />
-            <p>Science · Technology · Impact</p>
-          </div>
-          <div className="signal-card signal-card-top">
-            <span className="signal-dot" />
-            Multimodal AI
-          </div>
-          <div className="signal-card signal-card-bottom">
-            <ScanLine size={17} />
-            Health technologies
-          </div>
+        <div className="hero-map">
+          <ResearchMap />
         </div>
       </div>
-
-      <div className="stats" aria-label="Ethosoft at a glance">
-        <div>
-          <strong>8</strong>
-          <span>Active research areas</span>
-        </div>
-        <div>
-          <strong>12</strong>
-          <span>Interdisciplinary team members</span>
-        </div>
-        <div>
-          <strong>8</strong>
-          <span>National achievements</span>
-        </div>
-        <div>
-          <strong>5</strong>
-          <span>Strategic partners</span>
-        </div>
-      </div>
+      <dl className="shell stats">
+        {stats.map((stat) => (
+          <div key={stat.label}>
+            <dt>{stat.label}</dt>
+            <dd>{String(stat.value).padStart(2, "0")}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
 
-function SectionHeading({
+function SectionHead({
   id,
   index,
   kicker,
   title,
-  description,
+  children,
 }: {
   id: string;
   index: string;
   kicker: string;
-  title: string;
-  description?: string;
+  title: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   return (
-    <div className="section-heading">
-      <div className="section-index">{index}</div>
-      <div>
-        <p className="section-kicker">{kicker}</p>
-        <h2 id={id}>{title}</h2>
-        {description && <p className="section-description">{description}</p>}
-      </div>
-    </div>
+    <header className="section-head" data-reveal>
+      <p className="kicker">
+        <span className="section-index">{index}</span> {kicker}
+      </p>
+      <h2 id={id}>{title}</h2>
+      {children && <div className="section-intro">{children}</div>}
+    </header>
   );
 }
 
-function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
-  const Icon = categoryIcons[project.category];
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    document.body.classList.add("modal-open");
-    window.addEventListener("keydown", onKeyDown);
-    closeButtonRef.current?.focus();
-    return () => {
-      document.body.classList.remove("modal-open");
-      window.removeEventListener("keydown", onKeyDown);
-      previouslyFocused?.focus();
-    };
-  }, [onClose]);
-
+function Research() {
   return (
-    <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <div
-        className="modal-card"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="project-dialog-title"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeButtonRef}
-          className="modal-close"
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          <X />
-        </button>
-        <div className="modal-icon">
-          <Icon />
-        </div>
-        <p className="project-category">{project.category}</p>
-        <h3 id="project-dialog-title">{project.title}</h3>
-        <p className="modal-description">{project.description}</p>
-        <div className="focus-list">
-          {project.focus.map((item) => (
-            <span key={item}>{item}</span>
+    <section id="research" className="section" aria-labelledby="research-title">
+      <div className="shell">
+        <SectionHead id="research-title" index="01" kicker="Publications" title={<>Open research, <em>built to be examined.</em></>}>
+          <p>
+            Every paper has its own record with a full abstract, authors and citation
+            metadata. Preprints say so; negative results are reported as results.
+          </p>
+          <a className="text-link" href="/papers/">
+            All publications <ArrowRight size={16} />
+          </a>
+        </SectionHead>
+
+        <ol className="paper-index">
+          {papers.map((paper, index) => (
+            <li key={paper.slug} data-reveal>
+              <a href={`/papers/${paper.slug}/`}>
+                <span className="paper-no">{String(papers.length - index).padStart(2, "0")}</span>
+                <time dateTime={paper.date}>{formatDate(paper.date)}</time>
+                <span className="paper-title">{paper.title}</span>
+                <span className="paper-status">{paper.status}</span>
+                <ArrowUpRight className="paper-arrow" aria-hidden="true" />
+              </a>
+            </li>
           ))}
-        </div>
-        <a className="button button-primary" href={project.href}>
-          Read the project record <ArrowUpRight size={17} />
-        </a>
+        </ol>
+
+        <nav className="shelf-links" aria-label="More from the research archive" data-reveal>
+          <a href="/works/">
+            <small>Archive</small>Works <ArrowUpRight size={18} />
+          </a>
+          <a href="/apps/">
+            <small>Products</small>Apps <ArrowUpRight size={18} />
+          </a>
+          <a href="/conferences-workshops/">
+            <small>Events</small>Conferences &amp; workshops <ArrowUpRight size={18} />
+          </a>
+        </nav>
       </div>
-    </div>
-  );
-}
-
-function Projects() {
-  const categories: ProjectCategory[] = ["All", "Core AI", "Healthcare", "Education"];
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const visibleProjects = useMemo(
-    () =>
-      activeCategory === "All"
-        ? projects
-        : projects.filter((project) => project.category === activeCategory),
-    [activeCategory],
-  );
-
-  return (
-    <section id="projects" className="section projects-section" aria-labelledby="projects-title">
-      <SectionHeading
-        id="projects-title"
-        index="01"
-        kicker="Focus areas"
-        title="AI built for real-world problems."
-        description="A selection from our documented research and product work. The complete archive separates prototypes, exploratory studies, and reported results."
-      />
-
-      <div className="filter-bar" role="group" aria-label="Filter projects by category">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={activeCategory === category ? "is-active" : ""}
-            type="button"
-            aria-pressed={activeCategory === category}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <div className="project-grid">
-        {visibleProjects.map((project, index) => {
-          const Icon = categoryIcons[project.category];
-          return (
-            <article className="project-card" key={project.id}>
-              <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
-              <div className="project-icon">
-                <Icon />
-              </div>
-              <p className="project-category">{project.category}</p>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <button type="button" onClick={() => setSelectedProject(project)}>
-                View details <ArrowUpRight size={18} />
-              </button>
-            </article>
-          );
-        })}
-      </div>
-
-      <div className="section-cta">
-        <a className="button button-primary" href="/works/">
-          Explore all project records <ArrowRight size={18} />
-        </a>
-      </div>
-
-      {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-      )}
     </section>
   );
 }
 
-function ResearchSpotlight() {
+function ProductArt({ id }: { id: string }) {
+  if (id === "mercan") {
+    return <img className="product-art product-art-coral" src="/logolar/mercan-coral.svg" alt="" loading="lazy" />;
+  }
+  if (id === "zero2hero") {
+    const tones = ["a", "a", "b", "b", "b", "b", "b", "b", "c", "b", "b", "b", "b", "b", "b", "d", "c", "e", "f", "f", "f", "f", "c", "f", "f", "f", "g", "g", "g", "g", "g", "g", "g", "g", "c", "c", "c"];
+    return (
+      <div className="product-art week-bars" aria-hidden="true">
+        {tones.map((tone, index) => (
+          <i key={index} className={`tone-${tone}`} style={{ animationDelay: `${index * 35}ms` }} />
+        ))}
+      </div>
+    );
+  }
+  if (id === "karatahta") {
+    return (
+      <svg className="product-art chalk" viewBox="0 0 320 120" aria-hidden="true">
+        <path d="M10 100 C 70 100, 90 20, 160 20 S 250 100, 310 100" />
+        <path d="M10 108 H 310 M 160 8 V 112" className="axis" />
+        <text x="14" y="34">y = sin x</text>
+      </svg>
+    );
+  }
   return (
-    <section id="research" className="section research-spotlight" aria-labelledby="research-title">
-      <SectionHeading
-        id="research-title"
-        index="02"
-        kicker="Open research"
-        title="Open research, built to be examined."
-        description="Papers have their own publication archive. Projects, prototypes, models, benchmarks, and ongoing systems are documented separately in Works."
-      />
+    <div className="product-art wave" aria-hidden="true">
+      {Array.from({ length: 5 }, (_, index) => (
+        <i key={index} style={{ animationDelay: `${index * 0.6}s` }} />
+      ))}
+    </div>
+  );
+}
 
-      <nav className="research-section-cards" aria-label="Open research sections">
-        <a className="research-section-card" href="/papers/">
-          <span className="research-section-card-icon" aria-hidden="true">
-            <BookOpen />
-          </span>
-          <span className="research-section-card-copy">
-            <small>01</small>
-            <strong>Publications</strong>
-            <span>Papers, preprints &amp; reports</span>
-          </span>
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-        <a className="research-section-card" href="/works/">
-          <span className="research-section-card-icon" aria-hidden="true">
-            <BrainCircuit />
-          </span>
-          <span className="research-section-card-copy">
-            <small>02</small>
-            <strong>Works</strong>
-            <span>Projects, prototypes &amp; open releases</span>
-          </span>
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-        <a className="research-section-card" href="/apps/">
-          <span className="research-section-card-icon" aria-hidden="true">
-            <Rocket />
-          </span>
-          <span className="research-section-card-copy">
-            <small>03</small>
-            <strong>Apps</strong>
-            <span>Research into products</span>
-          </span>
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-        <a className="research-section-card" href="/conferences-workshops/">
-          <span className="research-section-card-icon" aria-hidden="true">
-            <Trophy />
-          </span>
-          <span className="research-section-card-copy">
-            <small>04</small>
-            <strong>Conferences</strong>
-            <span>International events &amp; competitions</span>
-          </span>
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-      </nav>
-
-      <div className="research-cards-slider research-cards-single" aria-label="Featured paper">
-        <section className="research-card-column" aria-labelledby="publications-card-title">
-          <a id="publications-card-title" className="research-card-category" href="/papers/">
-            <span>
-              <strong>Publications</strong>
-              <small>Papers, preprints &amp; reports</small>
-            </span>
-            <ArrowRight aria-hidden="true" />
+function Products() {
+  return (
+    <section id="products" className="section section-tint" aria-labelledby="products-title">
+      <div className="shell">
+        <SectionHead id="products-title" index="02" kicker="Products" title={<>Research that <em>people use.</em></>}>
+          <p>
+            Methods from our papers are tested in products, and running them in front of
+            real users turns into new research questions.
+          </p>
+          <a className="text-link" href="/apps/">
+            About our apps <ArrowRight size={16} />
           </a>
-          <article className="featured-paper-card clickable-research-card">
-            <div className="featured-paper-mark" aria-hidden="true">
-              <BookOpen />
-              <span>02</span>
-            </div>
-            <div className="featured-paper-content">
-              <div className="featured-paper-meta">
-                <span>Preprint</span>
-                <time dateTime="2026-07-16">July 16, 2026</time>
-                <span>Turkish NLP</span>
-              </div>
-              <h3>
-                NEDOQwen: An Auditable Low-Cost Diagnosis-and-Repair Study for a
-                Turkish-Centric 0.824B Language Model
-              </h3>
-              <p>
-                A version-aware case study in exposing evaluation mismatch, auditing
-                answer-label bias, and partially repairing a Turkish-centric small language model.
-              </p>
-              <div className="featured-paper-footer">
-                <span>Öztürk, Dalar, Aksoy, Sezer &amp; Salihoğlu</span>
-                <a href="/papers/nedoqwen/">
-                  Read the report <ArrowUpRight size={18} />
-                </a>
-              </div>
-            </div>
-            <a
-              className="research-card-hitarea"
-              href="/papers/"
-              aria-label="Browse publications"
-            />
-          </article>
-        </section>
+        </SectionHead>
 
+        <div className="product-grid">
+          {products.map((product) => (
+            <a
+              key={product.id}
+              className={`product-card product-${product.id}`}
+              href={product.href}
+              target="_blank"
+              rel="noopener"
+              data-reveal
+            >
+              <ProductArt id={product.id} />
+              <span className="product-status">{product.status}</span>
+              <span className="product-name">{product.name}</span>
+              <span className="product-tagline">{product.tagline}</span>
+              <span className="product-go">
+                Visit <ArrowUpRight size={16} />
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Works() {
+  return (
+    <section id="projects" className="section" aria-labelledby="projects-title">
+      <div className="shell">
+        <SectionHead id="projects-title" index="03" kicker="Works" title={<>AI built for <em>real-world problems.</em></>}>
+          <p>
+            Projects, prototypes and open releases, each described at the maturity level its
+            record supports.
+          </p>
+          <a className="text-link" href="/works/">
+            The full archive <ArrowRight size={16} />
+          </a>
+        </SectionHead>
+
+        <div className="works-columns">
+          {domains.map((domain) => {
+            const items = projects.filter((project) => project.category === domain);
+            return (
+              <div className="works-column" key={domain} data-reveal>
+                <h3>
+                  {domain}
+                  <span>{String(items.length).padStart(2, "0")}</span>
+                </h3>
+                <ul>
+                  {items.map((project) => (
+                    <li key={project.id}>
+                      <a href={project.href}>
+                        <strong>{project.title}</strong>
+                        <span className="work-desc">{project.description}</span>
+                        <span className="work-tags">{project.focus.join(" · ")}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -450,114 +343,91 @@ function ResearchSpotlight() {
 function Approach() {
   const principles = [
     {
-      icon: Microscope,
       title: "Research discipline",
       text: "We define problems with data, challenge assumptions through the literature, and develop through reproducible experiments.",
     },
     {
-      icon: ShieldCheck,
       title: "Trustworthy technology",
       text: "We treat explainability, privacy, and human oversight as essential design requirements alongside accuracy.",
     },
     {
-      icon: Users,
       title: "Interdisciplinary team",
       text: "We connect engineering with perspectives from healthcare, education, and communication.",
     },
   ];
 
   return (
-    <section id="approach" className="section approach-section" aria-labelledby="approach-title">
-      <SectionHeading
-        id="approach-title"
-        index="03"
-        kicker="How we work"
-        title="We build technology not simply because it is possible, but because it is meaningful."
-      />
-      <div className="principle-grid">
-        {principles.map(({ icon: Icon, title, text }) => (
-          <article key={title}>
-            <Icon />
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
+    <section id="approach" className="approach" aria-labelledby="approach-title">
+      <div className="shell">
+        <p className="kicker">
+          <span className="section-index">04</span> How we work
+        </p>
+        <h2 id="approach-title" data-reveal>
+          We build technology not simply because it is possible, but because it is <em>meaningful.</em>
+        </h2>
+        <div className="principles">
+          {principles.map((principle, index) => (
+            <article key={principle.title} data-reveal>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{principle.title}</h3>
+              <p>{principle.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-function MemberCard({ member, featured = false }: { member: TeamMember; featured?: boolean }) {
-  const initials = member.name
-    .split(" ")
-    .map((part) => part[0])
-    .slice(0, 2)
-    .join("");
-
+function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <article className={`member-card ${featured ? "is-featured" : ""}`}>
+    <article className="member" data-reveal>
       <div className="member-photo">
-        {member.image ? (
-          <img
-            src={`/kisiler/${member.image}`}
-            alt={`Portrait of ${member.name}`}
-            loading="lazy"
-            width="320"
-            height="320"
-          />
-        ) : (
-          <span aria-hidden="true">{initials}</span>
+        {member.image && (
+          <img src={`/kisiler/${member.image}`} alt={`Portrait of ${member.name}`} loading="lazy" width="320" height="400" />
         )}
       </div>
-      <div className="member-copy">
-        <h3>{member.name}</h3>
-        <p>{member.role}</p>
-        <div className="member-links">
-          {member.profile && (
-            <a className="member-profile-link" href={member.profile}>
-              Profile
-            </a>
-          )}
-          <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} LinkedIn`}>
-            <LinkedInIcon size={17} />
-          </a>
-          <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
-            <Mail size={17} />
-          </a>
-        </div>
+      <h3>{member.profile ? <a href={member.profile}>{member.name}</a> : member.name}</h3>
+      <p>{member.role}</p>
+      <div className="member-links">
+        <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} on LinkedIn`}>
+          <LinkedInIcon size={16} />
+        </a>
+        <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+          <Mail size={16} />
+        </a>
       </div>
     </article>
   );
 }
 
 function Team() {
-  const coreTeam = team.filter((member) => member.group !== "team");
+  const core = team.filter((member) => member.group !== "team");
   const infrastructure = team.filter((member) => member.group === "team");
 
   return (
-    <section id="team" className="section team-section" aria-labelledby="team-title">
-      <SectionHeading
-        id="team-title"
-        index="04"
-        kicker="Our team"
-        title="Different disciplines, shared curiosity."
-        description="A young, dynamic team working together to turn research into products and ideas into measurable impact."
-      />
-
-      <div className="team-grid team-grid-featured">
-        {coreTeam.map((member) => (
-          <MemberCard key={member.id} member={member} featured />
-        ))}
-      </div>
-
-      <div className="team-subheading">
-        <span>Infrastructure team</span>
-        <div />
-      </div>
-      <div className="team-grid team-grid-compact">
-        {infrastructure.map((member) => (
-          <MemberCard key={member.id} member={member} />
-        ))}
+    <section id="team" className="section" aria-labelledby="team-title">
+      <div className="shell">
+        <SectionHead id="team-title" index="05" kicker="Team" title={<>Different disciplines, <em>shared curiosity.</em></>}>
+          <p>A young team working together to turn research into products and ideas into measurable impact.</p>
+        </SectionHead>
+        <div className="team-grid">
+          {core.map((member) => (
+            <MemberCard key={member.id} member={member} />
+          ))}
+        </div>
+        <div className="roster" data-reveal>
+          <span className="kicker">Infrastructure team</span>
+          <ul>
+            {infrastructure.map((member) => (
+              <li key={member.id}>
+                <a href={member.linkedin} target="_blank" rel="noreferrer">
+                  {member.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
@@ -565,87 +435,52 @@ function Team() {
 
 function Achievements() {
   const [selected, setSelected] = useState<(typeof achievements)[number] | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!selected) return;
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelected(null);
-    };
+    const previous = document.activeElement as HTMLElement | null;
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setSelected(null);
     document.body.classList.add("modal-open");
-    window.addEventListener("keydown", onKeyDown);
-    closeButtonRef.current?.focus();
+    window.addEventListener("keydown", onKey);
+    closeRef.current?.focus();
     return () => {
       document.body.classList.remove("modal-open");
-      window.removeEventListener("keydown", onKeyDown);
-      previouslyFocused?.focus();
+      window.removeEventListener("keydown", onKey);
+      previous?.focus();
     };
   }, [selected]);
 
   return (
-    <section
-      id="achievements"
-      className="section achievements-section"
-      aria-labelledby="achievements-title"
-    >
-      <SectionHeading
-        id="achievements-title"
-        index="05"
-        kicker="Our achievements"
-        title="Where our work proves its value."
-        description="We have tested our research and products across different platforms—learning, improving, and succeeding together."
-      />
-
-      <div className="achievement-grid">
-        {achievements.map((achievement, index) => (
-          <button
-            key={achievement.id}
-            className={`achievement-card achievement-${index + 1}`}
-            type="button"
-            onClick={() => setSelected(achievement)}
-            aria-label={`Enlarge image for ${achievement.title}`}
-          >
-            <img
-              src={`/basarilarimiz/${achievement.image}`}
-              alt=""
-              loading="lazy"
-              width="720"
-              height="480"
-            />
-            <span className="achievement-overlay" />
-            <span className="achievement-copy">
-              <span>{achievement.rank}</span>
-              <strong>{achievement.title}</strong>
-              <small>{achievement.organization}</small>
-            </span>
-            <ExternalLink className="achievement-open" size={20} />
-          </button>
-        ))}
+    <section id="achievements" className="section section-tint" aria-labelledby="achievements-title">
+      <div className="shell">
+        <SectionHead id="achievements-title" index="06" kicker="Achievements" title={<>Where our work <em>proves its value.</em></>}>
+          <p>We test our research and products in competitions across Türkiye and abroad.</p>
+        </SectionHead>
+        <ol className="award-list">
+          {achievements.map((achievement) => (
+            <li key={achievement.id} data-reveal>
+              <button type="button" onClick={() => setSelected(achievement)} aria-label={`View photo: ${achievement.title}`}>
+                <span className="award-rank">{achievement.rank}</span>
+                <span className="award-title">{achievement.title}</span>
+                <span className="award-org">{achievement.organization}</span>
+                <img src={`/basarilarimiz/${achievement.image}`} alt="" loading="lazy" width="120" height="80" />
+              </button>
+            </li>
+          ))}
+        </ol>
       </div>
 
       {selected && (
-        <div className="modal-backdrop image-modal" role="presentation" onMouseDown={() => setSelected(null)}>
-          <div
-            className="image-modal-card"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="achievement-dialog-title"
-            onMouseDown={(event) => event.stopPropagation()}
-          >
-            <button
-              ref={closeButtonRef}
-              className="modal-close"
-              type="button"
-              onClick={() => setSelected(null)}
-              aria-label="Close"
-            >
+        <div className="modal-backdrop" role="presentation" onMouseDown={() => setSelected(null)}>
+          <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="award-dialog-title" onMouseDown={(event) => event.stopPropagation()}>
+            <button ref={closeRef} className="modal-close" type="button" onClick={() => setSelected(null)} aria-label="Close">
               <X />
             </button>
             <img src={`/basarilarimiz/${selected.image}`} alt={selected.title} />
             <div>
-              <p>{selected.rank}</p>
-              <h3 id="achievement-dialog-title">{selected.title}</h3>
+              <p className="kicker">{selected.rank}</p>
+              <h3 id="award-dialog-title">{selected.title}</h3>
               <span>{selected.organization}</span>
             </div>
           </div>
@@ -657,26 +492,18 @@ function Achievements() {
 
 function Partners() {
   return (
-    <section id="partners" className="section partners-section" aria-labelledby="partners-title">
-      <SectionHeading
-        id="partners-title"
-        index="06"
-        kicker="Ecosystem"
-        title="Organizations we create value with."
-      />
-      <div className="partner-grid">
-        {partners.map((partner) => (
-          <div className="partner-card" key={partner.id}>
-            <img
-              src={`/partnerlerimiz/${partner.logo}`}
-              alt={`${partner.name} logo`}
-              loading="lazy"
-              width="180"
-              height="90"
-            />
-            <span>{partner.name}</span>
-          </div>
-        ))}
+    <section id="partners" className="section partners" aria-labelledby="partners-title">
+      <div className="shell partners-inner">
+        <h2 id="partners-title" className="kicker">
+          <span className="section-index">07</span> Organizations we create value with
+        </h2>
+        <ul className="partner-row">
+          {partners.map((partner) => (
+            <li key={partner.id}>
+              <img src={`/partnerlerimiz/${partner.logo}`} alt={partner.name} loading="lazy" width="160" height="80" />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -684,60 +511,53 @@ function Partners() {
 
 function Contact() {
   return (
-    <footer id="contact" className="contact-section">
-      <div className="contact-orb" aria-hidden="true" />
-      <div className="contact-inner">
-        <div>
-          <p className="section-kicker">Have an idea?</p>
-          <h2>Let's shape the future together.</h2>
-          <p>
-            Reach out to explore research partnerships, product development, mentorship,
-            or opportunities to join our team.
-          </p>
-        </div>
-        <div className="contact-actions">
-          <a href="mailto:merhaba@ethosoft.org">
-            <span>
-              <Mail />
-            </span>
-            <div>
-              <small>Email</small>
-              <strong>merhaba@ethosoft.org</strong>
-            </div>
-            <ArrowUpRight />
-          </a>
-          <a href="https://www.linkedin.com/company/ethos-ai-team/" target="_blank" rel="noreferrer">
-            <span>
-              <LinkedInIcon />
-            </span>
-            <div>
-              <small>LinkedIn</small>
-              <strong>Ethos AI Team</strong>
-            </div>
-            <ArrowUpRight />
-          </a>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <a className="brand brand-inverse" href="#hero">
-          <img src="/logolar/ethos-05.png" alt="" width="40" height="40" />
-          <span>Ethosoft</span>
+    <footer id="contact" className="contact">
+      <div className="shell">
+        <p className="kicker">
+          <span className="kicker-dot" /> Have an idea?
+        </p>
+        <h2>
+          Let's shape the future <em>together.</em>
+        </h2>
+        <p className="contact-lede">
+          Research partnerships, product development, mentorship, or joining the team.
+        </p>
+        <a className="contact-mail" href="mailto:merhaba@ethosoft.org">
+          merhaba@ethosoft.org <ArrowUpRight />
         </a>
-        <p>© {new Date().getFullYear()} Ethosoft AI Team</p>
-        <a href="#hero">Back to top <ArrowUp size={16} /></a>
+        <div className="contact-links">
+          <a href="https://www.linkedin.com/company/ethos-ai-team/" target="_blank" rel="noreferrer">
+            LinkedIn <ArrowUpRight size={15} />
+          </a>
+          <a href="https://github.com/ethosoftai" target="_blank" rel="noreferrer">
+            GitHub <ArrowUpRight size={15} />
+          </a>
+          <a href="https://huggingface.co/Ethosoft" target="_blank" rel="noreferrer">
+            Hugging Face <ArrowUpRight size={15} />
+          </a>
+        </div>
+        <div className="footer-bottom">
+          <img src="/logolar/ethos-wordmark.png" alt="Ethosoft" width="120" height="21" />
+          <p>© {new Date().getFullYear()} Ethosoft AI Team</p>
+          <a href="#hero">
+            Back to top <ArrowUp size={15} />
+          </a>
+        </div>
       </div>
     </footer>
   );
 }
 
 export default function App() {
+  useReveal();
   return (
     <>
       <Header />
       <main id="main-content">
         <Hero />
-        <Projects />
-        <ResearchSpotlight />
+        <Research />
+        <Products />
+        <Works />
         <Approach />
         <Team />
         <Achievements />
